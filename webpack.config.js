@@ -39,13 +39,7 @@ module.exports = {
                 test: /\.scss$/,
                 loader: 'style!css!sass'
             }
-        ],
-        loaders : [
-            {
-                test: /\.scss$/,
-                loader: 'style!css!sass'
-            }
-        ]    
+        ]
     },
     resolve: {
         alias: {

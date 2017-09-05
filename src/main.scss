@@ -5,6 +5,11 @@ $sans-serif: 'Lato', sans-serif;
 $screen-medium: 1024px;
 $screen-small: 768px;
 
+body {
+    margin: 0em;
+    padding: 0em;
+}
+
 .page {
     display: flex;
     flex-direction: column;
@@ -16,12 +21,12 @@ $screen-small: 768px;
     }
 
     .page-body {
-        width: 55%;
+        width: 65%;
         text-align: left;
         margin-bottom: 5em;
 
         @media only screen and (max-width : $screen-small) {
-            width: 90%;
+            width: 100%;
         }
 
         ul {

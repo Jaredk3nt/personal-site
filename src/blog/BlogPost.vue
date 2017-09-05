@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="page">
-        <div class="page-body blogpost content">
+        <div class="page-body content">
             <div class="header">
                 <img src="../assets/jared.jpg" class="headshot">
                 <div class="info">
@@ -10,14 +10,16 @@
                     <a href="https://twitter.com/Jaredk3nt"><img src="../assets/twitter.svg" alt="Twitter" class="icon"></a>
                 </div>
             </div>
-            <h2>{{post.title}}</h2>
-            <h4 v-if="post.subtitle != undefined">{{post.subtitle}}</h4>
-            <ul>
-                <li v-for="paragraph in post.content">
-                    <h5>{{paragraph.title}}</h5>
-                    <p>{{paragraph.body}}</p>
-                </li>
-            </ul>
+            <div class="blogpost">
+                <h2>{{post.title}}</h2>
+                <h4 v-if="post.subtitle != undefined">{{post.subtitle}}</h4>
+                <ul>
+                    <li v-for="paragraph in post.content">
+                        <h5>{{paragraph.title}}</h5>
+                        <p>{{paragraph.body}}</p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -49,7 +51,7 @@ export default {
 
     @media only screen and (max-width : $screen-small) {
         height: 100px;
-        margin-bottom: 1em;
+        margin: 1em;
     }
 
     .headshot {
@@ -66,7 +68,7 @@ export default {
         padding: 2em;
 
         @media only screen and (max-width : $screen-small) {
-            padding: .5em .5em .5em 1em;
+            padding: .5em 1em .5em 1em;
         }
 
         h3 {
@@ -106,6 +108,14 @@ export default {
 }
 
 .blogpost {
+    //background: #fff;
+    padding: .5em 2em;
+    border-radius: 5px;
+
+    @media only screen and (max-width : $screen-small) {
+        padding: .5em 1em;
+    }
+
     ul {
         margin: 0em;
         padding: 0em;

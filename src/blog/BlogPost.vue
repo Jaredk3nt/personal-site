@@ -4,7 +4,10 @@
             <div class="header">
                 <img src="../assets/jared.jpg" class="headshot">
                 <div class="info">
-                    <h3>CS373 Fall 2017: Jared Jones</h3>
+                    <router-link :to="'/'"><h3>CS373 Fall 2017: Jared Jones</h3></router-link>
+                    <p>Computer Science student @ the University of Texas at Austin</p>
+                    <a href="https://github.com/Jaredk3nt"><img src="../assets/github.svg" alt="Github" class="icon"></a>
+                    <a href="https://twitter.com/Jaredk3nt"><img src="../assets/twitter.svg" alt="Twitter" class="icon"></a>
                 </div>
             </div>
             <h2>{{post.title}}</h2>
@@ -39,21 +42,65 @@ export default {
     display: flex;
     align-items: flex-start;
     flex-direction: row;
+    background: #f5f5f5;
+    border-radius: 5px;
+    height: 200px;
+    margin-bottom: 2em;
+
+    @media only screen and (max-width : $screen-small) {
+        height: 100px;
+        margin-bottom: 1em;
+    }
 
     .headshot {
         display: inline-block;
         height: 200px;
+        border-radius: 5px 0px 0px 5px;
+
+        @media only screen and (max-width : $screen-small) {
+            height: 100px;
+        }
     }
 
     .info {
-        margin-left: 2em;
+        padding: 2em;
+
+        @media only screen and (max-width : $screen-small) {
+            padding: .5em .5em .5em 1em;
+        }
 
         h3 {
             margin: .2em 0em;
+
+            @media only screen and (max-width : $screen-medium) {
+                font-size: 1.2rem;
+            }
+
+            @media only screen and (max-width : $screen-small) {
+                font-size: 1rem;
+            }
         }
 
         p {
             margin: .1em 0em;
+            font-size: 1.1rem;
+
+            @media only screen and (max-width : $screen-medium) {
+                font-size: .95rem;
+            }
+
+            @media only screen and (max-width : $screen-small) {
+                display: none;
+            }
+        }
+
+        .icon {
+            height: 25px;
+            margin: .5em .35em;
+
+            @media only screen and (max-width : $screen-medium) {
+                height: 20px;
+            }
         }
     }
 }

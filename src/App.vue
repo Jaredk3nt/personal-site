@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|PT+Serif');
+@import './main.scss';
 #app {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -34,6 +35,16 @@ export default {
     right: 0;
     margin: 0em 2em;
     padding: .6em;
+
+    @media only screen and (max-width : $screen-small) {
+        margin: 0em;
+        background: #fff;
+        padding-left: 1.5em;
+
+        -webkit-box-shadow: 0px 10px 32px -8px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 10px 32px -8px rgba(0,0,0,0.25);
+        box-shadow: 0px 10px 32px -8px rgba(0,0,0,0.25);
+    }
 
     a {
         text-decoration: none;

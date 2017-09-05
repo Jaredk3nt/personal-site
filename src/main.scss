@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Noto+Serif');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Noto+Serif');
 
 $serif: 'Noto Serif', serif;
 $sans-serif: 'Lato', sans-serif;
+$screen-medium: 1024px;
+$screen-small: 768px;
 
 .page {
     display: flex;
@@ -9,13 +11,22 @@ $sans-serif: 'Lato', sans-serif;
     align-items: center;
     margin-top: 3em;
 
+    @media only screen and (max-width : $screen-small) {
+        margin-top: 4em;
+    }
+
     .page-body {
-        width: 60%;
+        width: 55%;
         text-align: left;
         margin-bottom: 5em;
 
+        @media only screen and (max-width : $screen-small) {
+            width: 90%;
+        }
+
         ul {
             list-style: none;
+            padding-left: 0em;
             li {
                 margin: 0em;
             }
@@ -28,6 +39,11 @@ $sans-serif: 'Lato', sans-serif;
                 text-decoration: underline;
                 color: #000;
             }
+
+            &:visited {
+                text-decoration: none;
+                color: #000;
+            }
         }
     }
 }
@@ -35,40 +51,58 @@ $sans-serif: 'Lato', sans-serif;
 .content {
     h2 {
         font-family: $sans-serif;
-        font-weight: 700;
+        font-weight: 900;
         font-size: 2.5rem;
         color: #3e70c1;
         margin: .4em 0em .1em 0em;
+
+        @media only screen and (max-width : $screen-small) {
+            font-size: 2.2rem;
+        }
     }
 
     h3 {
         font-family: $sans-serif;
-        font-weight: 600;
+        font-weight: 900;
         font-size: 1.5rem;
         color: #000;
         margin: .2em 0em;
+
+        @media only screen and (max-width : $screen-small) {
+
+        }
     }
 
     h4 {
         font-family: $sans-serif;
-        font-weight: 600;
         font-size: 1.5rem;
+        font-weight: 400;
         color: #999;
         margin: 0em 0em .6em 0em;
+
+        @media only screen and (max-width : $screen-small) {
+            font-size: 1.25rem;
+        }
     }
 
     h5 {
         font-family: $sans-serif;
-        font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1.35rem;
         margin: 1.2em 0em .6em 0em;
 
+        @media only screen and (max-width : $screen-small) {
+            font-size: 1.1rem;
+        }
     }
 
     p {
         white-space: pre-wrap;
         font-family: $serif;
-        font-size: 1.15rem;
+        font-size: 1.25rem;
         margin: .2em 0em;
+
+        @media only screen and (max-width : $screen-small) {
+            font-size: 1rem;
+        }
     }
 }

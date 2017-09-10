@@ -1,4 +1,30 @@
 {
+    "09102017": {
+        "title": "Week 2",
+        "subtitle": "The Work Begins",
+        "content": [
+            {
+                "title": "What did you do this past week?",
+                "body": "This past week I spent my time doing readings for classes, starting to work on collatz, and working on personal projects. Class is just getting started so the work load for everything is still pretty light, so I still have lots of time to work on my own development projects. I have also been working on getting my org ready for the semester and recruiting. I became the president of Design Collective this semester so that has taken up more time than my classes this week."
+            },
+            {
+                "title": "What's in your way?",
+                "body": "Currently the only thing in my way is the mindset I had over the summer. When working I had a consistent schedule and lots of free time, since all of my work got done during the day. So right now moving away from programming my own things whenever I am free or playing games with my roommates and remembering all of the things I need to do for school is sort of a blocker, mentally."
+            },
+            {
+                "title": "What will you do next week?",
+                "body": "Next week I will spend a lot of time working on collatz and making sure it is all up to spec, and checking all of the boxes. I have other homework that mostly involves reading for all of my classes so continuing to do that will be a common part of everyweek."
+            },
+            {
+                "title": "What's my experience of the class?",
+                "body": "Overall I am excited for the class this semester. Right now its a bit dry since I took OOP and this project is the same as our starter project in that class. However after working this summer my thoughts around all of the scaffolding in the project have changed. When working on stories for work we go through the process of  estimating time, assigning champions to task them out, and giving them story points. In this class the process is quite different than in the workplace, its far more granular. If implementing a feature that found the max cycle length of a number the story would be more like this: Collatz would have a story point value of difficulty, probably a 1 - 3 just given where I worked. Then the story would have a simple description of the functionality and a set of 'acceptance criteria' to let you know the type of output it would have when finished. Then the champion would create subtasks which would be similar to our issues but more general; 1. Set up repository and CI  2. Write unit and acceptance tests  3. Implement logic  4. Manual testing (if necessary)  5. Code review  6. Deploy. The act of writing out a minimum of 15 issues is tedious and often ends up with the developer creating things simply for the sake of the task. I think the problem may be in that this project is supposed to simulate what an entire 'product' would look like when it is more the workload of a light story so coming up with all the subtasks seems extraneous. However the practice for anyone who has never had any experience doing something like this is better than nothing, it certainly taught me better in OOP. However I feel like the granularity of these projects pull people away from taking the skill into their own projects, and will end up with them worrying too much doing it wrong later in their career. I look forward to it in the web application though, however as that will be much more similar to a 'product'"
+            },
+            {
+                "title": "What's my pick-of-the-week or tip-of-the-week?",
+                "body": "Contributing to open source is extremely valuable, but can be really scary to students or feel overwhelming. My tip (and sort of self promotion) is to find people similar to your age or position in life working on projects and help out with those. Working on open source doesn't always have to mean workin on some big product, finding a small, maybe less 'important' project can help get you started. Even similar to this is to be the catalyst to creating small projects, when you work on a project make it open source! Typically this is as easy as ensuring the code is on github and writing documentation on what you are doing. This is something I have been trying to do with all of my hobby projects, I am currently working on a small css-framework called KentCSS that I have open and avaliable to the public. I write documentation on the classes and am working on submission guidelines and tips to help people work on it if they find it interesting. Open source is more of an idea than a set of projects, help promote the culture of open source through all of your development!"
+            }
+        ]
+    },
     "09042017": {
         "title": "Week 1",
         "subtitle": "Beginning of the End",

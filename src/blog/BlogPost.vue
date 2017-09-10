@@ -47,7 +47,7 @@ export default {
     background: #f5f5f5;
     border-radius: 5px;
     height: 200px;
-    margin-bottom: 2em;
+    margin: 0em 2em 2em 2em;
 
     @media only screen and (max-width : $screen-small) {
         height: 100px;

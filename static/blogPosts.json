@@ -1,4 +1,30 @@
 {
+    "09172017": {
+        "title": "Week 3",
+        "subtitle": "",
+        "content": [
+            {
+                "title": "What did you do this past week?",
+                "body": "This past week was the career fair! Both an exciting and extremely stressful time of the year. I attended for about 3.5 hours and talked to quite a few companies there, as well as hung out at the companies table that I worked at this past summer talking to students. The career fair really overshadowed everything else that happened."
+            },
+            {
+                "title": "What's in your way?",
+                "body": "During this time of year I find that the waiting for responses from recruiters and doing coding challenges gets in my way of school. I spend a lot of time thinking/working on stuff around recruiting that I get distracted away from my work."
+            },
+            {
+                "title": "What will you do next week?",
+                "body": "Next week school is fairly normal, however I did get an interview with Indeed while at the career fair. So monday and tuesday will be prepping/doing the interview and then the rest of the week will be spent anxiously waiting for responses from them and others."
+            },
+            {
+                "title": "What's my experience of the class?",
+                "body": "With the first project behind us feeling like logistical work, I am excited to get started on the big project in the class. I am enjoying learning alot of Python fundamentals deeper than I had understood them before. I am already applying alot of what we are learning in Python to my interview practice as I tend to do interview questions in Python already."
+            },
+            {
+                "title": "What's my pick-of-the-week or tip-of-the-week?",
+                "body": "Why tip of the week is to do lots of practicing for interviews. Whether its for the best or not the way our current recruiting system works favors those who practice one-off style algo and data structures problems. The more of these problems you do the better mindset you are in to tackle these types of complex bite-sized problems. I find that working or personal projects (the type of development most of us will do after school) doesn't lend itself to performing well in interviews so we need to supplement this with extra practice. Good luck to everyone going into interviews!!"
+            }
+        ]
+    },
     "09102017": {
         "title": "Week 2",
         "subtitle": "The Work Begins",

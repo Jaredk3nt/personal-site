@@ -5,7 +5,7 @@
 				<h1>Jared Kent Jones</h1>
 				<h2>Web Developer & Student</h2>
 				<br>
-				<p>As long as I can remeber I all have wanted to do was make things. My life thus far has been trying to figure out how to best achieve that goal. I've gone from wanting to be an artist, to a designer, and I have finally landed myself in nirvana with development. I am hopelessly passionate about the web because I believe it is the greatest medium for creation that has ever existed. Check out some of the stuff I have made, I hope it is as enjoyable to you as it was for me to make it!</p>
+				<p>As long as I can remember I all have wanted to do was make things. My life thus far has been trying to figure out how to best achieve that goal. I've gone from wanting to be an artist, to a designer, and I have finally landed myself in nirvana with development. I am hopelessly passionate about the web because I believe it is the greatest medium for creation that has ever existed. Check out some of the stuff I have made, I hope it is as enjoyable to you as it was for me to make it!</p>
 			</div>
 			
 			<a href="https://npmjs.com/kent-css" target="_blank" class="item kent">

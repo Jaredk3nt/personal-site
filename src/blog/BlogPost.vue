@@ -42,6 +42,7 @@ export default {
 
 <style lang="scss">
 @import '../main.scss';
+
 .header {
     display: flex;
     align-items: flex-start;
@@ -54,7 +55,6 @@ export default {
         height: 100px;
         margin: 1em;
     }
-
     .headshot {
         display: inline-block;
         height: 200px;
@@ -63,7 +63,6 @@ export default {
             height: 100px;
         }
     }
-
     .info {
         padding: 1.2em 2em;
 
@@ -78,7 +77,6 @@ export default {
             @media only screen and (max-width : $screen-medium) {
                 font-size: 1.2rem;
             }
-
             @media only screen and (max-width : $screen-small) {
                 font-size: 1rem;
             }
@@ -96,12 +94,10 @@ export default {
             @media only screen and (max-width : $screen-medium) {
                 font-size: .95rem;
             }
-
             @media only screen and (max-width : $screen-small) {
                 display: none;
             }
         }
-
         .icon {
             height: 25px;
             margin: .5em .35em;
@@ -121,7 +117,6 @@ export default {
     @media only screen and (max-width : $screen-small) {
         padding: .5em 1em;
     }
-
     .title {
         text-align: center;
 
@@ -139,9 +134,6 @@ export default {
             color: $dark-blue;
         }
     }
-
-    
-
     ul {
         margin: 0em;
         padding: 0em;

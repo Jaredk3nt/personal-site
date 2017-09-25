@@ -3,7 +3,7 @@
 		<div class="page-body small">
 			<div class="information">
 				<h1>Jared Kent Jones</h1>
-				<h2>Web Developer & Student</h2>
+				<h2>Web Developer &amp; Student</h2>
 				<br>
 				<p>As long as I can remember I all have wanted to do was make things. My life thus far has been trying to figure out how to best achieve that goal. I've gone from wanting to be an artist, to a designer, and I have finally landed myself in nirvana with development. I am hopelessly passionate about the web because I believe it is the greatest medium for creation that has ever existed. Check out some of the stuff I have made, I hope it is as enjoyable to you as it was for me to make it!</p>
 			</div>
@@ -24,9 +24,7 @@
 		</div>
 	</div>
 </template>
-<script>
-	
-</script>
+<script></script>
 <style lang="scss">
 	@import '../main.scss';
 
@@ -53,9 +51,6 @@
 				font-size: 1.25rem;
 			}
 		}
-		h3 {
-
-		}
 		p {
 			font-family: $serif;
 			font-size: 1rem;
@@ -74,7 +69,6 @@
 		@media only screen and (max-width : $screen-small) {
 			width: 100%;
 		}
-
 		@mixin hover-state($background-color) {
 			transition: transform .2s ease-in;
 			z-index: 10;
@@ -86,7 +80,6 @@
 			}
 			
 		}
-
 		&.kent {
 			background-color: #222;
 			color: #fff;
@@ -127,5 +120,4 @@
 			@include hover-state(#2de5c6);
 		}
 	}
-	
 </style>

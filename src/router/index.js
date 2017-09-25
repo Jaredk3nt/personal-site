@@ -8,6 +8,7 @@ import About from '../pages/About.vue'
 Vue.use(Router)
 
 export default new Router({
+	mode: 'history',
     routes: [
         { path: '/', name: 'Home', component: Home },
         { path: '/blog/:id', component: BlogPost },

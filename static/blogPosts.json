@@ -1,4 +1,30 @@
 {
+    "09242017": {
+        "title": "Week 4",
+        "subtitle": "Welcome to gamingdb",
+        "content": [
+            {
+                "title": "What did you do this past week?",
+                "body": "This past week I got started on the front-end of the idb project. It interesting going back to totally static html, its something I haven't done it quite some time. I have been using angular and vuejs for sometime now but I haven't used facebooks React before for frontend. I started going to MAD's advanced web where they are going to be teaching React to hopefully catch myself up to where I am with other frameworks."
+            },
+            {
+                "title": "What's in your way?",
+                "body": "Really nothing is in my way right now!"
+            },
+            {
+                "title": "What will you do next week?",
+                "body": "This next week I have an Information Retrieval project I will be working on. I will also be working to finish up the idb project. We need to work on our documentation write up and finish all of the front-end. Right now we have a lot of the 'infastructure' for the site working and just need to put in the sample data to show it off."
+            },
+            {
+                "title": "What's my experience of the class?",
+                "body": "The class has been good so far, I am really enjoying learning more about python in lecture. The project is a bit sporadic. I feel like the requirements are all over the place and unclear in a lot of ways. While we were working in the lab today we had another group come up and ask us stuff about the project. They asked how we set up react and the database, we however were certain neither of those things were required for the first project and told them such. We later were told by another group that we did need to use react for part 1 of idb. After posting on Piazza, we found out this was not the case and told that group as well. The fact that 3 groups had different ideas about what part 1 was speaks to the layout of this project. Doing a static site first with fake data, but not requiring react, which will later be an integral part is strange which is why I believe it was so unclear. The layout of a site using a component based framework is VASTLY different than a static HTML only site. We are going to have to spend many man hours just reworking our site and componetizing parts before we can move on in the next project. I feel as though this project should have started with us getting a simple one page HTML site up and running using flask and Google Cloud Platform. Something as simple as the team name and photos. Then the next project should have been building out the API and model structure of the site. After fully understanding the data layout of the project we could properly design the site and componetize the application, so the third project could be building out the front-end with React. This layout of this project makes far more sense to me from my experience as a web developer. An MVP shouldn't be so different from the final form that it is almost unusable or requiring manual effort to copy and past html into React components. I am really excited for this project but the cluttered structure has made many of the parts feel confusing or 'for the sake of doing them' and not actually teaching us something about development."
+            },
+            {
+                "title": "What's my pick-of-the-week or tip-of-the-week?",
+                "body": "My tip of the week is to 'reinvent the wheel' as often as you can! Many people talk about this as if it is a bad thing or a waste of time. However as students and upcoming developers I believe it is our duty to try to copy or recreate the things we use to develop, so that we can truly understand why they do things the way they do or how they work. You aren't trying to compete with the thing you are using or replace it for yourself, you simply are breaking it down so far that you can truly understand it."
+            }
+        ]
+    },
     "09172017": {
         "title": "Week 3",
         "subtitle": "",

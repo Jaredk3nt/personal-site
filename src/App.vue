@@ -2,6 +2,7 @@
     <div id="app" class="container">
         <div class="nav">
             <router-link :to="'/'">Home</router-link>
+            <router-link :to="'/About'">About</router-link>
         </div>
         <router-view></router-view>
   </div>
@@ -31,8 +32,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    margin: 0em 2em;
-    padding: .6em;
+    margin: 1em 0em 0em 1em;
     font-family: $sans-serif;
 
     @media only screen and (max-width : $screen-small) {
@@ -49,6 +49,13 @@ export default {
         text-decoration: none;
         font-size: 1.25em;
         color: $yellow;
+        display: block;
+        margin-bottom: 1em;
+
+        @media only screen and (max-width : $screen-small) {
+          display: inline-block;
+          margin: .5em 1em .5em 0em;
+        }
 
         &:visited {
           color: $yellow;

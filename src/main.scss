@@ -33,6 +33,10 @@ body {
 
         @media only screen and (max-width : $screen-small) {
             width: 100%;
+
+            &.small {
+                width: 90%;
+            }
         }
 
         ul {
@@ -45,7 +49,6 @@ body {
 
             &:visited {
                 text-decoration: none;
-                color: #000;
             }
         }
     }

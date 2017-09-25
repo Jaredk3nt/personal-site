@@ -19,10 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|PT+Serif');
 @import './main.scss';
 #app {
-  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,6 +33,7 @@ export default {
     right: 0;
     margin: 0em 2em;
     padding: .6em;
+    font-family: $sans-serif;
 
     @media only screen and (max-width : $screen-small) {
         margin: 0em;
@@ -49,10 +48,13 @@ export default {
     a {
         text-decoration: none;
         font-size: 1.25em;
+        color: $yellow;
 
+        &:visited {
+          color: $yellow;
+        }
         &:hover {
-            text-decoration: underline;
-            color: #000;
+          color: $dark-blue;
         }
     }
 }

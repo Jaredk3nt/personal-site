@@ -1,18 +1,20 @@
 <template lang="html">
     <div class="page">
         <div class="page-body content">
-            <div class="header">
-                <img src="../assets/jared.jpg" class="headshot">
-                <div class="info">
-                    <router-link :to="'/'"><h3>CS373 Fall 2017: Jared Jones</h3></router-link>
-                    <p>Computer Science student @ the University of Texas at Austin</p>
-                    <a href="https://github.com/Jaredk3nt"><img src="../assets/github.svg" alt="Github" class="icon"></a>
-                    <a href="https://twitter.com/Jaredk3nt"><img src="../assets/twitter.svg" alt="Twitter" class="icon"></a>
-                </div>
-            </div>
             <div class="blogpost">
-                <h2>{{post.title}}</h2>
-                <h4 v-if="post.subtitle != undefined">{{post.subtitle}}</h4>
+                <div class="title">
+                    <h2>{{post.title}}</h2>
+                    <h4 v-if="post.subtitle != undefined">{{post.subtitle}}</h4>
+                </div>
+                <div class="header">
+                    <img src="../assets/jared.jpg" class="headshot">
+                    <div class="info">
+                        <router-link :to="'/'"><h3>CS373 Fall 2017: <strong>Jared Jones</strong></h3></router-link>
+                        <p>Computer Science student @ the University of Texas at Austin. I'm here to write about what I know and ask about what I don't.</p>
+                        <a href="https://github.com/Jaredk3nt"><img src="../assets/github.svg" alt="Github" class="icon"></a>
+                        <a href="https://twitter.com/Jaredk3nt"><img src="../assets/twitter.svg" alt="Twitter" class="icon"></a>
+                    </div>
+                </div>
                 <ul>
                     <li v-for="paragraph in post.content">
                         <h5>{{paragraph.title}}</h5>
@@ -44,10 +46,9 @@ export default {
     display: flex;
     align-items: flex-start;
     flex-direction: row;
-    background: #f5f5f5;
-    border-radius: 5px;
+    background: #f9f9f9;
     height: 200px;
-    margin: 0em 2em 2em 2em;
+    margin: 2em 0em;
 
     @media only screen and (max-width : $screen-small) {
         height: 100px;
@@ -57,7 +58,6 @@ export default {
     .headshot {
         display: inline-block;
         height: 200px;
-        border-radius: 5px 0px 0px 5px;
 
         @media only screen and (max-width : $screen-small) {
             height: 100px;
@@ -65,7 +65,7 @@ export default {
     }
 
     .info {
-        padding: 2em;
+        padding: 1.2em 2em;
 
         @media only screen and (max-width : $screen-small) {
             padding: .5em 1em .5em 1em;
@@ -73,6 +73,7 @@ export default {
 
         h3 {
             margin: .2em 0em;
+            color: $grey;
 
             @media only screen and (max-width : $screen-medium) {
                 font-size: 1.2rem;
@@ -81,11 +82,16 @@ export default {
             @media only screen and (max-width : $screen-small) {
                 font-size: 1rem;
             }
+            strong {
+                color: $yellow;
+            }
         }
 
         p {
             margin: .1em 0em;
             font-size: 1.1rem;
+            color: $grey;
+            line-height: 1.5;
 
             @media only screen and (max-width : $screen-medium) {
                 font-size: .95rem;
@@ -108,19 +114,46 @@ export default {
 }
 
 .blogpost {
-    //background: #fff;
     padding: .5em 2em;
     border-radius: 5px;
+    color: #333;
 
     @media only screen and (max-width : $screen-small) {
         padding: .5em 1em;
     }
 
+    .title {
+        text-align: center;
+
+        h2 {
+            font-family: $serif;
+            font-size:3rem;
+            line-height: .5;
+            margin-bottom: .25em;
+            color: #333;
+        }
+        h4 {
+            font-family: $sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: $dark-blue;
+        }
+    }
+
+    
+
     ul {
         margin: 0em;
         padding: 0em;
         list-style: none;
-    }
 
+        li {
+            h5 {
+                font-size: 1.4rem;
+                text-align: center;
+                margin-top: 2em;
+            }
+        }
+    }
 }
 </style>

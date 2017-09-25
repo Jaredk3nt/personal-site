@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Noto+Serif');
-
-$serif: 'Noto Serif', serif;
-$sans-serif: 'Lato', sans-serif;
+$serif: 'adobe-caslon-pro', serif;
+$sans-serif: 'soleil', sans-serif;
 $screen-medium: 1024px;
 $screen-small: 768px;
+
+$dark-blue: #577b90;
+$yellow: #e9ac00;
+$grey: #333;
 
 body {
     margin: 0em;
@@ -21,9 +23,13 @@ body {
     }
 
     .page-body {
-        width: 65%;
+        width: 60%;
         text-align: left;
         margin-bottom: 5em;
+
+        &.small {
+            width: 45%;
+        }
 
         @media only screen and (max-width : $screen-small) {
             width: 100%;
@@ -32,18 +38,10 @@ body {
         ul {
             list-style: none;
             padding-left: 0em;
-            li {
-                margin: 0em;
-            }
         }
 
         a {
             text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-                color: #000;
-            }
 
             &:visited {
                 text-decoration: none;
@@ -58,7 +56,7 @@ body {
         font-family: $sans-serif;
         font-weight: 900;
         font-size: 2.5rem;
-        color: #3e70c1;
+        color: #e9ac00;
         margin: .4em 0em .1em 0em;
 
         @media only screen and (max-width : $screen-small) {
@@ -111,3 +109,4 @@ body {
         }
     }
 }
+

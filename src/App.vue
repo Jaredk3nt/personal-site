@@ -51,6 +51,7 @@ export default {
         color: $yellow;
         display: block;
         margin-bottom: 1em;
+        width: fit-content;
 
         @media only screen and (max-width : $screen-small) {
           display: inline-block;

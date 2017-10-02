@@ -1,4 +1,31 @@
 {
+    "10022017": {
+        "title": "Week 5",
+        "subtitle": "Dynamic SPA",
+        "date": "October 2, 2017",
+        "content": [
+            {
+                "title": "What did you do this past week?",
+                "body": "This past week I spent most of my time working to finish up the idb project. Making sure everything about the initial site was 'perfect' and up to my standards. I also had and Information Retrieval project due on the same day so balancing the work load between the two."
+            },
+            {
+                "title": "What's in your way?",
+                "body": "Right now my schedule feels really free since almost all of my classes just restarted in some sense. So I need to pump the gas and get started on my next round of projects/tests."
+            },
+            {
+                "title": "What will you do next week?",
+                "body": "In this upcoming week I am going to dive headfirst into all of my new projects. I am really excited to get started on working with React. I have been watching videos to prepare and even started writing some of the atomic components of the application."
+            },
+            {
+                "title": "What's my experience of the class?",
+                "body": "This class has by far the best turn-in for coding projects. I can't stand turning in a zipped file full of code that all has to be named something really specific, where you are always uncertain if you turned in the right files. By letting us turn in through github and basically only turning in a 'link' to canvas it makes handling the codebase more natural. Nothing in the real world gets turned in, but it does get PR'ed and reviewed."
+            },
+            {
+                "title": "What's my pick-of-the-week or tip-of-the-week?",
+                "body": "My tip of the week is to check out Academind on Youtube. He is always my first stop for learning the basics of new web technologies. I think he explains things really well and actually covers good use cases. Finding the right person to explain things can be really important, and when so many good resources exist its great to have a place to start. If you have anyone else you love for webdev tools let me know!"
+            }
+        ]
+    },
     "09242017": {
         "title": "Week 4",
         "subtitle": "Welcome to Gamingdb",

@@ -1,4 +1,31 @@
 {
+    "10082017": {
+        "title": "Week 6",
+        "subtitle": "Testing... testing...",
+        "date": "October 8, 2017",
+        "content": [
+            {
+                "title": "What did you do this past week?",
+                "body": "This past week I spent most of my time working on other classwork, trying to get a bit ahead in other things so our team could meet up and start powering through the next project (and studying for the test)."
+            },
+            {
+                "title": "What's in your way?",
+                "body": "I have been doing a lot of work for my org in terms of recruiting leadership. This has been a big time commitment for me and has been blocking a lot of my school work. We concluded 'interviews' this weekend so hopefully we can get it all wrapped up shortly!"
+            },
+            {
+                "title": "What will you do next week?",
+                "body": "The upcoming week is a BIG one. We of course have the SWE test which I will be spending a large amount of time preparing for. I also have a meeting with a recruiter from my past internship about a return offer, and then an interview with Lithium the following day. So alongside studying I will be prepping for the interview. I also have an information retrieval project that I am finishing up with experiments and testing."
+            },
+            {
+                "title": "What's my experience of the class?",
+                "body": "After the project ending I actually find myself looking forward to the next parts of it. I have been watching videos and learning about react on my own to prepare for architecting the applications front-end. This project is really well done and inspires collaboration and creativity, something that group projects in college really miss. I would say I wish the big topics on the project were covered even generally."
+            },
+            {
+                "title": "What's my pick-of-the-week or tip-of-the-week?",
+                "body": "My tip of the week is to break everything down into the smallest pieces. In web particularly this is known as 'Atomic Design'. This is a design pattern that involves creating the smallest parts of your component structure 'atoms' and building up from there to 'molecules', and 'organisms'. This kind of design pattern makes building new components easier for you and for others on the project. Basically its like making legos out of your application, a bunch of little building blocks that you can use later on to build cool things. If you aren't convinced heres a link with 10 reasons you too should use Atomic Design -- http://www.creativebloq.com/web-design/10-reasons-you-should-be-using-atomic-design-61620771"
+            }
+        ]
+    },
     "10022017": {
         "title": "Week 5",
         "subtitle": "Dynamic SPA",

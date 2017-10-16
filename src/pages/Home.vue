@@ -1,5 +1,6 @@
 <template lang="html">
     <div class="page">
+        <Popup body="This blog was build in one day using Vuejs for my UT CS course CS373 weekly blog extra credit. If you want to see some of my other fun projects checkout the /About tab!"></Popup>
         <div class="page-body small content">
             <ul class="posts">
                 <li v-for="post in posts" class="post">
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import Popup from './Popup'
 const blogPosts = require('../../static/blogPosts.json');
 
 export default {
@@ -24,6 +26,9 @@ export default {
         return {
             posts: blogPosts["blogposts"]
         }
+    },
+    components: {
+        Popup
     }
 }
 </script>

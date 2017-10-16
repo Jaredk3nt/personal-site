@@ -6,6 +6,7 @@ import router from './router'
 
 import Home from './pages/Home'
 import BlogPost from './blog/BlogPost'
+import Popup from './pages/Popup'
 
 Vue.config.productionTip = false
 
@@ -14,5 +15,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App,  }
+  components: { App, Home, BlogPost, Popup }
 })

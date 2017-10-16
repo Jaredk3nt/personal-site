@@ -1,4 +1,31 @@
 {
+    "10152017": {
+        "title": "Week 7",
+        "subtitle": "Examination Complete",
+        "date": "October 15, 2017",
+        "content": [
+            {
+                "title": "What did you do this past week?",
+                "body": "This past week was highlighted by the test! While it was certainly not the only important thing (even that day), I also had an Information Retrieval project due that morning, and a Lithium technologies interview a few hours before hand. Luckily a lot of the studying I do for Downings tests translate well into technical interviews. I felt it went really well, it was only one fairly simple programming problem that I finished in a little less than 15 minutes of the hour long interview. My Information Retrieval project was very interesting, the projects always give me some worry on completion though because I can never make it to office hours and I don't really know anyone in the class so I am truly muscling through them on my own."
+            },
+            {
+                "title": "What's in your way?",
+                "body": "I feel like the next big thing for me is the SWE project, the next portion is really large and we haven't made any real headway on it. There have been alot of other things imposing on my ability to focus and find time to meet with the group, like the test, other projects and group work in my other classes, and org business."
+            },
+            {
+                "title": "What will you do next week?",
+                "body": "Next week might actually end up being my most stressful week this year. It starts with a normal Monday, but on Tuesday I have a doctors appointment to get an ECG (electrogastrogram) which will probably take me out of commision for the day. Following that I have a research playback at IBM for my radical collaboration course in which I have not been able to heavily participate in due to my hectic schedule. And then on Thursday I have a midterm in Information Retrieval. It's the only midterm, which always worries me since you have no chance to improve on a second one given the layout of the test. I will also be missing a test prep/review class period due to my hence mentioned doctors visit. AND THEN after that I will have to run to the airport to fly to Seattle for an onsite Amazon interview. I'm pretty stoked to visit Seattle for the first time and looking forward to the interview, but its stressful when it come after all of that."
+            },
+            {
+                "title": "What's my experience of the class?",
+                "body": "Overall quite good. The test felt easy enough given my prep and it felt good coding on Hackerrank rather than Canvas like we used to in OOP. I will admit I spent most of my time trying to remember how to get the decimal numbers from an integer (an embarrasingly long time), but other than that I felt I did very well."
+            },
+            {
+                "title": "What's my pick-of-the-week or tip-of-the-week?",
+                "body": "Spend time finding things that really excite you about computer science. I think we are all really lucky to be in a major and career field that has such a wide reach. I don't really understand how people in other majors are able to make it through their classes without having something about it that they really really enjoy. For me I find my CS specific classes so interesting, but more than that the knowledge I gain from them opens up a world for me to find even more interesting things than are offered here. One thing I find really fascinating is the ability to use code to visually express complex ideas. This past week I discovered a guy who made vizualizations of repetition in songs using self-similarity matrices. You can check them out at this address -> https://colinmorris.github.io/SongSim/ <-. Being able to just go out on the internet and find so many people doing such neat and interesting things simply because they enjoy programming and making little discoveries is why I love CS so much."
+            }
+        ]
+    },
     "10082017": {
         "title": "Week 6",
         "subtitle": "Testing... testing...",

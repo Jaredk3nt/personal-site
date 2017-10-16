@@ -34,7 +34,19 @@ export default {
     props: [],
     data: function() {
         return {
-            post: blogPost[this.$route.params.id]
+            postList: blogPost["blogposts"]
+        }
+    },
+    created: function() {
+        //console.log(this.postList);
+    },
+    computed: {
+        post: function() {
+            for(var i in this.postList) {
+                if( this.postList[i].id === this.$route.params.id) {
+                    return this.postList[i];
+                }
+            }
         }
     }
 }

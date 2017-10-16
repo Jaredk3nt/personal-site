@@ -2,13 +2,13 @@
     <div class="page">
         <div class="page-body small content">
             <ul class="posts">
-                <li v-for="(post, id) in posts" class="post">
+                <li v-for="post in posts" class="post">
                     <div class="dates">
                         <h3>{{ " " + post.date }}</h3><h3 class="dark">{{ post.title }}</h3>
                     </div>
-                    <router-link :to="'/blog/' + id"><h1>{{ post.subtitle }}</h1></router-link>
+                    <router-link :to="'/blog/' + post['id']"><h1>{{ post.subtitle }}</h1></router-link>
                     <p class="hint">{{post.content[0].body.substr(0, 100) + '...'}}</p>
-                    <router-link :to="'/blog/' + id" class="seemore">READ</router-link>
+                    <router-link :to="'/blog/' + post['id']" class="seemore">READ</router-link>
                 </li>
             </ul>
         </div>
@@ -22,7 +22,7 @@ export default {
     name: 'Home',
     data: function() {
         return {
-            posts: blogPosts
+            posts: blogPosts["blogposts"]
         }
     }
 }

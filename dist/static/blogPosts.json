@@ -1,5 +1,33 @@
 {   "blogposts": [
         {
+            "id": "10222017",
+            "title": "Week 8",
+            "subtitle": "Halfway",
+            "date": "October 22, 2017",
+            "content": [
+                {
+                    "title": "What did you do this past week?",
+                    "body": "This past week was crazy for me. It started with spending Tuesday under anethesia for a medical prodcedure I had to get, then I had my midterm in Information Retrieval course, which was challenging but I think went pretty well. Then right after my test I came home and packed and left to Seattle for an Interview at Amazon. It was my first time in Seattle which was exciting. I had a great time while there, I got to visit Pikes Place and get some great seafood down by the bay after my interview. I also started working on the React front-end of idb this week during all of that."
+                },
+                {
+                    "title": "What's in your way?",
+                    "body": "Recovering from a long tough week that really messed with my schedule. Weeks like this where I miss a lot of class and spend a bunch of time indisposed take some mental recovery to get back into the swing of my traditional schedule."
+                },
+                {
+                    "title": "What will you do next week?",
+                    "body": "This next week will be heavily focused on finishing up and polishing idb. I also have some orientation stuff to do with my org for some new leadership we are bringing in, which will be exciting."
+                },
+                {
+                    "title": "What's my experience of the class?",
+                    "body": "Working on idb has felt like a small part-time job. Actually having to meet and plan out work feels reminiscant of actual agile processes albeit much more casual. Learning React has been quite a journey for me, it feels so different than the other frameworks I have worked with. Much of the syntax feels pretty odd for me."
+                },
+                {
+                    "title": "What's my pick-of-the-week or tip-of-the-week?",
+                    "body": "My tip is specifically related to idb. Since we should start having very polished looking websites I think it would be good to give a quick tip on how to improve user experience overall. One really simple thing you can do to improve your websites interface is to add whitespace. White space isn't just actual 'white' space, but parts of the page that are completely devoid of any type of information. When you increase your whitespace you typcially will increase readability and declutter the visual space. Especially in a project like this one where we are required to display a lot of information if you try to cram all of that information together your user will not be able to quickly parse the information or find what is valuable. Certainly this tip is not a 'catch-all' and you shouldn't just immense white space for no reason, but if you are looking at your content and it feels like it needs something to look better, try adding some extra white space and that may be a quick way to improve it. (P.S. Do NOT use images as backgrounds, this is really distracting and makes text and components really hard to decypher)"
+                }
+            ]
+        },
+        {
             "id": "10152017",
             "title": "Week 7",
             "subtitle": "Examination Complete",

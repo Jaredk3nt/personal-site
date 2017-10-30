@@ -1,5 +1,33 @@
 {   "blogposts": [
         {
+            "id": "10229017",
+            "title": "Week 9",
+            "subtitle": "A Real Website",
+            "date": "October 29, 2017",
+            "content": [
+                {
+                    "title": "What did you do this past week?",
+                    "body": "We finished IDB part 2! Our webiste is now functional and looks great. Working on finishing up IDB took up most of the week but I also had a test in another class that wasn't very bad. I am getting to the point where I feel pretty confident using react. I can't say I'm a huge fan of the syntax of the language, espcially when writing code in the JSX, but thats only when I am comparing it to frameworks I like more, overall I am enjoying the project/"
+                },
+                {
+                    "title": "What's in your way?",
+                    "body": "Job hunting is and has been in my way for too long. It takes so much energy and focus away from my school work, and I can't wait for it to be over."
+                },
+                {
+                    "title": "What will you do next week?",
+                    "body": "In this upcoming week I am going to start working on the next portion of IDB along with other homework, including beginning to prototype solutions for my IBM class project."
+                },
+                {
+                    "title": "What's my experience of the class?",
+                    "body": "Right now I would say its a high coming off of IDB 2. I think it was FAR more valuable to work on with React over the static front-end and data. I think it would have been so much better if we hadn't started out with that. My experience with the project and my team has been great, and it is a good feeling to have so much ownership and pride in a school project."
+                },
+                {
+                    "title": "What's my pick-of-the-week or tip-of-the-week?",
+                    "body": "Add small animations into your IDB website. I know CSS can be daunting and confusing at the start but there are a ton of great resources and pre-existing styles out there. So taking the time to add in just tiny little animations, whether it is a growing on hover or color change or loading bar, animation gives the user so much more feedback on their acitons. It is one of the smallest things you can do to transform your site from a patched together project to a polished portfolio piece."
+                }
+            ]
+        },
+        {
             "id": "10222017",
             "title": "Week 8",
             "subtitle": "Halfway",

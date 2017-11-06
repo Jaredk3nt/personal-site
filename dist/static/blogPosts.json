@@ -1,5 +1,33 @@
 {   "blogposts": [
         {
+            "id": "11059017",
+            "title": "Week 10",
+            "subtitle": "Nitty Gritty",
+            "date": "November 5, 2017",
+            "content": [
+                {
+                    "title": "What did you do this past week?",
+                    "body": "This past week I started ideation and planning for my upcoming BDP project proposal, I have had an idea for a long time but I started getting it on paper. I also registered for my last semester of classes; I have Cloud Computing and Intro to Computer Security on my schedule now with a hopeless looking waitlist for Ethical Hacking. I also had an on-campus interview with Arista that went really well and I moving forward to the 2nd round with them."
+                },
+                {
+                    "title": "What's in your way?",
+                    "body": "Pure exhaustion. Recently I think all of my tiredness of the year is compounding and surmounting to just a constant dull tired. Having intensive courses this semester along with personal life seeming to get in the way at the busiest of times, I am having trouble breaking the cycle of tiredness."
+                },
+                {
+                    "title": "What will you do next week?",
+                    "body": "This upcoming week will be spent finishing IDB part 3 working on implementing search for me mostly. I also have an Information Retrieval project on implementing PageRank that I need to work on."
+                },
+                {
+                    "title": "What's my experience of the class?",
+                    "body": "Class is still interesting, I certainly don't enjoy SQL as much as I did the ins-and-outs of Python, but it is by no means bad in any way, just alittle less my style than before. It feels like much more of the class takes place outside of the class these days, to where class time feels secondary to the project. I think this is probably since (especially for me working mostly in the frontend) the material is so detached from what I am doing that it can feel disjoint."
+                },
+                {
+                    "title": "What's my pick-of-the-week or tip-of-the-week?",
+                    "body": "My tip of the week is to find the people who make the tools/languages/frameworks/etc that you use on a daily or weekly basis and follow them on social media. My Twitter account is almost entirly developers nowadays and it is a great way to keep myself engaged in the development community and to hear about new things & the development of my favorite technologies. Many of these people are very vocal and active and will give you insight or make you think about parts of development or stacks that you don't often think about. It also makes browsing social media feel more substantial than looking at memes your friends posted."
+                }
+            ]
+        },
+        {
             "id": "10229017",
             "title": "Week 9",
             "subtitle": "A Real Website",

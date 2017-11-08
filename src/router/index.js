@@ -1,9 +1,10 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-import Home from '../pages/Home.vue'
-import BlogPost from '../blog/BlogPost.vue'
-import About from '../pages/About.vue'
+import Home from '../pages/Home.vue';
+import BlogPost from '../blog/BlogPost.vue';
+import About from '../pages/About.vue';
+import Resume from '../pages/Resume.vue';
 
 Vue.use(Router)
 
@@ -12,9 +13,10 @@ export default new Router({
     routes: [
         { path: '/', name: 'Home', component: Home },
         { path: '/blog/:id', component: BlogPost },
-        { path: '/About', name: 'About', component: About }
+        { path: '/About', name: 'About', component: About },
+        {path: '/Resume', name: 'Resume', component: Resume }
     ],
     scrollBehavior (to, from, savedPosition) {
-        return { x: 0, y: 0 }
+        return { x: 0, y: 0 };
     }
 })

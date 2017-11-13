@@ -1,4 +1,32 @@
 {   "blogposts": [
+    {
+        "id": "11059017",
+        "title": "Week 11",
+        "subtitle": "A Real Team",
+        "date": "November 12, 2017",
+        "content": [
+            {
+                "title": "What did you do this past week?",
+                "body": "IDB 3! We spent the past weekend and early week putting in a ton of time on gamingdb. I spent most of my working on search on the frontend, but also putting in a decent amount of time to styling sorting/filtering and improving upon some problems we had in the site after part 2. One of the big things I wanted to fix was having routing history on our pagination, so when you used the browser back button after clicking on a game or paging, it would take you to where you actually were before, rather than the first page. Search for the page was a big beast though that took most of my time. Specifically since it had so many moving parts. Search was a bit complex as a request due to how it was implemented on the back end, which was tough, but it also required the list display, tabbing over the different models, and paging within each of the model sets. Oh and also highlighting the text from all of the models and displaying them in a meaningful way was more complex than I felt it would be at the beginning of the project."
+            },
+            {
+                "title": "What's in your way?",
+                "body": "Big projects are piling up at this point of the semester, so balancing when to work on what is tough. I had a big IR project at the same time as IDB 3, while also in the middle of my large project at IBM. Each of them are very different and require a different mindset and can be hard to work on in parallel. Also I have 2 different groups to meet up with for different projects so planning often has to be a sacrafice of free-time or breaking into the other projects 'time'"
+            },
+            {
+                "title": "What will you do next week?",
+                "body": "I have to finish up and turn in my PageRank project for IR and give my next project playback at IBM. Once both of those are done I'll be able to slip into a bit of a more normal routine."
+            },
+            {
+                "title": "What's my experience of the class?",
+                "body": "Right now I am not enjoying it that much. I wouldn't say its because of the content but because of how it is all presented. Python and Regex and OO principals have been topics I already have knowledge in so if the teaching style hasn't really changed and I'm only noticing it now its because SQL is actually more new to me, especially the more advanced nuances. What I am talking about is that class is just a presentation of examples. I feel like we never get a good description of actual features of SQL we are just shown a bunch of seemingly contrived examples and expected to learn something important about SQL. I don't feel like I ever have the opportunity to reflect in class about how I personally would use a 'feature' of SQL and actually have complex thoughts about it. I wish we were given the chance to learn about WHY we do certain things not just being shown how it is done in one or two examples. Also I think this is heightened because the examples feel really disjoint since we also have to have knowledge of all of the tables, so much of the limited time we have between examples is spent wondering why you used the Apply table or whatever. I usually really enjoy coming to this class and learning, but I have had a really hard time recently."
+            },
+            {
+                "title": "What's my pick-of-the-week or tip-of-the-week?",
+                "body": "I'm a strong believer that productivity tools are really valuable to developers, whether this is build in editor tools, IDE's, shortcut keys, or whatever. One of my favorite things is the a visor mode terminal. This makes it to where you can 'summon' your terminal anytime on your computer with a shortcut. I use iterm2, where I have a secondary profile called 'visor' that has a shortcut key Alt + Space that allows it to appear from the top of my screen over any windows, and then disappears when I click away or use the hotkey again. It is really valuable to me when I am running scripts often through the commandline, since I don't have to have it fullscreened and swipe over to it or search through my open apps. There are lots of terminals that have this feature and great guides on how to get them set up!"
+            }
+        ]
+    },
         {
             "id": "11059017",
             "title": "Week 10",

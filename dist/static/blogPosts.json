@@ -1,6 +1,34 @@
 {   "blogposts": [
     {
-        "id": "11059017",
+        "id": "11192017",
+        "title": "Week 12",
+        "subtitle": "The End Draws Close",
+        "date": "November 19, 2017",
+        "content": [
+            {
+                "title": "What did you do this past week?",
+                "body": "This past week I turned in my PageRank information retrieval project, gave a playback on the concept ideas for my IBM project, and then rounded off the week with some relaxation."
+            },
+            {
+                "title": "What's in your way?",
+                "body": "Currently I'm closing in on a corner for accepting a full-time offer. I have a deadline and am waiting back from some others to decide. It's an interesting feeling knowing that I am at the end of my job hunting, and having to make SUCH A TOUGH DECISION. Deciding what I do for basically the next 2-5 years after college is a weighty thing to decide. So until that comes, that decision will be pulling at my attention."
+            },
+            {
+                "title": "What will you do next week?",
+                "body": "Eat and eat and eat and eat and eat... happy Thanksgiving."
+            },
+            {
+                "title": "What's my experience of the class?",
+                "body": "It's going alright. Right now I am a bit worried about the upcoming test. The past few weeks have been so scattered in topics that I know studying for the next test will be quite an ordeal. It can be hard remembering the nitty gritty of so many differing things. I feel like in another other class I have taken each of these would have been their own 'unit' with a test or something at the end."
+            },
+            {
+                "title": "What's my pick-of-the-week or tip-of-the-week?",
+                "body": "My tip of the week is to check out Vue.js. If you are interested in front-end development one of the best thing you can do is to have knowledge of a ton of technologies (can I hear a 'JS fatigue'??), and my current favorite is Vue. If you have been using React in IDB and feel sometimes like its a bit messy, or feels confusing sometimes, then Vue is just for you. Vue gives a bit more structure and opinionated design choices than react, while still giving you tons of flexibility in your own choices. Its lightweight and super quick just like React, and can be used piecemeal or for a huge project."
+            }
+        ]
+    },
+    {
+        "id": "11122017",
         "title": "Week 11",
         "subtitle": "A Real Team",
         "date": "November 12, 2017",
@@ -28,7 +56,7 @@
         ]
     },
         {
-            "id": "11059017",
+            "id": "11052017",
             "title": "Week 10",
             "subtitle": "Nitty Gritty",
             "date": "November 5, 2017",
@@ -56,7 +84,7 @@
             ]
         },
         {
-            "id": "10229017",
+            "id": "10222017",
             "title": "Week 9",
             "subtitle": "A Real Website",
             "date": "October 29, 2017",

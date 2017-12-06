@@ -14,6 +14,9 @@
                     </div>
             </div>
         <!-- </transition> -->
+        <div class="pack-container">
+            <button class="pack-button" v-on:click="openPack">Open a Pack</button>
+        </div>
         <div>
             <div class="sort-container">
                 <h3>Sort by:</h3>
@@ -32,9 +35,6 @@
                     <input type="text" placeholder="Search" v-model="searchQuery">
                     <!-- <button type="button" class="search-button extraordinary">Search</button> -->
                 </form>
-            </div>
-            <div class="pack-container">
-                <button class="pack-button" v-on:click="openPack">Open a Pack</button>
             </div>
         </div>
         <card v-for="c in cards" :cardObj="c" :key="c.name"></card>
@@ -142,6 +142,13 @@ export default {
         margin-left: .75em;
         margin-bottom: .75em;
 
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            padding: 0em 1em;
+            margin-left: 0em;
+            box-sizing: border-box;
+        }
+
         .rarity-button {
             @extend .button;
             padding: .5em;
@@ -153,6 +160,13 @@ export default {
     .search-container {
         display: inline-block;
         margin-left: 2.5em;
+
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            margin-left: 0em;
+            padding: 0em 1em;
+            box-sizing: border-box;
+        }
         
         input {
             padding: .75em;
@@ -161,6 +175,10 @@ export default {
             border: none;
             border-radius: 4px;
             width: 20em;
+
+            @media screen and (max-width: 720px) {
+                width: 100%;
+            }
 
             &:focus {
                 outline: none;
@@ -180,12 +198,23 @@ export default {
         margin-top: 1em;
         vertical-align: top;
 
+        @media screen and (max-width: 720px) {
+            float: none;
+            padding: 0em 1em;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
         .pack-button {
             @extend .button;
             background-color: #D3B326;
             color: $white;
             font-weight: 500;
             padding: 2em 1em;
+
+            @media screen and (max-width: 720px) {
+                width: 100%;
+            }            
         }
     }
     .modal-container {
@@ -209,6 +238,12 @@ export default {
         height: 28em;
         margin: 2em 0em;
         border-radius: 4px;
+
+        @media screen and (max-width: 720px) {
+            margin: 1em;
+            overflow-x: hidden;
+            height: 100%;
+        }
     }
     .pack-open-enter-active, .pack-open-leave-active {
         transition: all 1s;

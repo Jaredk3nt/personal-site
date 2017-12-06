@@ -61,14 +61,26 @@
             "id": 32
         },
         {
+            "name": "Healing Melody",
+            "description": "Heal all allies 1d4 in a 30 ft radius",
+            "rarity": "simple",
+            "id": 34
+        },
+        {
+            "name": "North Wind",
+            "description": "Summon a strong gust that pushes a target back 3d10 ft\n If the target makes contact with any solid surface, they take 1d6 bludgeoning damage",
+            "rarity": "simple",
+            "id": 35
+        },
+        {
             "name": "Fireball",
-            "description": "Launch a fireball at a target\n Deal 1d6 + Int",
+            "description": "Launch a fireball at a target\n Deal 1d6 + INT",
             "rarity": "special",
             "id": 6
         },
         {
             "name": "Holy Light",
-            "description": "Heal a target for 1d8 + Wis",
+            "description": "Heal a target for 1d8 + WIS",
             "rarity": "special",
             "id": 7
         },
@@ -167,6 +179,12 @@
             "description": "Bond with a heroic spirit that will follow commands until death",
             "rarity": "extraordinary",
             "id": 22
+        },
+        {
+            "name": "Last Stand",
+            "description": "If you are below 10% health, heal 2d12 + 4 and knock any enemies back 30 ft",
+            "rarity": "extraordinary",
+            "id": 33
         },
         {
             "name": "Banish",

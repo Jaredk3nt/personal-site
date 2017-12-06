@@ -2,7 +2,7 @@
     <div class="card-container" :class="{'small': small}">
         <div class="rarity-banner" >
             <div class="banner-content" :class="cardObj.rarity">
-                <h3>{{ cardObj.id }}</h3>
+                <h3>#{{ cardObj.id }}</h3>
             </div>
         </div>
         <div class="card-content">
@@ -70,20 +70,44 @@ export default {
             cursor: default;
         }
 
+        @media screen and (max-width: 720px) {
+            margin: 1em 2em;
+        }
+
         &.small {
             width: $card-width - 2em;
             height: $card-height - 3em;
 
+            @media screen and (max-width: 720px) {
+                width: $card-width;
+                height: $card-height;
+            }
+
             .rarity-banner {
                 left: $card-width - (2.5em + .75em + 2em); top: -.75em;
+
+                @media screen and (max-width: 720px) {
+                    left: $card-width - (2.5em + .75em); top: -.75em;
+                }
             }
             .card-content {
                 padding: ($card-content-padding - 1em) 1em 1em;
+
+                @media screen and (max-width: 720px) {
+                    padding: $card-content-padding 1em 1em;
+                }
+
                 h1 {
                     font-size: $title-text - .2rem;
+                    @media screen and (max-width: 720px) {
+                        font-size: $title-text;
+                    }
                 }
                 p {
                     font-size: $description-text - .2rem;
+                    @media screen and (max-width: 720px) {
+                        font-size: $description-text;
+                    }
                 }
             }
         }
@@ -100,8 +124,8 @@ export default {
                 box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
 
                 h3 {
-                    font-size: 1rem;
-                    margin-top: 1.5em;
+                    font-size: .8rem;
+                    margin-top: 2em;
                 }
             }
         }

@@ -7,6 +7,8 @@ import router from './router'
 import Home from './pages/Home'
 import BlogPost from './blog/BlogPost'
 import Popup from './pages/Popup'
+import CardPage from './CardPage';
+import Card from './Card';
 
 Vue.config.productionTip = false
 
@@ -15,5 +17,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App, Home, BlogPost, Popup }
+  components: { App, Home, BlogPost, Popup, CardPage, Card }
 })

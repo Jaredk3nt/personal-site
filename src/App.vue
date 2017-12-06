@@ -1,8 +1,9 @@
 <template>
     <div id="app" class="container">
-        <div class="nav">
+        <div class="nav" v-if="$route.path !== '/Cards'">
             <router-link :to="'/'">Home</router-link>
             <router-link :to="'/About'">About</router-link>
+            <router-link :to="'/Cards'">Cards</router-link>
         </div>
         <router-view></router-view>
   </div>
@@ -12,9 +13,7 @@
 export default {
   name: 'app',
   data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+    return {}
   }
 }
 </script>

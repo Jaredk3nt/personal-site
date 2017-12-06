@@ -1,0 +1,34 @@
+$white: #fff;
+$eggshell: #fbf9f0;
+$simple: #E8E8E8;
+$special: #74C773;
+$extraordinary: #3DA4CF;
+$legendary: #8C8CEA;
+$mythic: #85DDC9;
+$familiar: #85877C;
+$dark-grey: #2b2b2b;
+
+.simple {
+    background-color: $simple;
+    color: $dark-grey;
+}
+.special {
+    background-color: $special;
+    color: $white;
+}
+.extraordinary {
+    background-color: $extraordinary;
+    color: $white;
+}
+.legendary {
+    background-color: $legendary;
+    color: $white;
+}
+.mythic {
+    background-color: $mythic;
+    color: $white;
+}
+.familiar {
+    background-color: $familiar;
+    color: $white;
+}

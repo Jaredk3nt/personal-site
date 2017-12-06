@@ -97,7 +97,7 @@ export default {
         cards : function() {
             let cl = this.getRarity(this.rarity);
             let re = new RegExp(this.searchQuery.toLowerCase());
-            cl = cl.filter( (card) => card.name.toLowerCase().search(re) !== -1);
+            cl = cl.filter( (card) => card.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1);
             return cl;
         },
         familiars : function() {
@@ -146,17 +146,20 @@ export default {
             @extend .button;
             padding: .5em;
         }
+        h3 {
+            margin: 1em 0em;
+        }
     }
     .search-container {
         display: inline-block;
-        margin-left: 45%;
+        margin-left: 2.5em;
         
         input {
             padding: .75em;
             height: 3em;
             box-sizing: border-box;
             border: none;
-            border-radius: 4px 0px 0px 4px;
+            border-radius: 4px;
             width: 20em;
 
             &:focus {
@@ -174,8 +177,8 @@ export default {
         display: inline-block;
         float: right;
         margin-right: 2em;
-        margin-top: 2em;
-        vertical-align: baseline;
+        margin-top: 1em;
+        vertical-align: top;
 
         .pack-button {
             @extend .button;

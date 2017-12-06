@@ -48,7 +48,7 @@ export default {
 
     $card-height: 22em;
     $card-width: 15em;
-    $card-content-padding: 9em;
+    $card-content-padding: 8.5em;
 
     $title-text: 1.4rem;
     $description-text: .9rem;

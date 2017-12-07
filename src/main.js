@@ -9,6 +9,8 @@ import BlogPost from './blog/BlogPost'
 import Popup from './pages/Popup'
 import CardPage from './CardPage';
 import Card from './Card';
+import Collection from './Collection.vue';
+import FilterButtons from './cards/FilterButtons.vue';
 
 Vue.config.productionTip = false
 
@@ -17,5 +19,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App, Home, BlogPost, Popup, CardPage, Card }
+  components: { App, Home, BlogPost, Popup, CardPage, Card, Collection }
 })

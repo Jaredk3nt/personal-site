@@ -2,7 +2,7 @@ $white: #fff;
 $eggshell: #fbf9f0;
 $simple: #E8E8E8;
 $special: #74C773;
-$extraordinary: #3DA4CF;
+$heroic: #3DA4CF;
 $legendary: #8C8CEA;
 $mythic: #85DDC9;
 $familiar: #85877C;
@@ -16,8 +16,8 @@ $dark-grey: #2b2b2b;
     background-color: $special;
     color: $white;
 }
-.extraordinary {
-    background-color: $extraordinary;
+.heroic {
+    background-color: $heroic;
     color: $white;
 }
 .legendary {
@@ -28,7 +28,20 @@ $dark-grey: #2b2b2b;
     background-color: $mythic;
     color: $white;
 }
-.familiar {
+.familiars {
     background-color: $familiar;
     color: $white;
+}
+
+.button {
+    border: none;
+    margin: .2em;
+    padding: .6em 1em;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
 }

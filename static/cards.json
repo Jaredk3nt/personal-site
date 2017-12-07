@@ -73,10 +73,64 @@
             "id": 35
         },
         {
-            "name": "Fireball",
-            "description": "Launch a fireball at a target\n Deal 1d6 + INT",
-            "rarity": "special",
+            "name": "Babel's Tongue",
+            "description": "Gain the ability to speak any 1 language for 1 min",
+            "rarity": "simple",
+            "id": 37
+        },
+        {
+            "name": "Flare",
+            "description": "Ignite a target\n Deal 1d6 + INT fire damage",
+            "rarity": "simple",
             "id": 6
+        },
+        {
+            "name": "Apprentice's Die",
+            "description": "Cast a random simple card",
+            "rarity": "simple",
+            "id": 39
+        },
+        {
+            "name": "Shard",
+            "description": "Cast a ice shard at a target\n Deal 1d6 + INT ice damage",
+            "rarity": "simple",
+            "id": 43
+        },
+        {
+            "name": "Curse",
+            "description": "Inflict a curse upon a target\n Deal 1d6 + INT necrotic damage",
+            "rarity": "simple",
+            "id": 44
+        },
+        {
+            "name": "Shock",
+            "description": "Shock a target with a small jolt of electricity causing target's movement to be halved next turn\n Deal 1d4 + INT electric damage",
+            "rarity": "simple",
+            "id": 46
+        },
+        {
+            "name": "Fog of War",
+            "description": "Fill surroundings with fog\n All characters, except the caster, have disadvantage\n Lasts 1d4 min",
+            "rarity": "simple",
+            "id": 11
+        },
+        {
+            "name": "Hover",
+            "description": "Target now levitates 1 ft above the ground for 1 hr",
+            "rarity": "simple",
+            "id": 50
+        },
+        {
+            "name": "Wizard's Armor",
+            "description": "Target gains +1 AC for 10 min",
+            "rarity": "simple",
+            "id": 51
+        },
+        {
+            "name": "Phase Shift",
+            "description": "Swap places with a visible target within a 200 ft range",
+            "rarity": "simple",
+            "id": 52
         },
         {
             "name": "Holy Light",
@@ -101,12 +155,6 @@
             "description": "Taunt target to attack you\n Gain +1 AC for 1 min",
             "rarity": "special",
             "id": 10
-        },
-        {
-            "name": "Fog of War",
-            "description": "Fill surroundings with fog\n All characters, except the caster, have disadvantage\n Lasts 1d4 min",
-            "rarity": "special",
-            "id": 11
         },
         {
             "name": "Scouter Eye",
@@ -139,52 +187,100 @@
             "id": 29
         },
         {
+            "name": "Rain of Blades",
+            "description": "Rain down ethereal blades on a target\n Deal 6d4 damage",
+            "rarity": "special",
+            "id": 38
+        },
+        {
+            "name": "Caster's Die",
+            "description": "Cast a random special card",
+            "rarity": "special",
+            "id": 40
+        },
+        {
+            "name": "Fireball",
+            "description": "Cast a fireball at a target\n Deal 1d8 + INT fire damage",
+            "rarity": "special",
+            "id": 45
+        },
+        {
+            "name": "Frost Blade",
+            "description": "Cast a frost blade that hits any targets in a 10ft x 20ft cone in front of you\n Deal 1d6 + INT ice damage",
+            "rarity": "special",
+            "id": 47
+        },
+        {
+            "name": "Spreading Lightning",
+            "description": "Cast a lightning bolt on a target, if another character is within 15 ft cast again on new target\nCan not hit the a target twice\nDeal 1d8 + INT electric damage",
+            "rarity": "special",
+            "id": 48
+        },
+        {
+            "name": "Dark Pact",
+            "description": "Bond with a special familiar that will follow commands until death",
+            "rarity": "special",
+            "id": 49
+        },
+        {
             "name": "Mist Form",
             "description": "You disappear into the Shrouded Plane\n Lasts up to 5x character movement",
-            "rarity": "extraordinary",
+            "rarity": "heroic",
             "id": 12
         },
         {
             "name": "Skull Key",
             "description": "Open any locked door",
-            "rarity": "extraordinary",
+            "rarity": "heroic",
             "id": 13
         },
         {
             "name": "Diviner's Sight",
             "description": "Gain +1 to all saving throws for 24 hours\n Character has eye on their forehead for duration",
-            "rarity": "extraordinary",
+            "rarity": "heroic",
             "id": 14
         },
         {
             "name": "Shout of the Guardian",
             "description": "Taunt all enemies in a 50 ft radius to attack you\n Double your health for 1 min",
-            "rarity": "extraordinary",
+            "rarity": "heroic",
             "id": 15
         },
         {
             "name": "Executioner",
             "description": "Kill an target that is below 20% health",
-            "rarity": "extraordinary",
+            "rarity": "heroic",
             "id": 21
         },
         {
             "name": "Heaven's Kiss",
             "description": "Revive a dead target",
-            "rarity": "extraordinary",
+            "rarity": "heroic",
             "id": 25
         },
         {
             "name": "Blood Pact",
             "description": "Bond with a heroic spirit that will follow commands until death",
-            "rarity": "extraordinary",
+            "rarity": "heroic",
             "id": 22
         },
         {
             "name": "Last Stand",
             "description": "If you are below 10% health, heal 2d12 + 4 and knock any enemies back 30 ft",
-            "rarity": "extraordinary",
+            "rarity": "heroic",
             "id": 33
+        },
+        {
+            "name": "Duel Marble",
+            "description": "Transport you and a target to a ethereal plane until one dies",
+            "rarity": "heroic",
+            "id": 36
+        },
+        {
+            "name": "Wizard's Die",
+            "description": "Cast a random heroic card",
+            "rarity": "heroic",
+            "id": 41
         },
         {
             "name": "Banish",
@@ -211,16 +307,22 @@
             "id": 30
         },
         {
+            "name": "Creator's Die",
+            "description": "Cast a random legendary card",
+            "rarity": "legendary",
+            "id": 42
+        },
+        {
             "name": "Emperor's Fist",
             "description": "Character’s fists become charged with celestial power\n Character deals 2d10 + 6 + Str mod on hit and can take a bonus action to hit again with fists\n Lasts for 1 min",
             "rarity": "mythic",
             "id": 19
-        },      
+        }, 
         {
-            "name": "",
-            "description": "",
-            "rarity": "",
-            "id": 0
+            "name": "Dragon's Heart",
+            "description": "Summon the spirit of one of the 6 celestial dragons",
+            "rarity": "mythic",
+            "id": 53
         }
     ],
     "familiars": [
@@ -237,22 +339,28 @@
             "id": 2
         },
         {
-            "name": "Mist Goblin",
-            "description": "12 hp, 13 AC\n dex: 16, str: 12, int: 6\n Dagger: 1d6 + dex\n Can cast Mist Form once every 1 min",
-            "rarity": "extraordinary",
-            "id": 3
+            "name": "Dire Wolf",
+            "description": "12 hp\nstr: 14, dex: 12, int: 4\nCan cast Mist Form once every 10 min",
+            "rarity": "special",
+            "id": 4
         },
         {
-            "name": "Dire Wolf",
-            "description": "18 hp\n str: 16, \n Can cast Mist Form once every 10 min",
-            "rarity": "extraordinary",
-            "id": 4
+            "name": "Animated Armor",
+            "description": "20 hp, AC 15\nCan't attack",
+            "rarity": "special",
+            "id": 5
+        },
+        {
+            "name": "Mist Goblin",
+            "description": "16 hp, 13 AC\nstr: 12, dex: 16\n Dagger: 1d6 + dex\n Can cast Mist Form once every 1 min",
+            "rarity": "heroic",
+            "id": 3
         },
         {
             "name": "Pegasus",
             "description": "32 hp\n Has flight with movement speed of 100 ft",
             "rarity": "legendary",
-            "id": 4
+            "id": 5
         }
     ]
 }

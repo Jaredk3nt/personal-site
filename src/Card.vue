@@ -64,6 +64,7 @@ export default {
         vertical-align: top;
         box-shadow: 2px 4px 10px rgba(0,0,0, 0.2);
         transition: transform .2s ease;
+        font-family: sans-serif;
 
         &:hover {
             transform: scale(1.05);

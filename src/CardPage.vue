@@ -14,16 +14,13 @@
                     </div>
             </div>
         <!-- </transition> -->
-        <div class="pack-container">
-            <button class="pack-button" v-on:click="openPack">Open a Pack</button>
-        </div>
-        <div>
+        <div class="function-bar">
             <div class="sort-container">
-                <h3>Sort by:</h3>
+                <h3>Filter by:</h3>
                 <div>
                     <button class="rarity-button simple" v-on:click="setRarity('simple')">Simple</button>
                     <button class="rarity-button special" v-on:click="setRarity('special')">Special</button>
-                    <button class="rarity-button extraordinary" v-on:click="setRarity('extraordinary')">Extraordinary</button>
+                    <button class="rarity-button heroic" v-on:click="setRarity('heroic')">heroic</button>
                     <button class="rarity-button legendary" v-on:click="setRarity('legendary')">Legendary</button>
                     <button class="rarity-button mythic" v-on:click="setRarity('mythic')">Mythic</button>
                     <button class="rarity-button familiar" v-on:click="setRarity('familiars')">Familiars</button>
@@ -33,8 +30,21 @@
             <div class="search-container">
                 <form>
                     <input type="text" placeholder="Search" v-model="searchQuery">
-                    <!-- <button type="button" class="search-button extraordinary">Search</button> -->
+                    <!-- <button type="button" class="search-button heroic">Search</button> -->
                 </form>
+            </div>
+            <div class="random-container">
+                <h3>Cast Random: <strong>{{ randomCard }}</strong></h3>
+                <div>
+                    <button class="rarity-button simple" v-on:click="setRandomCard('simple')">Simple</button>
+                    <button class="rarity-button special" v-on:click="setRandomCard('special')">Special</button>
+                    <button class="rarity-button heroic" v-on:click="setRandomCard('heroic')">Heroic</button>
+                    <button class="rarity-button legendary" v-on:click="setRandomCard('legendary')">Legendary</button>
+                    <button class="rarity-button mythic" v-on:click="setRandomCard('mythic')">Mythic</button>
+                </div>
+            </div>
+            <div class="pack-container">
+                <button class="pack-button" v-on:click="openPack">Open a Pack</button>
             </div>
         </div>
         <card v-for="c in cards" :cardObj="c" :key="c.name"></card>
@@ -54,7 +64,8 @@ export default {
             rarity: "",
             openingPack: false,
             showPack: false,
-            searchQuery: ""
+            searchQuery: "",
+            randomCard: ""
         }
     },
     methods : {
@@ -67,18 +78,17 @@ export default {
             // get each card in pack
             for(let i = 0; i < packSize; i++) {
                 let r = Math.random();
-                let c = {};
+                let rarity = "";
                 if(r <= rt[0]) {    // get simple
-                    c = this.getRarity("simple");
+                    rarity = "simple";
                 } else if(r > rt[0] && r < rt[1]) { // get special
-                    c = this.getRarity("special");
-                } else if(r > rt[1] && r < rt[2]) {  // get extraordinary
-                    c = this.getRarity("extraordinary");
+                    rarity = "special";
+                } else if(r > rt[1] && r < rt[2]) {  // get heroic
+                    rarity = "heroic";
                 } else {    // get legendary
-                    c = this.getRarity("legendary");
+                    rarity = "legendary";
                 }
-                c = c.filter( (x) => !cards.includes(x));
-                let card = c[Math.round(Math.random() * (c.length - 1))];
+                let card = this.getRandomCard(rarity, cards);
                 cards.push(card);
             }
             this.showPack = true;
@@ -87,10 +97,21 @@ export default {
         getRarity: function(rarity) {
             if(rarity === "") {
                 return cardFile.cardList;
-            } else if (this.rarity === "familiars") {
+            } else if (rarity === "familiars") {
                 return cardFile.familiars;
             }
             return cardFile.cardList.filter( (c) => c.rarity === rarity);
+        },
+        getRandomCard: function(rarity, exclude = undefined) {
+            let cl = this.getRarity(rarity);
+            if(exclude) {
+                cl = cl.filter( (x) => !exclude.includes(x));
+            }
+            let card = cl[Math.round(Math.random() * (cl.length - 1))];
+            return card;
+        },
+        setRandomCard: function(rarity) {
+            this.randomCard = this.getRandomCard(rarity).name;
         }
     },
     computed : {
@@ -100,12 +121,6 @@ export default {
             cl = cl.filter( (card) => card.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1);
             return cl;
         },
-        familiars : function() {
-            
-        },
-        pack : function() {
-            return this.openPack();
-        }
     },
     components : { Card }
 }
@@ -116,17 +131,9 @@ export default {
     body {
         background: #eee;
         font-family: sans-serif;
+        -webkit-overflow-scrolling: touch;
     }
-    .button {
-        border: none;
-
-        &:hover {
-            cursor: pointer;
-        }
-        &:focus {
-            outline: none;
-        }
-    }
+    
     .button-container {
         height: 3em;
         width: 100%;
@@ -139,7 +146,7 @@ export default {
     }
     .sort-container {
         display: inline-block;
-        margin-left: .75em;
+        margin-left: 3em;
         margin-bottom: .75em;
 
         @media screen and (max-width: 720px) {
@@ -152,9 +159,23 @@ export default {
         .rarity-button {
             @extend .button;
             padding: .5em;
+            margin: .2em;
         }
         h3 {
             margin: 1em 0em;
+        }
+    }
+    .random-container {
+        @extend .sort-container;
+        margin-left: 4em;
+        width: 22em;
+        @media screen and (max-width: 720px) {
+            margin-left: 0em;
+        }
+        h3 {
+            strong {
+                color: #D3B326;
+            }
         }
     }
     .search-container {
@@ -184,18 +205,11 @@ export default {
                 outline: none;
             }
         }
-        .search-button {
-            @extend .button;
-            box-sizing: border-box;
-            height: 3em;
-            border-radius: 0px 4px 4px 0px;
-        }
     }
     .pack-container {
         display: inline-block;
-        float: right;
-        margin-right: 2em;
-        margin-top: 1em;
+        margin-left: 6em;
+        margin-top: 1.5em;
         vertical-align: top;
 
         @media screen and (max-width: 720px) {
@@ -203,6 +217,7 @@ export default {
             padding: 0em 1em;
             box-sizing: border-box;
             width: 100%;
+            margin-left: 0em;
         }
 
         .pack-button {

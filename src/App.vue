@@ -1,6 +1,6 @@
 <template>
     <div id="app" class="container">
-        <div class="nav" v-if="$route.path !== '/Cards'">
+        <div class="nav" v-if="isCards">
             <router-link :to="'/'">Home</router-link>
             <router-link :to="'/About'">About</router-link>
             <router-link :to="'/Cards'">Cards</router-link>
@@ -14,6 +14,15 @@ export default {
   name: 'app',
   data () {
     return {}
+  },
+  computed : {
+    isCards : function() {
+      let bool = true;
+      if((this.$route.path !== '/Cards') || (this.$route.path !== '/cardcollection')) {
+        bool = false;
+      }
+      return bool;
+    }
   }
 }
 </script>
@@ -23,6 +32,8 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
 }
 html, body {
     width: 100%;

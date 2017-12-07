@@ -1,47 +1,34 @@
 <template>
     <div id="CardPage">
-        <!-- <transition name="pack-open"> -->
-            <div v-if="this.openingPack" class="modal-container">
-                    <div class="pack-modal">
-                        <div class="button-container">
-                            <button class="close-button" v-on:click="() => this.openingPack = false">close</button>
-                        </div>
-                        <div>
-                            <div v-if="this.showPack">
-                                <card v-for="x in openPack()" :cardObj="x" :small="true" :key="x.id"></card>
-                            </div>
+        <div v-if="this.openingPack" class="modal-container">
+                <div class="pack-modal">
+                    <div class="button-container">
+                        <button class="close-button" v-on:click="() => this.openingPack = false">close</button>
+                    </div>
+                    <div>
+                        <div v-if="this.showPack">
+                            <card v-for="x in openPack()" :cardObj="x" :small="true" :key="x.id"></card>
                         </div>
                     </div>
-            </div>
-        <!-- </transition> -->
+                </div>
+        </div>
         <div class="function-bar">
             <div class="sort-container">
                 <h3>Filter by:</h3>
-                <div>
-                    <button class="rarity-button simple" v-on:click="setRarity('simple')">Simple</button>
-                    <button class="rarity-button special" v-on:click="setRarity('special')">Special</button>
-                    <button class="rarity-button heroic" v-on:click="setRarity('heroic')">heroic</button>
-                    <button class="rarity-button legendary" v-on:click="setRarity('legendary')">Legendary</button>
-                    <button class="rarity-button mythic" v-on:click="setRarity('mythic')">Mythic</button>
-                    <button class="rarity-button familiar" v-on:click="setRarity('familiars')">Familiars</button>
-                    <button class="rarity-button" v-on:click="setRarity('')">None</button>
-                </div>
+                <filter-buttons v-on:filter="(x) => this.rarity = x"
+                    :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', 'familiars', '']">
+                </filter-buttons>
             </div>
             <div class="search-container">
                 <form>
                     <input type="text" placeholder="Search" v-model="searchQuery">
-                    <!-- <button type="button" class="search-button heroic">Search</button> -->
                 </form>
             </div>
             <div class="random-container">
                 <h3>Cast Random: <strong>{{ randomCard }}</strong></h3>
-                <div>
-                    <button class="rarity-button simple" v-on:click="setRandomCard('simple')">Simple</button>
-                    <button class="rarity-button special" v-on:click="setRandomCard('special')">Special</button>
-                    <button class="rarity-button heroic" v-on:click="setRandomCard('heroic')">Heroic</button>
-                    <button class="rarity-button legendary" v-on:click="setRandomCard('legendary')">Legendary</button>
-                    <button class="rarity-button mythic" v-on:click="setRandomCard('mythic')">Mythic</button>
-                </div>
+                <filter-buttons v-on:filter="setRandomCard"
+                    :filters="['simple', 'special', 'heroic', 'legendary', 'mythic']">
+                </filter-buttons>
             </div>
             <div class="pack-container">
                 <button class="pack-button" v-on:click="openPack">Open a Pack</button>
@@ -53,6 +40,7 @@
 
 <script>
 import Card from './Card.vue';
+import FilterButtons from './cards/FilterButtons.vue';
 const cardFile = require("../static/cards.json");
 const packSize = 5;
 const rt = [0.70, 0.90, 0.99];
@@ -122,7 +110,7 @@ export default {
             return cl;
         },
     },
-    components : { Card }
+    components : { Card, FilterButtons }
 }
 </script>
 
@@ -146,7 +134,7 @@ export default {
     }
     .sort-container {
         display: inline-block;
-        margin-left: 3em;
+        margin-left: 2.5em;
         margin-bottom: .75em;
 
         @media screen and (max-width: 720px) {
@@ -154,12 +142,6 @@ export default {
             padding: 0em 1em;
             margin-left: 0em;
             box-sizing: border-box;
-        }
-
-        .rarity-button {
-            @extend .button;
-            padding: .5em;
-            margin: .2em;
         }
         h3 {
             margin: 1em 0em;

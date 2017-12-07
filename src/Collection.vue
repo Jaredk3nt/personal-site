@@ -29,8 +29,9 @@
                 </div>
             </div>
             <div class="card-collection">
-                <div class="card-wrapper" v-for="c in cardCollection" :key="c.name" @click="removeCard(c)">
-                    <card :cardObj="c"></card>
+                <div class="card-wrapper" v-for="(c, index) in cardCollection" :key="c.name" @click="removeCard( index)">
+                    <card :cardObj="c.obj"></card>
+                    <div class="counter-icon"><p>{{c.count}}</p></div>
                 </div>
             </div>
         </div>
@@ -91,14 +92,20 @@ export default {
             return cards.filter( (c) => c.rarity === rarity);
         },
         addCard: function(card) {
-            this.collection.push(card);
-        },
-        removeCard: function(card) {
-            for(let i = 0; i < this.collection.length; i++) {
-                if(this.collection[i] === card) {
-                    this.collection.splice(i, 1);
+            for(let x of this.collection) {
+                if(x.name === card.name) {
+                    x.count++;
                     return;
                 }
+            }
+            this.collection.push({ name: card.name, obj: card, count: 1});
+        },
+        removeCard: function(index) {
+            let c = this.collection[index];
+            if(c.count > 1) {
+                c.count--;
+            } else {
+                this.collection.splice(index, 1);
             }
         }
     },
@@ -130,6 +137,30 @@ export default {
     .card-wrapper {
         width: auto;
         display: inline-block;
+        position: relative;
+        margin: .5em;
+
+        &:hover>.counter-icon {
+            transform: translateY(-5px);
+        }
+
+        .counter-icon {
+            position: absolute;
+            height: 3em; width: 3em;
+            border-radius: 50%;
+            margin-left: 15em;
+            background: $special;
+            text-align: center;
+            top: 22em;
+            transition: transform .2s ease;
+            
+            p {
+                font-family: sans-serif;
+                color: $white;
+                margin-top: .95em;
+                font-weight: 700;
+            }
+        }
     }
     .card-search-container {
         @extend .container;
@@ -227,6 +258,7 @@ export default {
             height: 100%;
         }
     }
+    
 </style>
 
 

@@ -2,13 +2,15 @@
     <div class="collection-grid">
         <div class="card-search-container">
             <div class="card-filter">
+                <h3>Search/Filter</h3>
+                <hr/>
                 <div class="search-container">
                     <form>
                         <input type="text" placeholder="Search" v-model="searchQuery">
                     </form>
                 </div>
                 <filter-buttons v-on:filter="(x) => this.rarity = x"
-                    :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', 'familiars', '']">
+                    :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', '']">
                 </filter-buttons>
             </div>
             <div class="card-list-container">
@@ -131,6 +133,7 @@ export default {
         height: 100vh;
 
         overflow-x: hidden;
+        overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
     }
@@ -140,7 +143,7 @@ export default {
         position: relative;
         margin: .5em;
 
-        &:hover>.counter-icon {
+        &:hover > .counter-icon {
             transform: translateY(-5px);
         }
 
@@ -164,14 +167,16 @@ export default {
     }
     .card-search-container {
         @extend .container;
-        width: 22em;
+        width:100%;
+        padding-bottom: 10em;
 
         .card-list-container {
             width: 100%;
             background-color: $dark-grey;
             height: 100%;
-            padding: 1em 1em 1em 2em;
+            padding: 1em 1em 1em 1.5em;
             overflow-y: scroll;
+            overflow-x: hidden;
             box-sizing: border-box;
         }
         .card-filter {
@@ -182,6 +187,13 @@ export default {
             padding: 1em;
             box-sizing: border-box;
             border-bottom: solid 2px #eee;
+
+            h3 {
+                color: $white;
+                font-family: sans-serif;
+                font-weight: 700;
+                margin: 0em 0em .35em 0em;
+            }
 
             .search-container {
                 display: inline-block;

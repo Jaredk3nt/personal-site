@@ -69,7 +69,7 @@ export default {
 
         &:hover {
             transform: translateY(-5px);
-            cursor: default;
+            cursor: pointer;
         }
 
         @media screen and (max-width: 720px) {

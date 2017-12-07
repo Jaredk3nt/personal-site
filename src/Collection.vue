@@ -86,7 +86,7 @@ export default {
             return cl;
         },
         cardCollection: function() {
-            let cards = this.getRarity(this.collectionRarity, this.collection);
+            let cards = this.getCollectionRarity(this.collectionRarity, this.collection);
             let re = new RegExp(this.collectionSearchQuery.toLowerCase());
             cards = cards.filter( (card) => {
                 return card.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1;
@@ -117,6 +117,12 @@ export default {
                 return cards;
             }
             return cards.filter( (c) => c.rarity === rarity);
+        },
+        getCollectionRarity: function(rarity, cards) {
+            if(rarity === "") {
+                return cards;
+            }
+            return cards.filter( (c) => c.obj.rarity === rarity);
         },
         addCard: function(card) {
             for(let x of this.collection) {

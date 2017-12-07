@@ -1,4 +1,16 @@
 <template>
+<div>
+    <div v-if="this.openingPack" class="modal-container">
+        <div class="pack-modal">
+            <div class="button-container">
+                <button class="pack-modal-button" v-on:click="addPack()">Add Cards</button>
+                <button class="pack-modal-button" v-on:click="() => this.openingPack = false">close</button>
+            </div>
+            <div>
+                <card v-for="x in pack" :cardObj="x" :small="true" :key="x.id"></card>
+            </div>
+        </div>
+    </div>
     <div class="collection-grid">
         <div class="card-search-container">
             <div class="card-filter">
@@ -24,11 +36,13 @@
                 <filter-buttons v-on:filter="(x) => this.collectionRarity = x"
                     :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', '']">
                 </filter-buttons>
+               
                 <div class="search-container">
                     <form>
                         <input type="text" placeholder="Search" v-model="collectionSearchQuery">
                     </form>
                 </div>
+                 <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
             </div>
             <div class="card-collection">
                 <div class="card-wrapper" v-for="(c, index) in cardCollection" :key="c.name" @click="removeCard( index)">
@@ -38,11 +52,14 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 <script>
 import Card from './Card.vue';
 import FilterButtons from './cards/FilterButtons.vue';
 const cardFile = require("../static/cards.json");
+const packSize = 5;
+const rt = [0.70, 0.90, 0.99];
 
 export default {
     name: "collection",
@@ -52,7 +69,8 @@ export default {
             collectionRarity: "",
             searchQuery: "",
             collection: [],
-            collectionSearchQuery: "" 
+            collectionSearchQuery: "",
+            openingPack: false,
         };
     },
     computed : {
@@ -73,6 +91,13 @@ export default {
             cards = cards.filter( (card) => {
                 return card.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1;
             })
+            return cards;
+        },
+        pack: function() {
+            let cards = [];
+            if(this.openingPack) {
+                cards = this.openPack();
+            }
             return cards;
         }
     },
@@ -109,6 +134,41 @@ export default {
             } else {
                 this.collection.splice(index, 1);
             }
+        },
+        openPack: function() {
+            let cards = [];
+            this.openingPack = true;
+            // get each card in pack
+            for(let i = 0; i < packSize; i++) {
+                let r = Math.random();
+                let rarity = "";
+                if(r <= rt[0]) {    // get simple
+                    rarity = "simple";
+                } else if(r > rt[0] && r < rt[1]) { // get special
+                    rarity = "special";
+                } else if(r > rt[1] && r < rt[2]) {  // get heroic
+                    rarity = "heroic";
+                } else {    // get legendary
+                    rarity = "legendary";
+                }
+                let card = this.getRandomCard(rarity, cards);
+                cards.push(card);
+            }
+            return cards;
+        },
+        getRandomCard: function(rarity, exclude = undefined) {
+            let cl = this.getRarity(rarity);
+            if(exclude) {
+                cl = cl.filter( (x) => !exclude.includes(x));
+            }
+            let card = cl[Math.round(Math.random() * (cl.length - 1))];
+            return card;
+        },
+        addPack: function() {
+            for(let card of this.pack) {
+                this.addCard(card);
+            }
+            this.openingPack = false;
         }
     },
     components : { Card, FilterButtons }
@@ -270,7 +330,61 @@ export default {
             height: 100%;
         }
     }
-    
+    .pack-button {
+        @extend .button;
+        background-color: #D3B326;
+        color: $white;
+        font-weight: 500;
+        padding: 1em;
+        height: 3em;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 720px) {
+            width: 100%;
+        }            
+    }
+    .modal-container {
+        z-index: 99990;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.5);
+        left: 0px;
+        top: 0px;
+    }
+    .pack-modal {
+        z-index: 99999;
+        background-color: #eee;
+        padding: 1em;
+        box-sizing: border-box;
+        height: 28em;
+        margin: 2em 0em;
+        border-radius: 4px;
+
+        @media screen and (max-width: 720px) {
+            margin: 1em;
+            overflow-x: hidden;
+            height: 100%;
+        }
+        .button-container {
+            height: 3em;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            .pack-modal-button {
+                @extend .button;
+                padding: .75em 1em;
+                margin-right: 1em;
+            }
+        }
+        
+    }
 </style>
 
 

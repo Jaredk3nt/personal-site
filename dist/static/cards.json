@@ -40,7 +40,7 @@
             "name": "Guess Who?",
             "description": "Cause target to feel as though someone is tapping on their shoulder",
             "rarity": "simple",
-            "id": 25
+            "id": 27
         },
         {
             "name": "Smoke Puppet",
@@ -62,7 +62,7 @@
         },
         {
             "name": "Healing Melody",
-            "description": "Heal all allies 1d4 in a 30 ft radius",
+            "description": "Heal all allies within 30 ft 1d4 + CHA",
             "rarity": "simple",
             "id": 34
         },
@@ -133,8 +133,32 @@
             "id": 52
         },
         {
+            "name": "Ether Bolt",
+            "description": "Cast a magic bolt at a target\nDeal 1d6 + INT damage",
+            "rarity": "simple",
+            "id": 58
+        },
+        {
+            "name": "Monk's Prayer",
+            "description": "At the start of your next turn heal 1d8 + CHA",
+            "rarity": "simple",
+            "id": 59
+        },
+        {
+            "name": "Shadow Strike",
+            "description": "Teleport behind a target within 50 ft\nDeal 1d4 + DEX slashing damage",
+            "rarity": "simple",
+            "id": 60
+        },
+        {
+            "name": "Alchemist's Cask",
+            "description": "Throw an alchemist's brew at a target\nDeal 1d6 + WIS acid damage and 1d4 to any targets within 5 ft",
+            "rarity": "simple",
+            "id": 65
+        },
+        {
             "name": "Holy Light",
-            "description": "Heal a target for 1d8 + WIS",
+            "description": "Heal a target in a 30 ft range for 1d8 + WIS",
             "rarity": "special",
             "id": 7
         },
@@ -163,10 +187,10 @@
             "id": 20
         },
         {
-            "name": "Beserker Spirit",
+            "name": "Berserker's Spirit",
             "description": "Gain +2 to your next hit roll if below 25% health; take a normal attack turn as a bonus action",
             "rarity": "special",
-            "id": 22
+            "id": 56
         },
         {
             "name": "Spirit Lash",
@@ -188,7 +212,7 @@
         },
         {
             "name": "Rain of Blades",
-            "description": "Rain down ethereal blades on a target\n Deal 6d4 damage",
+            "description": "Rain down ethereal blades on a target\n Deal 4d4 damage",
             "rarity": "special",
             "id": 38
         },
@@ -200,7 +224,7 @@
         },
         {
             "name": "Fireball",
-            "description": "Cast a fireball at a target\n Deal 1d8 + INT fire damage",
+            "description": "Cast a fireball at a target\n Deal 1d10 + INT fire damage",
             "rarity": "special",
             "id": 45
         },
@@ -221,6 +245,48 @@
             "description": "Bond with a special familiar that will follow commands until death",
             "rarity": "special",
             "id": 49
+        },
+        {
+            "name": "Aggressive Aura",
+            "description": "Cause all targets in a 30 ft radius to become intimidated",
+            "rarity": "special",
+            "id": 54
+        },
+        {
+            "name": "Berserker's Focus",
+            "description": "Choose a target: you may only attack them for 1 min, but you deal 2x damage during this period\nTaunt all enemies within a 25 ft radius to attack you",
+            "rarity": "special",
+            "id": 55
+        },
+        {
+            "name": "Monk's Chant",
+            "description": "At the start of your next turn heal all allies in a 30 ft radius 1d8 + WIS",
+            "rarity": "special",
+            "id": 61
+        },
+        {
+            "name": "Nothing Personal",
+            "description": "Teleport behind a target in 50 ft range\nDeal 2d6 + DEX slashing damage",
+            "rarity": "special",
+            "id": 62
+        },
+        {
+            "name": "Ether Volley",
+            "description": "Cast 3 ether bolts, that can be directed a different targets\nEach bolt deals 1d6 + INT",
+            "rarity": "special",
+            "id": 63
+        },
+        {
+            "name": "Sacrifical Spike",
+            "description": "Take X damage, deal 2x damage taken to target",
+            "rarity": "special",
+            "id": 66
+        },
+        {
+            "name": "Warm Aura",
+            "description": "Heal all allies within 30 ft 1d6 + CHA",
+            "rarity": "special",
+            "id": 69
         },
         {
             "name": "Mist Form",
@@ -283,6 +349,30 @@
             "id": 41
         },
         {
+            "name": "Radiant Aura",
+            "description": "Heal all allies in a 50 ft radius 1d10 + CHA",
+            "rarity": "heroic",
+            "id": 61
+        },
+        {
+            "name": "Wildfire",
+            "description": "Cast a 10x20 ft cone of fire\nDeals 1d12 fire damage and burns targets 1d4 for 3 turns",
+            "rarity": "heroic",
+            "id": 64
+        },
+        {
+            "name": "Plague",
+            "description": "Infect a target\nDeal 1d6 + WIS necrotic damage for 1d4 + WIS turns",
+            "rarity": "heroic",
+            "id": 70
+        },
+        {
+            "name": "Ether Explosion",
+            "description": "Cast ether bolts in a 10 ft sphere around you\nAll enemies take 1d6 + INT + the inverse of their distance from you damage",
+            "rarity": "heroic",
+            "id": 70
+        },
+        {
             "name": "Banish",
             "description": "Send a target to the Ethereal Plane for 1d6 hours",
             "rarity": "legendary",
@@ -311,6 +401,24 @@
             "description": "Cast a random legendary card",
             "rarity": "legendary",
             "id": 42
+        },
+        {
+            "name": "Forest of Blades",
+            "description": "Cast a 25x25 ft field of blades\nTargets in the field take 1d10 + WIS slashing damage per 5ft moved every turn",
+            "rarity": "legendary",
+            "id": 57
+        },
+        {
+            "name": "Thunder Lord's Fury",
+            "description": "Strike every enemy in a 50 ft radius with lightning, rooting all targets on next turn\nDeal 2d6 + INT lightning damage to each target",
+            "rarity": "legendary",
+            "id": 67
+        },
+        {
+            "name": "Iron Maiden",
+            "description": "Lock target in a iron coffin\nTarget takes 2d10 damage each turn until they succeed in a STR saving throw",
+            "rarity": "legendary",
+            "id": 68
         },
         {
             "name": "Emperor's Fist",

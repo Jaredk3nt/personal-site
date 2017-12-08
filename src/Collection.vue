@@ -192,7 +192,11 @@ export default {
     .collection-grid {
         display: grid;
         width: 100%;
-        grid-template-columns: 22em auto;
+        grid-template-columns: 20em auto;
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: 18em auto;
+        }
     }
     .container {
         display: inline-block;
@@ -209,6 +213,10 @@ export default {
         position: relative;
         margin: .5em;
 
+        @media screen and (max-width: 1024px) {
+            margin: 0em;
+        }
+
         &:hover > .counter-icon {
             transform: translateY(-5px);
         }
@@ -222,6 +230,7 @@ export default {
             text-align: center;
             top: 22em;
             transition: transform .2s ease;
+            z-index: 9999;
             
             p {
                 font-family: sans-serif;
@@ -240,10 +249,15 @@ export default {
             width: 100%;
             background-color: $dark-grey;
             height: 100%;
-            padding: 1em 1em 1em 1.5em;
+            padding: 1em;
             overflow-y: scroll;
             overflow-x: hidden;
             box-sizing: border-box;
+
+            @media screen and (max-width: 1024px) {
+                padding: .25em;
+            }
+            
         }
         .card-filter {
             width: 100%;
@@ -302,11 +316,19 @@ export default {
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
-           justify-content: space-between;
+            justify-content: space-between;
+
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+            }
 
             .search-container {
                 width: 22em;
                 box-sizing: border-box;
+
+                @media screen and (max-width: 1024px) {
+                    margin: 1em 0em;
+                }
 
                 input {
                     padding: .75em;
@@ -347,6 +369,7 @@ export default {
 
         @media screen and (max-width: 720px) {
             width: 100%;
+            height: 5em;
         }            
     }
     .modal-container {
@@ -364,12 +387,16 @@ export default {
     }
     .pack-modal {
         z-index: 99999;
+        display: flex;
         background-color: #eee;
-        padding: 1em;
+        padding: 1em 1em 10em;
         box-sizing: border-box;
-        height: 28em;
-        margin: 2em 0em;
+        height: auto;
         border-radius: 4px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
 
         @media screen and (max-width: 720px) {
             margin: 1em;

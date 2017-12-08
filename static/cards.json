@@ -146,7 +146,7 @@
         },
         {
             "name": "Shadow Strike",
-            "description": "Teleport behind a target within 50 ft\nDeal 1d4 + DEX slashing damage",
+            "description": "Teleport behind a target within 50 ft\nDeal 1d6 + DEX slashing damage",
             "rarity": "simple",
             "id": 60
         },
@@ -155,6 +155,18 @@
             "description": "Throw an alchemist's brew at a target\nDeal 1d6 + WIS acid damage and 1d4 to any targets within 5 ft",
             "rarity": "simple",
             "id": 65
+        },
+        {
+            "name": "Soft Aura",
+            "description": "Heal all allies within 30 ft 1d4 + CHA",
+            "rarity": "simple",
+            "id": 72
+        },
+        {
+            "name": "Ether Coating",
+            "description": "Give a weapon +1d4 on damage rolls for 3 turns",
+            "rarity": "simple",
+            "id": 73
         },
         {
             "name": "Holy Light",

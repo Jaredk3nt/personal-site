@@ -73,7 +73,7 @@ export default {
         }
 
         @media screen and (max-width: 720px) {
-            margin: 1em 2em;
+            
         }
 
         &.small {

@@ -249,7 +249,7 @@ export default {
             width: 100%;
             background-color: $dark-grey;
             height: 100%;
-            padding: 1em;
+            padding: .65em;
             overflow-y: scroll;
             overflow-x: hidden;
             box-sizing: border-box;
@@ -389,7 +389,7 @@ export default {
         z-index: 99999;
         display: flex;
         background-color: #eee;
-        padding: 1em 1em 10em;
+        padding: 1em;
         box-sizing: border-box;
         height: auto;
         border-radius: 4px;

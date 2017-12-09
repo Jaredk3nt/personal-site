@@ -89,7 +89,7 @@ export default {
             let cards = this.getCollectionRarity(this.collectionRarity, this.collection);
             let re = new RegExp(this.collectionSearchQuery.toLowerCase());
             cards = cards.filter( (card) => {
-                return card.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1;
+                return card.obj.name.toLowerCase().search(re) !== -1 || card.obj.description.toLowerCase().search(re) !== -1;
             })
             return cards;
         },

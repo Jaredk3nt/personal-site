@@ -46,12 +46,12 @@ export default {
     @import 'globals';
     $round: 8px;
 
-    $card-height: 22em;
-    $card-width: 15em;
-    $card-content-padding: 8.5em;
+    $card-height: 19.75em;
+    $card-width: 13.5em;
+    $card-content-padding: 7.25em;
 
-    $title-text: 1.4rem;
-    $description-text: .9rem;
+    $title-text: 1.2rem;
+    $description-text: .85rem;
 
     .card-container {
         background-color: $eggshell;
@@ -77,8 +77,8 @@ export default {
         }
 
         &.small {
-            width: $card-width - 2em;
-            height: $card-height - 3em;
+            width: $card-width - 1em;
+            height: $card-height - 1.5em;
 
             @media screen and (max-width: 720px) {
                 width: $card-width;
@@ -100,13 +100,13 @@ export default {
                 }
 
                 h1 {
-                    font-size: $title-text - .2rem;
+                    font-size: $title-text - .1rem;
                     @media screen and (max-width: 720px) {
                         font-size: $title-text;
                     }
                 }
                 p {
-                    font-size: $description-text - .2rem;
+                    font-size: $description-text - .1rem;
                     @media screen and (max-width: 720px) {
                         font-size: $description-text;
                     }

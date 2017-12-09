@@ -3,7 +3,7 @@
     <div v-if="this.openingPack" class="modal-container">
         <div class="pack-modal">
             <div class="button-container">
-                <button class="pack-modal-button" v-on:click="addPack()">Add Cards</button>
+                <button class="pack-modal-button add-button" v-on:click="addPack()">Add Cards</button>
                 <button class="pack-modal-button" v-on:click="() => this.openingPack = false">close</button>
             </div>
             <div>
@@ -225,10 +225,10 @@ export default {
             position: absolute;
             height: 3em; width: 3em;
             border-radius: 50%;
-            margin-left: 15em;
+            margin-left: 13.5em;
             background: $special;
             text-align: center;
-            top: 22em;
+            top: 19.75em;
             transition: transform .2s ease;
             z-index: 9999;
             
@@ -257,7 +257,6 @@ export default {
             @media screen and (max-width: 1024px) {
                 padding: .25em;
             }
-            
         }
         .card-filter {
             width: 100%;
@@ -355,6 +354,7 @@ export default {
             padding: 1em 1em 10em 1em;
             margin-bottom: 10em;
             overflow-y: scroll;
+            overflow-x: hidden;
             height: 100%;
         }
     }
@@ -371,6 +371,10 @@ export default {
             width: 100%;
             height: 5em;
         }            
+    }
+    .add-button {
+        background-color: $special;
+        color: $white;
     }
     .modal-container {
         z-index: 99990;
@@ -397,11 +401,13 @@ export default {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        width: 80em;
 
-        @media screen and (max-width: 720px) {
+        @media screen and (max-width: 1024px) {
             margin: 1em;
             overflow-x: hidden;
             height: 100%;
+            width: auto;
         }
         .button-container {
             height: 3em;
@@ -416,7 +422,6 @@ export default {
                 margin-right: 1em;
             }
         }
-        
     }
 </style>
 

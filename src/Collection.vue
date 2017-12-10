@@ -26,9 +26,8 @@
                 </filter-buttons>
             </div>
             <div class="card-list-container">
-                <div class="card-wrapper" v-for="c in cards" :key="c.name" @click="addCard(c)">
-                    <card :cardObj="c"></card>
-                </div>
+                <card :cardObj="c" v-for="(c, index) in cards" 
+                        :key="c.name" @click="addCard(c)"></card>
             </div>
         </div>
         <div class="collection-container">
@@ -45,9 +44,8 @@
                  <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
             </div>
             <div class="card-collection">
-                <div class="card-wrapper" v-for="(c, index) in cardCollection" :key="c.name" @click="removeCard( index)">
-                    <card :cardObj="c.obj"></card>
-                    <div class="counter-icon"><p>{{c.count}}</p></div>
+                    <card :cardObj="c.obj" :count="c.count" v-for="(c, index) in cardCollection" 
+                        :key="c.name" @click="removeCard(index)"></card>
                 </div>
             </div>
         </div>
@@ -125,6 +123,7 @@ export default {
             return cards.filter( (c) => c.obj.rarity === rarity);
         },
         addCard: function(card) {
+            console.log(card);
             for(let x of this.collection) {
                 if(x.name === card.name) {
                     x.count++;
@@ -206,39 +205,6 @@ export default {
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
-    }
-    .card-wrapper {
-        width: auto;
-        display: inline-block;
-        position: relative;
-        margin: .5em;
-
-        @media screen and (max-width: 1024px) {
-            margin: 0em;
-        }
-
-        &:hover > .counter-icon {
-            transform: translateY(-5px);
-        }
-
-        .counter-icon {
-            position: absolute;
-            height: 3em; width: 3em;
-            border-radius: 50%;
-            margin-left: 13.5em;
-            background: $special;
-            text-align: center;
-            top: 19.75em;
-            transition: transform .2s ease;
-            z-index: 9999;
-            
-            p {
-                font-family: sans-serif;
-                color: $white;
-                margin-top: .95em;
-                font-weight: 700;
-            }
-        }
     }
     .card-search-container {
         @extend .container;

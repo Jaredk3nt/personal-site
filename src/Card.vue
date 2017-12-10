@@ -1,6 +1,7 @@
 <template>
+<div class="card-wrapper" @click="$emit('click', cardObj.id)">
     <div class="card-container" :class="{'small': small}">
-        <div class="rarity-banner" >
+        <div class="rarity-banner">
             <div class="banner-content" :class="cardObj.rarity">
                 <h3>#{{ cardObj.id }}</h3>
             </div>
@@ -10,13 +11,16 @@
             <p v-for="s in splitDescription" :key="s">{{s}}</p>
         </div>
     </div>
+    <div v-if="count != undefined && count > 0" class="counter-icon"><p>{{count}}</p></div>
+</div>
 </template>
 <script>
 export default {
     name : "card",
     props : {
         cardObj: { type: Object, required: true },
-        small: { type: Boolean }
+        small: { type: Boolean },
+        count: { type: Number }
     },
     data : function() {
         return {}
@@ -61,6 +65,7 @@ export default {
         padding: .75em;
         margin: .5em;
         display: inline-block;
+        position: relative;
         vertical-align: top;
         box-shadow: 2px 4px 10px rgba(0,0,0, 0.2);
         transition: transform .2s ease;
@@ -86,7 +91,7 @@ export default {
             }
 
             .rarity-banner {
-                left: $card-width - (2.5em + .75em + 2em); top: -.75em;
+                left: $card-width - (2.5em + .75em + 1em); top: -.75em;
 
                 @media screen and (max-width: 720px) {
                     left: $card-width - (2.5em + .75em); top: -.75em;
@@ -150,6 +155,40 @@ export default {
                 font-size: $description-text;
                 margin: .6em 0em;
                 color: #ededed;
+            }
+        }
+    }
+
+    .card-wrapper {
+        width: auto;
+        display: inline-block;
+        position: relative;
+        margin: .5em;
+
+        @media screen and (max-width: 1024px) {
+            margin: 0em;
+        }
+
+        &:hover > .counter-icon {
+            transform: translateY(-5px);
+        }
+
+        .counter-icon {
+            position: absolute;
+            height: 3em; width: 3em;
+            border-radius: 50%;
+            margin-left: 13.5em;
+            background: $special;
+            text-align: center;
+            top: 19.75em;
+            transition: transform .2s ease;
+            z-index: 9999;
+            
+            p {
+                font-family: sans-serif;
+                color: $white;
+                margin-top: .95em;
+                font-weight: 700;
             }
         }
     }

@@ -34,19 +34,25 @@
                 <button class="pack-button" v-on:click="openPack">Open a Pack</button>
             </div>
         </div>
-        <card v-for="c in cards" :cardObj="c" :key="c.name"></card>
+        <card-layout :cards="cards"></card-layout>
     </div>
 </template>
 
 <script>
 import Card from './Card.vue';
 import FilterButtons from './cards/FilterButtons.vue';
+import CardLayout from './cards/CardLayout.vue';
+
 const cardFile = require("../static/cards.json");
+const cardList = cardFile.cardList.map( (c) => {
+    return { cardObj: c}
+});
 const packSize = 5;
 const rt = [0.70, 0.90, 0.99];
 
 export default {
     name: 'card-page',
+    components : { Card, FilterButtons, CardLayout },
     data () {
         return { 
             rarity: "",
@@ -84,11 +90,11 @@ export default {
         },
         getRarity: function(rarity) {
             if(rarity === "") {
-                return cardFile.cardList;
+                return cardList;
             } else if (rarity === "familiars") {
                 return cardFile.familiars;
             }
-            return cardFile.cardList.filter( (c) => c.rarity === rarity);
+            return cardList.filter( (c) => c.cardObj.rarity === rarity);
         },
         getRandomCard: function(rarity, exclude = undefined) {
             let cl = this.getRarity(rarity);
@@ -99,18 +105,18 @@ export default {
             return card;
         },
         setRandomCard: function(rarity) {
-            this.randomCard = this.getRandomCard(rarity).name;
+            this.randomCard = this.getRandomCard(rarity).cardObj.name;
         }
     },
     computed : {
         cards : function() {
             let cl = this.getRarity(this.rarity);
             let re = new RegExp(this.searchQuery.toLowerCase());
-            cl = cl.filter( (card) => card.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1);
+            cl = cl.filter( (card) => card.cardObj.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1);
             return cl;
         },
     },
-    components : { Card, FilterButtons }
+    
 }
 </script>
 

@@ -8,6 +8,10 @@ $mythic: #85DDC9;
 $familiar: #85877C;
 $dark-grey: #2b2b2b;
 
+body {
+    font-family: sans-serif;
+}
+
 .simple {
     background-color: $simple;
     color: $dark-grey;
@@ -45,3 +49,4 @@ $dark-grey: #2b2b2b;
         outline: none;
     }
 }
+

@@ -82,7 +82,7 @@ export default {
         }
 
         &.small {
-            width: $card-width - 1em;
+            width: $card-width - 1.2em;
             height: $card-height - 1.5em;
 
             @media screen and (max-width: 720px) {

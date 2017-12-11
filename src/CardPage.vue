@@ -20,9 +20,7 @@
                 </filter-buttons>
             </div>
             <div class="search-container">
-                <form>
-                    <input type="text" placeholder="Search" v-model="searchQuery">
-                </form>
+                <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
             </div>
             <div class="random-container">
                 <h3>Cast Random: <strong>{{ randomCard }}</strong></h3>
@@ -112,7 +110,7 @@ export default {
         cards : function() {
             let cl = this.getRarity(this.rarity);
             let re = new RegExp(this.searchQuery.toLowerCase());
-            cl = cl.filter( (card) => card.cardObj.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1);
+            cl = cl.filter( (card) => card.cardObj.name.toLowerCase().search(re) !== -1 || card.cardObj.description.toLowerCase().search(re) !== -1);
             return cl;
         },
     },
@@ -239,7 +237,7 @@ export default {
         padding: 1em;
         box-sizing: border-box;
         height: 28em;
-        margin: 2em 0em;
+        margin: 1em 0em;
         border-radius: 4px;
 
         @media screen and (max-width: 720px) {

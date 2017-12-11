@@ -17,9 +17,7 @@
                 <h3>Search/Filter</h3>
                 <hr/>
                 <div class="search-container">
-                    <form>
-                        <input type="text" placeholder="Search" v-model="searchQuery">
-                    </form>
+                    <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
                 </div>
                 <filter-buttons v-on:filter="(x) => this.rarity = x"
                     :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', '']">
@@ -37,16 +35,13 @@
                 </filter-buttons>
                
                 <div class="search-container">
-                    <form>
-                        <input type="text" placeholder="Search" v-model="collectionSearchQuery">
-                    </form>
+                    <input type="text" placeholder="Search" v-model="collectionSearchQuery" v-on:keydown.enter.prevent="prevent">
                 </div>
                  <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
             </div>
             <div class="card-collection">
-                    <card :cardObj="c.obj" :count="c.count" v-for="(c, index) in cardCollection" 
-                        :key="c.name" @click="removeCard(index)"></card>
-                </div>
+                <card :cardObj="c.obj" :count="c.count" v-for="(c, index) in cardCollection" 
+                    :key="c.name" @click="removeCard(index)"></card>
             </div>
         </div>
     </div>
@@ -174,6 +169,11 @@ export default {
                 this.addCard(card);
             }
             this.openingPack = false;
+        },
+        prevent: function(e) {
+            if(e) {
+                e.preventDefault();
+            }
         }
     },
     components : { Card, FilterButtons }
@@ -359,7 +359,8 @@ export default {
         z-index: 99999;
         display: flex;
         background-color: #eee;
-        padding: 1em;
+        padding: .5em;
+        margin: 0em 3em;
         box-sizing: border-box;
         height: auto;
         border-radius: 4px;
@@ -367,7 +368,6 @@ export default {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        width: 80em;
 
         @media screen and (max-width: 1024px) {
             margin: 1em;

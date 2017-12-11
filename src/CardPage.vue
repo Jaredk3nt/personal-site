@@ -1,16 +1,16 @@
 <template>
     <div id="CardPage">
         <div v-if="this.openingPack" class="modal-container">
-                <div class="pack-modal">
-                    <div class="button-container">
-                        <button class="close-button" v-on:click="() => this.openingPack = false">close</button>
-                    </div>
-                    <div>
-                        <div v-if="this.showPack">
-                            <card v-for="x in openPack()" :cardObj="x" :small="true" :key="x.id"></card>
-                        </div>
+            <div class="pack-modal">
+                <div class="button-container">
+                    <button class="close-button" v-on:click="() => this.openingPack = false">close</button>
+                </div>
+                <div>
+                    <div v-if="this.showPack">
+                        <card v-for="x in openPack()" :cardObj="x" :small="true" :key="x.id"></card>
                     </div>
                 </div>
+            </div>
         </div>
         <div class="function-bar">
             <div class="sort-container">
@@ -45,6 +45,9 @@ const cardFile = require("../static/cards.json");
 const cardList = cardFile.cardList.map( (c) => {
     return { cardObj: c}
 });
+const familiars = cardFile.familiars.map( (f) => {
+    return {cardObj:f};
+})
 const packSize = 5;
 const rt = [0.70, 0.90, 0.99];
 
@@ -90,7 +93,7 @@ export default {
             if(rarity === "") {
                 return cardList;
             } else if (rarity === "familiars") {
-                return cardFile.familiars;
+                return familiars;
             }
             return cardList.filter( (c) => c.cardObj.rarity === rarity);
         },

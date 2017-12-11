@@ -296,7 +296,7 @@
         },
         {
             "name": "Nothing Personal",
-            "description": "Teleport behind a target in 50 ft range\nDeal 2d6 + DEX slashing damage",
+            "description": "Teleport behind a target in 50 ft range\nTake a normal action turn as a bonus action gain +5 to hit and damage",
             "rarity": "special",
             "id": 62
         },
@@ -478,7 +478,7 @@
         },
         {
             "name": "Dire Wolf",
-            "description": "12 hp\nstr: 14, dex: 12, int: 4\nCan cast Mist Form once every 10 min",
+            "description": "10 hp, AC 11\nBite: +2 to hit, deal 1d4 + 3 piercing damage",
             "rarity": "special",
             "id": 4
         },

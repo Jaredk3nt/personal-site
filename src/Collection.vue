@@ -64,11 +64,12 @@ export default {
             collection: [],
             collectionSearchQuery: "",
             openingPack: false,
+            filter: { rarity: "", type: "" }
         };
     },
     computed : {
         cards: function() {
-            let cl = this.getRarity(this.rarity);
+            let cl = this.getFilteredCards();
             let re = new RegExp(this.searchQuery.toLowerCase());
             // Filter out by searchQuery
             cl = cl.filter( (card) => card.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1);
@@ -95,9 +96,6 @@ export default {
         }
     },
     methods : {
-        setRarity: function(rarity) {
-            this.rarity = rarity;
-        },
         getRarity: function(rarity, cards = undefined) {
             if(cards === undefined) {
                 if (rarity === "familiars") {
@@ -110,6 +108,34 @@ export default {
                 return cards;
             }
             return cards.filter( (c) => c.rarity === rarity);
+        },
+        getFilteredCards: function(set) {
+            let list;
+            if(set === 'cardList') {
+                list = cardFile.cardList;
+            } else {
+                list = this.collection;
+            }
+            return list.filter( (card) => {
+                return Object.keys(this.filter).every( (key) => {
+                    // If there is no filter for this key pass
+                    if(this.filter[key] === '') {
+                        return true;
+                    }
+                    // Ensure the card has this property
+                    if(!card.cardObj.hasOwnProperty(key)) {
+                        return false;
+                    }
+                    // Return true if property matches filter
+                    if(key === 'type') {
+                        return card.cardObj[key].some( (x) => {
+                            console.log(this.getType(x).name === this.filter[key]);
+                            return this.getType(x).name === this.filter[key];
+                        });
+                    }
+                    return card.cardObj[key] === this.filter[key];
+                });
+            });
         },
         getCollectionRarity: function(rarity, cards) {
             if(rarity === "") {

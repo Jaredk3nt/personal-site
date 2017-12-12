@@ -174,7 +174,7 @@ export default {
         width: auto;
         display: inline-block;
         position: relative;
-        margin: .5em;
+        margin: .5em 1em 1em .5em;
 
         @media screen and (max-width: 1024px) {
             margin: 0em;

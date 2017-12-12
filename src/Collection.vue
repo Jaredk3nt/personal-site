@@ -199,7 +199,7 @@ export default {
     .collection-grid {
         display: grid;
         width: 100%;
-        grid-template-columns: 20em auto;
+        grid-template-columns: 19em auto;
 
         @media screen and (max-width: 1024px) {
             grid-template-columns: 18em auto;
@@ -214,8 +214,6 @@ export default {
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
     }
-<<<<<<< HEAD
-=======
     .card-search-container {
         @extend .container;
         width:100%;
@@ -276,7 +274,6 @@ export default {
             }
         }
     }
->>>>>>> 407224adf4cc4c62a3b91b36dc9f19bc1d92a36f
     .collection-container {
         @extend .container;
         height: 100vh;

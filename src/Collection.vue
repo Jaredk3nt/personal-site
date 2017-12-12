@@ -12,36 +12,29 @@
         </div>
     </div>
     <div class="collection-grid">
-        <div class="card-search-container">
-            <div class="card-filter">
-                <h3>Search/Filter</h3>
-                <hr/>
-                <div class="search-container">
-                    <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
-                </div>
-                <filter-buttons v-on:filter="(x) => this.rarity = x"
-                    :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', '']">
-                </filter-buttons>
-            </div>
-            <div class="card-list-container">
-                <card :cardObj="c" v-for="(c, index) in cards" 
-                        :key="c.name" @click="addCard(c)"></card>
-            </div>
-        </div>
+        <card-side-bar v-on:addCard="(c) => addCard(c)"></card-side-bar>
+
         <div class="collection-container">
             <div class="card-filter">
-                <filter-buttons v-on:filter="(x) => this.collectionRarity = x"
-                    :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', '']">
-                </filter-buttons>
+                <div class="filters">
+                    <filter-buttons v-on:filter="(x) => this.filter.rarity = x"
+                        :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', '']">
+                    </filter-buttons>
+                    <filter-buttons v-on:filter="(t) => this.filter.type = t"
+                        :filters="typeFilters">
+                    </filter-buttons>
+                </div>
                
                 <div class="search-container">
-                    <input type="text" placeholder="Search" v-model="collectionSearchQuery" v-on:keydown.enter.prevent="prevent">
+                    <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
                 </div>
                  <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
             </div>
             <div class="card-collection">
-                <card :cardObj="c.obj" :count="c.count" v-for="(c, index) in cardCollection" 
-                    :key="c.name" @click="removeCard(c.obj.id)"></card>
+                <card :cardObj="c.cardObj" :count="c.count" v-for="(c, index) in cardCollection" 
+                    :key="c.name" @click="removeCard(c.cardObj.id)"></card>
+                <div class="empty-message" v-if="collection.length === 0">Your collection is empty!</div>
+                <div class="empty-message" v-if="cardCollection.length === 0 && collection.length > 0">No cards</div>
             </div>
         </div>
     </div>
@@ -50,39 +43,30 @@
 <script>
 import Card from './Card.vue';
 import FilterButtons from './cards/FilterButtons.vue';
+import CardSideBar from './cards/CardSideBar.vue';
+
 const cardFile = require("../static/cards.json");
+const typeFile = require("../static/types.json");
 const packSize = 5;
 const rt = [0.70, 0.90, 0.99];
 
 export default {
     name: "collection",
+    components : { Card, FilterButtons, CardSideBar },
     data: function() {
         return {
-            rarity: "",
-            collectionRarity: "",
             searchQuery: "",
             collection: [],
-            collectionSearchQuery: "",
             openingPack: false,
+            filter: { rarity: "", type: "" }
         };
     },
     computed : {
-        cards: function() {
-            let cl = this.getRarity(this.rarity);
-            let re = new RegExp(this.searchQuery.toLowerCase());
-            // Filter out by searchQuery
-            cl = cl.filter( (card) => card.name.toLowerCase().search(re) !== -1 || card.description.toLowerCase().search(re) !== -1);
-            // Sort cards by ID
-            cl.sort( (a, b) => {
-                return (a.id < b.id) ? -1 : 1;
-            });
-            return cl;
-        },
         cardCollection: function() {
-            let cards = this.getCollectionRarity(this.collectionRarity, this.collection);
-            let re = new RegExp(this.collectionSearchQuery.toLowerCase());
+            let cards = this.getFilteredCards();
+            let re = new RegExp(this.searchQuery.toLowerCase());
             cards = cards.filter( (card) => {
-                return card.obj.name.toLowerCase().search(re) !== -1 || card.obj.description.toLowerCase().search(re) !== -1;
+                return card.cardObj.name.toLowerCase().search(re) !== -1 || card.cardObj.description.toLowerCase().search(re) !== -1;
             })
             return cards;
         },
@@ -92,45 +76,65 @@ export default {
                 cards = this.openPack();
             }
             return cards;
+        },
+        types: function() {
+            return typeFile.types;
+        },
+        typeFilters: function() {
+            let filter = this.types.map( (t) => t.name );
+            filter.push('');
+            return filter;
         }
     },
     methods : {
-        setRarity: function(rarity) {
-            this.rarity = rarity;
+        getRarity: function(rarity) {
+            if(rarity === "") {
+                return cardFile.cardList;
+            }
+            return cardFile.cardList.filter( (c) => c.rarity === rarity);
         },
-        getRarity: function(rarity, cards = undefined) {
-            if(cards === undefined) {
-                if (rarity === "familiars") {
-                    return cardFile.familiars;
-                } else {
-                    cards = cardFile.cardList;
+        getType: function(id) {
+            for(let t of this.types) {
+                if(t.id === id) {
+                    return t;
                 }
             }
-            if(rarity === "") {
-                return cards;
-            }
-            return cards.filter( (c) => c.rarity === rarity);
         },
-        getCollectionRarity: function(rarity, cards) {
-            if(rarity === "") {
-                return cards;
-            }
-            return cards.filter( (c) => c.obj.rarity === rarity);
+        getFilteredCards: function(set) {
+            return this.collection.filter( (card) => {
+                return Object.keys(this.filter).every( (key) => {
+                    // If there is no filter for this key pass
+                    if(this.filter[key] === '') {
+                        return true;
+                    }
+                    // Ensure the card has this property
+                    if(!card.cardObj.hasOwnProperty(key)) {
+                        return false;
+                    }
+                    // Return true if property matches filter
+                    if(key === 'type') {
+                        return card.cardObj[key].some( (x) => {
+                            console.log(this.getType(x).name === this.filter[key]);
+                            return this.getType(x).name === this.filter[key];
+                        });
+                    }
+                    return card.cardObj[key] === this.filter[key];
+                });
+            });
         },
         addCard: function(card) {
-            console.log(card);
             for(let x of this.collection) {
                 if(x.name === card.name) {
                     x.count++;
                     return;
                 }
             }
-            this.collection.push({ name: card.name, obj: card, count: 1});
+            this.collection.push({ name: card.name, cardObj: card, count: 1});
         },
         removeCard: function(id) {
             for(let i = 0; i < this.collection.length; i++) {
                 let card = this.collection[i];
-                if(card.obj.id === id) {
+                if(card.cardObj.id === id) {
                      if(card.count > 1) {
                         card.count--;
                     } else {
@@ -180,7 +184,7 @@ export default {
             }
         }
     },
-    components : { Card, FilterButtons }
+    
 }
 </script>
 <style lang="scss" scoped>
@@ -210,6 +214,8 @@ export default {
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
     }
+<<<<<<< HEAD
+=======
     .card-search-container {
         @extend .container;
         width:100%;
@@ -270,6 +276,7 @@ export default {
             }
         }
     }
+>>>>>>> 407224adf4cc4c62a3b91b36dc9f19bc1d92a36f
     .collection-container {
         @extend .container;
         height: 100vh;
@@ -290,6 +297,9 @@ export default {
 
             @media screen and (max-width: 1024px) {
                 flex-direction: column;
+            }
+            .filters {
+                width: 40%;
             }
 
             .search-container {
@@ -334,6 +344,8 @@ export default {
         font-weight: 500;
         padding: 1em;
         height: 3em;
+        width: 10em;
+        margin: 0em 1em;
         box-sizing: border-box;
 
         @media screen and (max-width: 720px) {
@@ -391,6 +403,13 @@ export default {
                 margin-right: 1em;
             }
         }
+    }
+    .empty-message {
+        color: #fafafa;
+        font-weight: 700;
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 5em;
     }
 </style>
 

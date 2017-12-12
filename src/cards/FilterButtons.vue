@@ -1,10 +1,11 @@
 <template>
     <div class="filter-buttons">
-        <button v-for="f in filters" :key="f" 
-            @click="$emit('filter', f)"
-            :class="f" class="button">
+        <div class="button-wrapper" 
+            v-for="f in filters" :key="f" @click="$emit('filter', f)">
+            <button :class="f" class="button">
                 {{ (f.length > 0) ? f : 'none' }}
-        </button>
+            </button>
+        </div>
     </div>
 </template>
 <script>
@@ -15,6 +16,18 @@ export default {
 </script>
 <style lang="scss" scoped>
     @import '../globals';
+    .button-wrapper {
+        display: inline-block;
+        width: 4.2em;
+        padding: 0em .1em;
+        box-sizing: border-box;
+
+        button {
+            width: 100%;
+            text-align: center;
+            padding: .6em .6em;
+        }
+    }
 </style>
 
 

@@ -1,6 +1,6 @@
 <template>
     <div id="CardPage">
-        <div v-if="this.openingPack" class="modal-container">
+        <!-- <div v-if="this.openingPack" class="modal-container">
             <div class="pack-modal">
                 <div class="button-container">
                     <button class="close-button" v-on:click="() => this.openingPack = false">close</button>
@@ -11,15 +11,20 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="function-bar">
             <div class="sort-container">
                 <h3>Filter by:</h3>
-                <filter-buttons v-on:filter="(x) => this.rarity = x"
+                <filter-buttons v-on:filter="(r) => this.filter.rarity = r"
                     :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', 'familiars', '']">
+                </filter-buttons>
+                <br/>
+                <filter-buttons v-on:filter="(t) => this.filter.type = t"
+                    :filters="typeFilters">
                 </filter-buttons>
             </div>
             <div class="search-container">
+                <h3>Search:</h3>
                 <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
             </div>
             <div class="random-container">
@@ -28,9 +33,9 @@
                     :filters="['simple', 'special', 'heroic', 'legendary', 'mythic']">
                 </filter-buttons>
             </div>
-            <div class="pack-container">
+            <!-- <div class="pack-container">
                 <button class="pack-button" v-on:click="openPack">Open a Pack</button>
-            </div>
+            </div> -->
         </div>
         <card-layout :cards="cards"></card-layout>
     </div>
@@ -61,13 +66,11 @@ export default {
             openingPack: false,
             showPack: false,
             searchQuery: "",
-            randomCard: ""
+            randomCard: "",
+            filter: { rarity: '', type: '' }
         }
     },
     methods : {
-        setRarity: function(rarity) {
-            this.rarity = rarity;
-        },
         openPack: function() {
             let cards = [];
             this.openingPack = true;
@@ -90,6 +93,28 @@ export default {
             this.showPack = true;
             return cards;
         },
+        getFilteredCards: function() {
+            return cardList.filter( (card) => {
+                return Object.keys(this.filter).every( (key) => {
+                    // If there is no filter for this key pass
+                    if(this.filter[key] === '') {
+                        return true;
+                    }
+                    // Ensure the card has this property
+                    if(!card.cardObj.hasOwnProperty(key)) {
+                        return false;
+                    }
+                    // Return true if property matches filter
+                    if(key === 'type') {
+                        return card.cardObj[key].some( (x) => {
+                            console.log(this.getType(x).name === this.filter[key]);
+                            return this.getType(x).name === this.filter[key];
+                        });
+                    }
+                    return card.cardObj[key] === this.filter[key];
+                });
+            });
+        },
         getRarity: function(rarity) {
             if(rarity === "") {
                 return cardList;
@@ -108,11 +133,18 @@ export default {
         },
         setRandomCard: function(rarity) {
             this.randomCard = this.getRandomCard(rarity).cardObj.name;
+        },
+        getType: function(id) {
+            for(let t of this.types) {
+                if(t.id === id) {
+                    return t;
+                }
+            }
         }
     },
     computed : {
         cards : function() {
-            let cl = this.getRarity(this.rarity); // Filtered cardSet
+            let cl = this.getFilteredCards(); // Filtered cardSet
             let re = new RegExp(this.searchQuery.toLowerCase()); // Regex of search; exact match
             cl = cl.filter( (card) => {
                 // Search within the name
@@ -121,12 +153,33 @@ export default {
                 const description = card.cardObj.description.toLowerCase().search(re) !== -1;
                 // Search within the types
                 const type = card.cardObj.type
-                    .map( (t) => typeFile.types[t - 1].name )
+                    .map( (t) => this.getType(t).name )
                         .some( (t) => t.search(re) !== -1 );
                 return name || description || type;
             });
+            //sort by name
+            cl.sort( (a, b) => {
+                var nameA = a.cardObj.name.toLowerCase(); // ignore upper and lowercase
+                var nameB = b.cardObj.name.toLowerCase(); // ignore upper and lowercase
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                // names must be equal
+                return 0;
+            })
             return cl;
         },
+        types: function() {
+            return typeFile.types;
+        },
+        typeFilters: function() {
+            let filter = this.types.map( (t) => t.name );
+            filter.push('');
+            return filter;
+        }
     },
     
 }
@@ -150,10 +203,15 @@ export default {
         padding: .75em;
         margin-right: 1em;
     }
+    .function-bar {
+        background-color: $dark-grey;
+        padding-bottom: .5em;
+    }
     .sort-container {
         display: inline-block;
         margin-left: 2.5em;
         margin-bottom: .75em;
+        width: 35%;
 
         @media screen and (max-width: 720px) {
             width: 100%;
@@ -163,12 +221,18 @@ export default {
         }
         h3 {
             margin: 1em 0em;
+            color: $white;
+        }
+        br {
+
         }
     }
     .random-container {
         @extend .sort-container;
         margin-left: 4em;
         width: 22em;
+        vertical-align: top;
+
         @media screen and (max-width: 720px) {
             margin-left: 0em;
         }
@@ -181,6 +245,7 @@ export default {
     .search-container {
         display: inline-block;
         margin-left: 2.5em;
+        vertical-align: top;
 
         @media screen and (max-width: 720px) {
             width: 100%;
@@ -188,14 +253,17 @@ export default {
             padding: 0em 1em;
             box-sizing: border-box;
         }
-        
+        h3 {
+            margin: 1em 0em;
+            color: $white;
+        }
         input {
             padding: .75em;
             height: 3em;
             box-sizing: border-box;
             border: none;
             border-radius: 4px;
-            width: 20em;
+            width: 28em;
 
             @media screen and (max-width: 720px) {
                 width: 100%;

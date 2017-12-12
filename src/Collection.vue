@@ -41,7 +41,7 @@
             </div>
             <div class="card-collection">
                 <card :cardObj="c.obj" :count="c.count" v-for="(c, index) in cardCollection" 
-                    :key="c.name" @click="removeCard(index)"></card>
+                    :key="c.name" @click="removeCard(c.obj.id)"></card>
             </div>
         </div>
     </div>
@@ -127,12 +127,16 @@ export default {
             }
             this.collection.push({ name: card.name, obj: card, count: 1});
         },
-        removeCard: function(index) {
-            let c = this.collection[index];
-            if(c.count > 1) {
-                c.count--;
-            } else {
-                this.collection.splice(index, 1);
+        removeCard: function(id) {
+            for(let i = 0; i < this.collection.length; i++) {
+                let card = this.collection[i];
+                if(card.obj.id === id) {
+                     if(card.count > 1) {
+                        card.count--;
+                    } else {
+                        this.collection.splice(i, 1);
+                    }
+                }
             }
         },
         openPack: function() {

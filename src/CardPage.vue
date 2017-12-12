@@ -42,6 +42,7 @@ import FilterButtons from './cards/FilterButtons.vue';
 import CardLayout from './cards/CardLayout.vue';
 
 const cardFile = require("../static/cards.json");
+const typeFile = require("../static/types.json");
 const cardList = cardFile.cardList.map( (c) => {
     return { cardObj: c}
 });
@@ -111,9 +112,19 @@ export default {
     },
     computed : {
         cards : function() {
-            let cl = this.getRarity(this.rarity);
-            let re = new RegExp(this.searchQuery.toLowerCase());
-            cl = cl.filter( (card) => card.cardObj.name.toLowerCase().search(re) !== -1 || card.cardObj.description.toLowerCase().search(re) !== -1);
+            let cl = this.getRarity(this.rarity); // Filtered cardSet
+            let re = new RegExp(this.searchQuery.toLowerCase()); // Regex of search; exact match
+            cl = cl.filter( (card) => {
+                // Search within the name
+                const name = card.cardObj.name.toLowerCase().search(re) !== -1;
+                // Search within the description
+                const description = card.cardObj.description.toLowerCase().search(re) !== -1;
+                // Search within the types
+                const type = card.cardObj.type
+                    .map( (t) => typeFile.types[t - 1].name )
+                        .some( (t) => t.search(re) !== -1 );
+                return name || description || type;
+            });
             return cl;
         },
     },

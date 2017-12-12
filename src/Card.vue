@@ -3,7 +3,7 @@
     <div class="card-container" :class="{'small': small}">
         <div class="rarity-banner">
             <div class="banner-content" :class="cardObj.rarity">
-                <h3>#{{ cardObj.id }}</h3>
+                <h3>{{ typeCode }}</h3>
             </div>
         </div>
         <div class="card-content">
@@ -15,6 +15,8 @@
 </div>
 </template>
 <script>
+const typeFile = require('../static/types.json');
+
 export default {
     name : "card",
     props : {
@@ -28,6 +30,15 @@ export default {
     computed : {
         splitDescription : function() {
             return this.cardObj.description.split("\n");
+        },
+        typeCode: function() {
+            for(let t of typeFile.types) {
+                if(t.id == this.cardObj.type[0]){
+                    
+                    return t.code;
+                }
+            }
+            return "NO"
         }
     },
     methods : {

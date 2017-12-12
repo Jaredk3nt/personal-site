@@ -226,7 +226,6 @@ export default {
         }
         .card-filter {
             width: 100%;
-            top: 0px; left: 0px;
             background-color: $dark-grey;
             z-index: 9999;
             padding: 1em;
@@ -272,7 +271,8 @@ export default {
         height: 100vh;
         flex-grow: 1;
         overflow-y: hidden;
-        padding-bottom: 10em;
+        display: flex;
+        flex-direction: column;
 
         .card-filter {
             width: 100%;
@@ -282,6 +282,7 @@ export default {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
 
             @media screen and (max-width: 1024px) {
                 flex-direction: column;
@@ -309,7 +310,6 @@ export default {
                 }
             }
             .filter-buttons {
-                margin-top: .5em;
                 display: inline-block;
                 .rarity-button {
                     @extend .button;
@@ -317,8 +317,7 @@ export default {
             }
         }
         .card-collection {
-            padding: 1em 1em 10em 1em;
-            margin-bottom: 10em;
+            padding: 1em;
             overflow-y: scroll;
             overflow-x: hidden;
             height: 100%;

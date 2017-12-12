@@ -214,12 +214,76 @@ export default {
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
     }
+<<<<<<< HEAD
+=======
+    .card-search-container {
+        @extend .container;
+        width:100%;
+        padding-bottom: 10em;
+
+        .card-list-container {
+            width: 100%;
+            background-color: $dark-grey;
+            height: 100%;
+            padding: .65em;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            box-sizing: border-box;
+
+            @media screen and (max-width: 1024px) {
+                padding: .25em;
+            }
+        }
+        .card-filter {
+            width: 100%;
+            background-color: $dark-grey;
+            z-index: 9999;
+            padding: 1em;
+            box-sizing: border-box;
+            border-bottom: solid 2px #eee;
+
+            h3 {
+                color: $white;
+                font-family: sans-serif;
+                font-weight: 700;
+                margin: 0em 0em .35em 0em;
+            }
+
+            .search-container {
+                display: inline-block;
+                width: 100%;
+                margin-left: 0em;
+                box-sizing: border-box;
+
+                input {
+                    padding: .75em;
+                    height: 3em;
+                    box-sizing: border-box;
+                    border: none;
+                    border-radius: 4px;
+                    width: 100%;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            .filter-buttons {
+                margin-top: .5em;
+                .rarity-button {
+                    @extend .button;
+                }
+            }
+        }
+    }
+>>>>>>> 407224adf4cc4c62a3b91b36dc9f19bc1d92a36f
     .collection-container {
         @extend .container;
         height: 100vh;
         flex-grow: 1;
         overflow-y: hidden;
-        padding-bottom: 10em;
+        display: flex;
+        flex-direction: column;
 
         .card-filter {
             width: 100%;
@@ -229,6 +293,7 @@ export default {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
 
             @media screen and (max-width: 1024px) {
                 flex-direction: column;
@@ -259,7 +324,6 @@ export default {
                 }
             }
             .filter-buttons {
-                margin-top: .5em;
                 display: inline-block;
                 .rarity-button {
                     @extend .button;
@@ -267,8 +331,7 @@ export default {
             }
         }
         .card-collection {
-            padding: 1em 1em 10em 1em;
-            margin-bottom: 10em;
+            padding: 1em;
             overflow-y: scroll;
             overflow-x: hidden;
             height: 100%;

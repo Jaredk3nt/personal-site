@@ -16,13 +16,18 @@
 
         <div class="collection-container">
             <div class="card-filter">
-                <div class="filters">
-                    <filter-buttons v-on:filter="(x) => this.filter.rarity = x"
-                        :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', '']">
-                    </filter-buttons>
-                    <filter-buttons v-on:filter="(t) => this.filter.type = t"
-                        :filters="typeFilters">
-                    </filter-buttons>
+                <div class="filter-container">
+                    <div class="filters">
+                        <filter-buttons v-on:filter="(x) => this.filter.rarity = x"
+                            :filters="['simple', 'special', 'heroic', 'legendary', 'mythic']">
+                        </filter-buttons>
+                        <filter-buttons v-on:filter="(t) => this.filter.type = t"
+                            :filters="types.map( (t) => t.name )">
+                        </filter-buttons>
+                    </div>
+                    <div class="clear-filters" @click="() => filter = { 'rarity': '', 'type': ''}">
+                        <div class="clear-button">Clear</div>
+                    </div>
                 </div>
                
                 <div class="search-container">
@@ -79,11 +84,6 @@ export default {
         },
         types: function() {
             return typeFile.types;
-        },
-        typeFilters: function() {
-            let filter = this.types.map( (t) => t.name );
-            filter.push('');
-            return filter;
         }
     },
     methods : {
@@ -284,7 +284,7 @@ export default {
 
         .card-filter {
             width: 100%;
-            background-color: #eee;
+            background-color: #dedede;
             padding: 1em;
             box-sizing: border-box;
             display: flex;
@@ -295,8 +295,31 @@ export default {
             @media screen and (max-width: 1024px) {
                 flex-direction: column;
             }
-            .filters {
-                width: 40%;
+            .filter-container {
+                display: flex;
+                flex-direction: row;
+
+                .filters {
+                    width: 21.2em;
+                    display: inline-block;
+                }
+                .clear-filters {
+                    display: inline-block;
+                    width: 4em;
+                    color: $white;
+                    padding: .2em;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    .clear-button {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $dark-grey;
+                        height: 100%;
+                    }
+                }
             }
 
             .search-container {

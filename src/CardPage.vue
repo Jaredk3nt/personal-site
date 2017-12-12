@@ -18,11 +18,13 @@
                 <filter-buttons v-on:filter="(r) => this.filter.rarity = r"
                     :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', 'familiars', '']">
                 </filter-buttons>
+                <br/>
                 <filter-buttons v-on:filter="(t) => this.filter.type = t"
                     :filters="typeFilters">
                 </filter-buttons>
             </div>
             <div class="search-container">
+                <h3>Search:</h3>
                 <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
             </div>
             <div class="random-container">
@@ -201,10 +203,15 @@ export default {
         padding: .75em;
         margin-right: 1em;
     }
+    .function-bar {
+        background-color: $dark-grey;
+        padding-bottom: .5em;
+    }
     .sort-container {
         display: inline-block;
         margin-left: 2.5em;
         margin-bottom: .75em;
+        width: 35%;
 
         @media screen and (max-width: 720px) {
             width: 100%;
@@ -214,12 +221,18 @@ export default {
         }
         h3 {
             margin: 1em 0em;
+            color: $white;
+        }
+        br {
+
         }
     }
     .random-container {
         @extend .sort-container;
         margin-left: 4em;
         width: 22em;
+        vertical-align: top;
+
         @media screen and (max-width: 720px) {
             margin-left: 0em;
         }
@@ -232,6 +245,7 @@ export default {
     .search-container {
         display: inline-block;
         margin-left: 2.5em;
+        vertical-align: top;
 
         @media screen and (max-width: 720px) {
             width: 100%;
@@ -239,14 +253,17 @@ export default {
             padding: 0em 1em;
             box-sizing: border-box;
         }
-        
+        h3 {
+            margin: 1em 0em;
+            color: $white;
+        }
         input {
             padding: .75em;
             height: 3em;
             box-sizing: border-box;
             border: none;
             border-radius: 4px;
-            width: 20em;
+            width: 28em;
 
             @media screen and (max-width: 720px) {
                 width: 100%;

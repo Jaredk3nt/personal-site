@@ -11,6 +11,21 @@
             </div>
         </div>
     </div>
+    <div v-if="this.isImportingCollection" class="modal-container">
+        <div class="pack-modal">
+            <div class="button-container">
+                <button class="pack-modal-button add-button" v-on:click="importCollection()">Import Collection</button>
+                <button class="pack-modal-button" v-on:click="() => this.isImportingCollection = false">close</button>
+            </div>
+            <div class="dropzone-area" drag-over="handleDragOver" @dragenter="hovering = true" @dragleave="hovering = false" :class="{'hovered': hovering}">
+                <div class="dropzone-text">
+                    <span class="dropzone-title">Drop json here or click to select</span>
+                    <span>{{importData != null ? "File loaded" : "No file" }}</span>
+                </div>
+                <input type="file" @change="onImportCollectionFileChange" />
+            </div>
+        </div>
+    </div>
     <div class="collection-grid">
         <card-side-bar v-on:addCard="(c) => addCard(c)"></card-side-bar>
 
@@ -29,14 +44,16 @@
                         <div class="clear-button">Clear</div>
                     </div>
                 </div>
-               
+
                 <div class="search-container">
                     <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
                 </div>
-                 <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
+                <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
+                <button class="pack-button" v-on:click="() => isImportingCollection = true">Import</button>
+                <button class="pack-button" v-on:click="() => JSON.stringify(exportCollection())">Export</button>
             </div>
             <div class="card-collection">
-                <card :cardObj="c.cardObj" :count="c.count" v-for="(c, index) in cardCollection" 
+                <card :cardObj="c.cardObj" :count="c.count" v-for="(c, index) in cardCollection"
                     :key="c.name" @click="removeCard(c.cardObj.id)"></card>
                 <div class="empty-message" v-if="collection.length === 0">Your collection is empty!</div>
                 <div class="empty-message" v-if="cardCollection.length === 0 && collection.length > 0">No cards</div>
@@ -63,6 +80,10 @@ export default {
             searchQuery: "",
             collection: JSON.parse(localStorage.getItem('collection')) || [],
             openingPack: false,
+            isImportingCollection: false,
+            importData: null,
+            hovering: false,
+            isExportingCollection: false,
             filter: { rarity: "", type: "" }
         };
     },
@@ -189,18 +210,86 @@ export default {
         clearCollection: function() {
             this.collection = [];
             localStorage.setItem('collection', JSON.stringify(this.collection));
+        },
+        importCollection: function() {
+            this.collection = this.importData;
+            this.isImportingCollection = false;
+        },
+        exportCollection: function() {
+            console.log("HERE EXPORT");
+            let collectionJsonData = JSON.stringify(this.collection);
+            let a = document.createElement('a');
+            a.id = 'exportCollectionAref';
+            a.href = 'data:atttachment/json,' + encodeURIComponent(collectionJsonData);
+            a.target = '_blank';
+            a.download = 'card_collection_export.json';
+            document.body.appendChild(a);
+            a.click();
+            document.getElementById('exportCollectionAref').remove()
+        },
+        onImportCollectionFileChange: function(e) {
+            let files = e.target.files || e.dataTransfer.files;
+            if (!files.length) return;
+
+            let reader = new FileReader();
+            let page = this;
+            reader.onload = (e) => {
+                page.importData = JSON.parse(e.target.result);
+            };
+            reader.readAsText(files[0]);
         }
     },
 }
 </script>
 <style lang="scss" scoped>
     @import 'globals';
+
     body {
         background: #eee;
         font-family: sans-serif;
         -webkit-overflow-scrolling: touch;
         font-family: sans-serif;
         height: 100%;
+    }
+    .dropzone-area {
+        width: 80%;
+        height: 200px;
+        position: relative;
+        border: 2px dashed $dark-grey;
+        display: block;
+        &.hovered {
+            border: 2px dashed $heroic;
+            .dropzone-title {
+                color: $heroic;
+            }
+        }
+    }
+    .dropzone-area input {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    .dropzone-text {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        transform: translate(0, -50%);
+        width: 100%;
+        span {
+            display: block;
+            line-height: 1.9;
+        }
+    }
+    .dropzone-title {
+        font-size: 13px;
+        color: $dark-grey;
+        letter-spacing: 0.4px;
     }
     .collection-grid {
         display: grid;

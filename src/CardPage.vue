@@ -1,27 +1,22 @@
 <template>
     <div id="CardPage">
-        <!-- <div v-if="this.openingPack" class="modal-container">
-            <div class="pack-modal">
-                <div class="button-container">
-                    <button class="close-button" v-on:click="() => this.openingPack = false">close</button>
-                </div>
-                <div>
-                    <div v-if="this.showPack">
-                        <card v-for="x in openPack()" :cardObj="x" :small="true" :key="x.id"></card>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div class="function-bar">
             <div class="sort-container">
                 <h3>Filter by:</h3>
-                <filter-buttons v-on:filter="(r) => this.filter.rarity = r"
-                    :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', 'familiars', '']">
-                </filter-buttons>
-                <br/>
-                <filter-buttons v-on:filter="(t) => this.filter.type = t"
-                    :filters="typeFilters">
-                </filter-buttons>
+                <div class="filter-container">
+                    <div class="filters">
+                        <filter-buttons v-on:filter="(r) => this.filter.rarity = r"
+                            :filters="['simple', 'special', 'heroic', 'legendary', 'mythic', 'familiars']">
+                        </filter-buttons>
+                        <hr/>
+                        <filter-buttons v-on:filter="(t) => this.filter.type = t"
+                            :filters="types.map( (t) => t.name )">
+                        </filter-buttons>
+                    </div>
+                    <div class="clear-filters" @click="() => filter = { 'rarity': '', 'type': ''}">
+                        <div class="clear-button">Clear</div>
+                    </div>
+                </div>
             </div>
             <div class="search-container">
                 <h3>Search:</h3>
@@ -33,9 +28,6 @@
                     :filters="['simple', 'special', 'heroic', 'legendary', 'mythic']">
                 </filter-buttons>
             </div>
-            <!-- <div class="pack-container">
-                <button class="pack-button" v-on:click="openPack">Open a Pack</button>
-            </div> -->
         </div>
         <card-layout :cards="cards"></card-layout>
     </div>
@@ -63,36 +55,12 @@ export default {
     data () {
         return { 
             rarity: "",
-            openingPack: false,
-            showPack: false,
             searchQuery: "",
             randomCard: "",
             filter: { rarity: '', type: '' }
         }
     },
     methods : {
-        openPack: function() {
-            let cards = [];
-            this.openingPack = true;
-            // get each card in pack
-            for(let i = 0; i < packSize; i++) {
-                let r = Math.random();
-                let rarity = "";
-                if(r <= rt[0]) {    // get simple
-                    rarity = "simple";
-                } else if(r > rt[0] && r < rt[1]) { // get special
-                    rarity = "special";
-                } else if(r > rt[1] && r < rt[2]) {  // get heroic
-                    rarity = "heroic";
-                } else {    // get legendary
-                    rarity = "legendary";
-                }
-                let card = this.getRandomCard(rarity, cards);
-                cards.push(card);
-            }
-            this.showPack = true;
-            return cards;
-        },
         getFilteredCards: function() {
             return cardList.filter( (card) => {
                 return Object.keys(this.filter).every( (key) => {
@@ -174,11 +142,6 @@ export default {
         },
         types: function() {
             return typeFile.types;
-        },
-        typeFilters: function() {
-            let filter = this.types.map( (t) => t.name );
-            filter.push('');
-            return filter;
         }
     },
     
@@ -211,7 +174,6 @@ export default {
         display: inline-block;
         margin-left: 2.5em;
         margin-bottom: .75em;
-        width: 35%;
 
         @media screen and (max-width: 720px) {
             width: 100%;
@@ -220,12 +182,35 @@ export default {
             box-sizing: border-box;
         }
         h3 {
-            margin: 1em 0em;
+            margin: .75em 0em .5em;
             color: $white;
         }
-        br {
+        .filter-container {
+                display: flex;
+                flex-direction: row;
 
-        }
+                .filters {
+                    width: 25.5em;
+                    display: inline-block;
+                }
+                .clear-filters {
+                    display: inline-block;
+                    width: 4em;
+                    color: $white;
+                    padding: .2em;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    .clear-button {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #FB5A62;
+                        height: 100%;
+                    }
+                }
+            }
     }
     .random-container {
         @extend .sort-container;
@@ -254,7 +239,7 @@ export default {
             box-sizing: border-box;
         }
         h3 {
-            margin: 1em 0em;
+            margin: .75em 0em .5em;
             color: $white;
         }
         input {
@@ -328,11 +313,11 @@ export default {
             height: 100%;
         }
     }
-    .pack-open-enter-active, .pack-open-leave-active {
-        transition: all 1s;
-    }
-    .pack-open-enter, .pack-open-leave-to /* .list-leave-active below version 2.1.8 */ {
-        opacity: 0;
-        transform: translateY(30px);
+
+    hr {
+        width: 95%;
+        border-style: solid;
+        border-color: darken($white, 25%);
+        margin-top: .25em; margin-bottom: .25em;
     }
 </style>

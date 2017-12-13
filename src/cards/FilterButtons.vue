@@ -28,6 +28,9 @@ export default {
             padding: .6em .6em;
         }
     }
+    .simple {
+        background: $white;
+    }
 </style>
 
 

@@ -21,6 +21,7 @@
                         <filter-buttons v-on:filter="(x) => this.filter.rarity = x"
                             :filters="['simple', 'special', 'heroic', 'legendary', 'mythic']">
                         </filter-buttons>
+                        <hr/><!-- <div class="spacer"></div> -->
                         <filter-buttons v-on:filter="(t) => this.filter.type = t"
                             :filters="types.map( (t) => t.name )">
                         </filter-buttons>
@@ -236,7 +237,7 @@ export default {
             width: 100%;
             background-color: $dark-grey;
             z-index: 9999;
-            padding: 1em;
+            padding: 3em 1em;
             box-sizing: border-box;
             border-bottom: solid 2px #eee;
 
@@ -285,7 +286,7 @@ export default {
         .card-filter {
             width: 100%;
             background-color: #dedede;
-            padding: 1em;
+            padding: 2em 1em;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
@@ -430,6 +431,12 @@ export default {
         font-size: 1.6rem;
         text-align: center;
         margin-top: 5em;
+    }
+    hr {
+        width: 95%;
+        border-style: solid;
+        border-color: lighten($dark-grey, 50%);
+        margin-top: .25em; margin-bottom: .25em;
     }
 </style>
 

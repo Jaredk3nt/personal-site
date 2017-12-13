@@ -206,7 +206,7 @@ export default {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    background-color: #FB5A62;
+                    background-color: $red;
                     height: 100%;
                 }
             }

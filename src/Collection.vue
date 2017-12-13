@@ -50,8 +50,11 @@
                     <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
                 </div>
                 <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
-                <button class="pack-button" v-on:click="() => isImportingCollection = true">Import</button>
-                <button class="pack-button" v-on:click="() => JSON.stringify(exportCollection())">Export</button>
+                <div class="controls">
+                    <button class="control-button danger" v-on:click="() => clearCollection()">Delete</button>
+                    <button class="control-button" v-on:click="() => isImportingCollection = true">Import</button>
+                    <button class="control-button" v-on:click="() => JSON.stringify(exportCollection())">Export</button>
+                </div>
             </div>
             <div class="card-collection">
                 <card :cardObj="c.cardObj" :count="c.count" v-for="(c, index) in cardCollection"
@@ -368,6 +371,7 @@ export default {
                     @extend .button;
                 }
             }
+            
         }
     }
     .collection-container {
@@ -445,6 +449,16 @@ export default {
                 display: inline-block;
                 .rarity-button {
                     @extend .button;
+                }
+            }
+            .controls {
+                .control-button {
+                    @extend .button;
+                    display: block;
+                    margin: .5em 0em;
+                }
+                .danger {
+                    background-color: $red;
                 }
             }
         }

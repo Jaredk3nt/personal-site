@@ -9,15 +9,15 @@
             </router-link>
              <router-link to="/cards" class="nav-item">
                 <img src="./assets/card.svg" alt="" class="icon">
-                <div class="nav-item-name">CARDS</div>
+                <div class="nav-item-name">cards</div>
             </router-link>
             <router-link to="/cards/collection" class="nav-item">
                 <img src="./assets/bookmark.svg" alt="" class="icon">
-                <div class="nav-item-name">DECK</div>
+                <div class="nav-item-name">deck</div>
             </router-link>
             <router-link to="/cards/character/Ayluin" class="nav-item">
                 <img src="./assets/npc.svg" alt="" class="icon">
-                <div class="nav-item-name">NPCS</div>
+                <div class="nav-item-name">npcs</div>
             </router-link>
         </nav>
         <div>

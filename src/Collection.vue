@@ -62,7 +62,7 @@ export default {
     data: function() {
         return {
             searchQuery: "",
-            collection: [],
+            collection: JSON.parse(localStorage.getItem('collection')) || [],
             openingPack: false,
             filter: { rarity: "", type: "" }
         };
@@ -73,7 +73,7 @@ export default {
             let re = new RegExp(this.searchQuery.toLowerCase());
             cards = cards.filter( (card) => {
                 return card.cardObj.name.toLowerCase().search(re) !== -1 || card.cardObj.description.toLowerCase().search(re) !== -1;
-            })
+            });
             return cards;
         },
         pack: function() {
@@ -127,10 +127,12 @@ export default {
             for(let x of this.collection) {
                 if(x.name === card.name) {
                     x.count++;
+                    localStorage.setItem('collection', JSON.stringify(this.collection));
                     return;
                 }
             }
             this.collection.push({ name: card.name, cardObj: card, count: 1});
+            localStorage.setItem('collection', JSON.stringify(this.collection));
         },
         removeCard: function(id) {
             for(let i = 0; i < this.collection.length; i++) {
@@ -143,6 +145,7 @@ export default {
                     }
                 }
             }
+            localStorage.setItem('collection', JSON.stringify(this.collection));
         },
         openPack: function() {
             let cards = [];
@@ -183,9 +186,12 @@ export default {
             if(e) {
                 e.preventDefault();
             }
+        },
+        clearCollection: function() {
+            this.collection = [];
+            localStorage.setItem('collection', JSON.stringify(this.collection));
         }
     },
-    
 }
 </script>
 <style lang="scss" scoped>
@@ -428,7 +434,7 @@ export default {
         }
     }
     .empty-message {
-        color: #fafafa;
+        color: $dark-grey;
         font-weight: 700;
         font-size: 1.6rem;
         text-align: center;

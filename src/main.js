@@ -7,6 +7,7 @@ import router from './router'
 import Home from './pages/Home'
 import BlogPost from './blog/BlogPost'
 import Popup from './pages/Popup'
+import CardRoot from './CardRoot';
 import CardPage from './CardPage';
 import Card from './Card';
 import Collection from './Collection.vue';
@@ -19,5 +20,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App, Home, BlogPost, Popup, CardPage, Card, Collection }
+  components: { App, Home, BlogPost, Popup, CardPage, Card, Collection, CardRoot }
 })

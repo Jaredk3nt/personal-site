@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Bookmark Ribbon</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path data-name="layer2"
+  d="M24 52a8 8 0 0 1 8 8V16a8 8 0 0 0-8-8H2v44zM54 8h8v44H40a8 8 0 0 0-8 8"
+  fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" stroke-linejoin="miter"
+  stroke-linecap="round"></path>
+  <path data-name="layer2" d="M32 16a8 8 0 0 1 8-8h2" fill="none"
+  stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" stroke-linejoin="miter"
+  stroke-linecap="round"></path>
+  <path data-name="layer1" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+  stroke-width="3" d="M54 26l-6-4-6 4V4h12v22z" stroke-linejoin="miter" stroke-linecap="round"></path>
+</svg>

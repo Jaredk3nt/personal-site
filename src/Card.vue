@@ -174,7 +174,7 @@ export default {
         width: auto;
         display: inline-block;
         position: relative;
-        margin: .5em 1em 1em .5em;
+        margin: 0em .75em .75em 0em;
 
         @media screen and (max-width: 1024px) {
             margin: 0em;
@@ -189,7 +189,7 @@ export default {
             height: 3em; width: 3em;
             border-radius: 50%;
             margin-left: 13.5em;
-            background: $special;
+            background: $gold;
             text-align: center;
             top: 19.75em;
             transition: transform .2s ease;

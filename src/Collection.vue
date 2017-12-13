@@ -36,12 +36,13 @@
                         <filter-buttons v-on:filter="(x) => this.filter.rarity = x"
                             :filters="['simple', 'special', 'heroic', 'legendary', 'mythic']">
                         </filter-buttons>
+                        <hr/><!-- <div class="spacer"></div> -->
                         <filter-buttons v-on:filter="(t) => this.filter.type = t"
                             :filters="types.map( (t) => t.name )">
                         </filter-buttons>
                     </div>
                     <div class="clear-filters" @click="() => filter = { 'rarity': '', 'type': ''}">
-                        <div class="clear-button">Clear</div>
+                        <div class="clear-button">Clear Filters</div>
                     </div>
                 </div>
 
@@ -294,7 +295,7 @@ export default {
     .collection-grid {
         display: grid;
         width: 100%;
-        grid-template-columns: 19em auto;
+        grid-template-columns: 18em auto;
 
         @media screen and (max-width: 1024px) {
             grid-template-columns: 18em auto;
@@ -331,7 +332,7 @@ export default {
             width: 100%;
             background-color: $dark-grey;
             z-index: 9999;
-            padding: 1em;
+            padding: 3em 1em;
             box-sizing: border-box;
             border-bottom: solid 2px #eee;
 
@@ -380,7 +381,7 @@ export default {
         .card-filter {
             width: 100%;
             background-color: #dedede;
-            padding: 1em;
+            padding: 1.5em 1em;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
@@ -395,7 +396,7 @@ export default {
                 flex-direction: row;
 
                 .filters {
-                    width: 21.2em;
+                    width: 20.75em;
                     display: inline-block;
                 }
                 .clear-filters {
@@ -403,6 +404,8 @@ export default {
                     width: 4em;
                     color: $white;
                     padding: .2em;
+                    text-align: center;
+
                     &:hover {
                         cursor: pointer;
                     }
@@ -454,7 +457,7 @@ export default {
     }
     .pack-button {
         @extend .button;
-        background-color: #D3B326;
+        background-color: $gold;
         color: $white;
         font-weight: 500;
         padding: 1em;
@@ -525,6 +528,12 @@ export default {
         font-size: 1.6rem;
         text-align: center;
         margin-top: 5em;
+    }
+    hr {
+        width: 95%;
+        border-style: solid;
+        border-color: lighten($dark-grey, 50%);
+        margin-top: .25em; margin-bottom: .25em;
     }
 </style>
 

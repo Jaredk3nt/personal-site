@@ -93,7 +93,7 @@ export default {
                 text-decoration: none;
                 font-size: .75rem;
                 text-align: center;
-                padding: .75em 0em 1.5em;
+                padding: .75em 0em 1.8em;
                 font-weight: 600;
 
                 &:hover {

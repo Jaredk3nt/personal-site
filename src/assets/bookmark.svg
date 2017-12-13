@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Bookmark</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path data-name="layer1"
+  d="M46 14h8v48H18a8 8 0 0 1-8-8V8" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+  stroke-width="3" stroke-linejoin="miter" stroke-linecap="round"></path>
+  <path data-name="layer2" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+  stroke-width="3" d="M46 34l-7.9-6-8.1 6V10h16v24z" stroke-linejoin="miter"
+  stroke-linecap="round"></path>
+  <path data-name="layer1" d="M30 14H16a6 6 0 0 1 0-12h34" fill="none"
+  stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" stroke-linejoin="miter"
+  stroke-linecap="round"></path>
+</svg>

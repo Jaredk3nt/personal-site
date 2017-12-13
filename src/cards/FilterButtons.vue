@@ -18,8 +18,9 @@ export default {
     @import '../globals';
     .button-wrapper {
         display: inline-block;
-        width: 4.2em;
-        padding: 0em .1em;
+        width: 4em;
+        padding: 0em .05em;
+        margin: 0em .05em;
         box-sizing: border-box;
 
         button {

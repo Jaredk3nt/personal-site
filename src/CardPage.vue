@@ -186,31 +186,31 @@ export default {
             color: $white;
         }
         .filter-container {
-                display: flex;
-                flex-direction: row;
+            display: flex;
+            flex-direction: row;
 
-                .filters {
-                    width: 25.5em;
-                    display: inline-block;
+            .filters {
+                width: 24.8em;
+                display: inline-block;
+            }
+            .clear-filters {
+                display: inline-block;
+                width: 4em;
+                color: $white;
+                padding: .2em;
+                &:hover {
+                    cursor: pointer;
                 }
-                .clear-filters {
-                    display: inline-block;
-                    width: 4em;
-                    color: $white;
-                    padding: .2em;
-                    &:hover {
-                        cursor: pointer;
-                    }
-                    .clear-button {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: #FB5A62;
-                        height: 100%;
-                    }
+                .clear-button {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #FB5A62;
+                    height: 100%;
                 }
             }
+        }
     }
     .random-container {
         @extend .sort-container;

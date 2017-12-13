@@ -48,5 +48,8 @@ export default {
 
 <style lang="scss">
     @import '../globals';
+    .card-layout {
+        padding-left: 1em;
+    }
 </style>
 

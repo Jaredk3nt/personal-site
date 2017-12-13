@@ -27,7 +27,7 @@
                         </filter-buttons>
                     </div>
                     <div class="clear-filters" @click="() => filter = { 'rarity': '', 'type': ''}">
-                        <div class="clear-button">Clear</div>
+                        <div class="clear-button">Clear Filters</div>
                     </div>
                 </div>
                
@@ -200,7 +200,7 @@ export default {
     .collection-grid {
         display: grid;
         width: 100%;
-        grid-template-columns: 19em auto;
+        grid-template-columns: 18em auto;
 
         @media screen and (max-width: 1024px) {
             grid-template-columns: 18em auto;
@@ -286,7 +286,7 @@ export default {
         .card-filter {
             width: 100%;
             background-color: #dedede;
-            padding: 2em 1em;
+            padding: 1.5em 1em;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
@@ -301,7 +301,7 @@ export default {
                 flex-direction: row;
 
                 .filters {
-                    width: 21.2em;
+                    width: 20.75em;
                     display: inline-block;
                 }
                 .clear-filters {
@@ -309,6 +309,8 @@ export default {
                     width: 4em;
                     color: $white;
                     padding: .2em;
+                    text-align: center;
+
                     &:hover {
                         cursor: pointer;
                     }
@@ -360,7 +362,7 @@ export default {
     }
     .pack-button {
         @extend .button;
-        background-color: #D3B326;
+        background-color: $gold;
         color: $white;
         font-weight: 500;
         padding: 1em;

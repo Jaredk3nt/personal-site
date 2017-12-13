@@ -4,7 +4,7 @@
         { "id": 2, "name": "control", "code": "CTRL" },
         { "id": 3, "name": "heal", "code": "HEAL" },
         { "id": 4, "name": "summon", "code": "SMN" },
-        { "id": 5, "name": "fight", "code": "FGHT" },
+        { "id": 5, "name": "fighting", "code": "FGHT" },
         { "id": 6, "name": "tank", "code": "TNK" },
         { "id": 7, "name": "enhance", "code": "ENHC" },
         { "id": 8, "name": "drain", "code": "DRN" },

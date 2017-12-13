@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Pay by Card</title>
+  <desc>A line styled icon from Orion Icon Library.</desc>
+  <path data-name="layer1"
+  d="M40 20l8.8 8.7C51.2 31.1 52 34.2 52 40c0 8.6-.1 22-.1 22M22 44a20 20 0 0 0 3.3 11.5C28.1 60 28 61.3 28 62"
+  fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" stroke-linejoin="miter"
+  stroke-linecap="round"></path>
+  <path data-name="layer2" d="M29.8 44H14a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h24a2 2 0 0 1 2 2v31M30 2v23"
+  fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" stroke-linejoin="miter"
+  stroke-linecap="round"></path>
+  <path data-name="layer1" d="M44.1 39.1L28.4 23.5a5 5 0 0 0-7 0 5 5 0 0 0 0 7l8.6 8.6s-2.6 8 6 14.9"
+  fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" stroke-linejoin="miter"
+  stroke-linecap="round"></path>
+</svg>

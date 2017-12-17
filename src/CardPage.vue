@@ -41,10 +41,10 @@ import CardLayout from './cards/CardLayout.vue';
 const cardFile = require("../static/cards.json");
 const typeFile = require("../static/types.json");
 const cardList = cardFile.cardList.map( (c) => {
-    return { cardObj: c}
+    return { cardObj: c }
 });
 const familiars = cardFile.familiars.map( (f) => {
-    return {cardObj:f};
+    return { cardObj: f };
 })
 const packSize = 5;
 const rt = [0.70, 0.90, 0.99];
@@ -62,6 +62,10 @@ export default {
     },
     methods : {
         getFilteredCards: function() {
+            if(this.filter.rarity === 'familiars') {
+                console.log(familiars);
+                return familiars;
+            }
             return cardList.filter( (card) => {
                 return Object.keys(this.filter).every( (key) => {
                     // If there is no filter for this key pass

@@ -34,12 +34,12 @@ export default {
 
 <style lang="scss">
     @import 'globals';
-    $nav-width: 4em;
+    $nav-width: 3.5em;
 
     //icon values
     $box-width: .75em;
     $box-pad: .375em;
-    $border-pad: 1em;
+    $border-pad: .75em;
 
     .card-root-container {
         padding-left: $nav-width;

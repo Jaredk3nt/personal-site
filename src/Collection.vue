@@ -459,6 +459,7 @@ export default {
                 }
                 .danger {
                     background-color: $red;
+                    color: $white;
                 }
             }
         }

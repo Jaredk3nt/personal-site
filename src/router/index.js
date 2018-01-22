@@ -19,7 +19,7 @@ export default new Router({
         { path: '/blog/:id', component: BlogPost },
         { path: '/About', name: 'About', component: About },
         { path: '/Resume', name: 'Resume', component: Resume },
-        { path: '/cards', name: 'Cards', component: CardRoot,
+        { path: '/cards', name: 'cards', component: CardRoot,
             children: [
                 {
                     path: '',

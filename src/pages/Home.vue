@@ -5,11 +5,10 @@
             <ul class="posts">
                 <li v-for="post in posts" class="post">
                     <div class="dates">
-                        <h3>{{ " " + post.date }}</h3><h3 class="dark">{{ post.title }}</h3>
+                        <h3>{{ " " + post.date }}</h3>
                     </div>
-                    <router-link :to="'/blog/' + post['id']"><h1>{{ post.subtitle }}</h1></router-link>
-                    <p class="hint">{{post.content[0].body.substr(0, 100) + '...'}}</p>
-                    <router-link :to="'/blog/' + post['id']" class="seemore">READ</router-link>
+                    <router-link :to="'/blog/' + post['id']"><h1>{{ post.title }}</h1></router-link>
+                    <router-link :to="'/blog/' + post['id']"><p>View post >></p></router-link>
                 </li>
             </ul>
         </div>
@@ -18,14 +17,20 @@
 
 <script>
 import Popup from './Popup'
-const blogPosts = require('../../static/blogPosts.json');
+import marky from 'markyjs'
+const blogPosts = require('../../static/posts.json');
 
 export default {
     name: 'Home',
     data: function() {
         return {
-            posts: blogPosts["blogposts"]
+            posts: blogPosts["posts"]
         }
+    },
+    methods: {
+        hintMaker: function(text) {
+            return marky(text) + '...';
+        } 
     },
     components: {
         Popup
@@ -39,7 +44,9 @@ export default {
 .posts {
     padding: .5em 1em;
     .post {
-        margin: 4em 0em;
+        margin: 2em 0em;
+        padding: 1em 1.5em;
+        box-shadow: 0px 0px 15px rgba(0,0,0,.09);
 
         &:first-child {
             margin-top: 0em;
@@ -47,7 +54,7 @@ export default {
         h1 {
             font-family: $sans-serif;
             margin: 0em 0em;
-            color: $dark-blue;
+            color: $grey;
             font-weight: 900;
         }
         .dates {
@@ -67,7 +74,10 @@ export default {
             text-overflow: ellipsis;
         }
         p {
-            font-size: 1.2em !important;
+            font-size: 1em !important;
+            color: $grey;
+            margin: .2em;
+            font-family: $sans-serif;
         }
         .seemore {
             color: $dark-blue !important;

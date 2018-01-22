@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import marky from 'markyjs'
 
 import Home from './pages/Home'
 import BlogPost from './blog/BlogPost'

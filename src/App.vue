@@ -3,7 +3,7 @@
         <div class="nav" v-if="isCards">
             <router-link :to="'/'">Home</router-link>
             <router-link :to="'/About'">About</router-link>
-            <router-link :to="'/Cards'">Cards</router-link>
+            <router-link :to="'/cards'">Cards</router-link>
         </div>
         <router-view></router-view>
   </div>
@@ -17,11 +17,12 @@ export default {
   },
   computed : {
     isCards : function() {
-      let bool = true;
-      if((this.$route.path !== '/Cards') || (this.$route.path !== '/cardcollection')) {
-        bool = false;
-      }
-      return bool;
+      // let bool = true;
+      // if((this.$route.path !== '/Cards') || (this.$route.path !== '/cardcollection')) {
+      //   bool = false;
+      // }
+      console.log(this.$route.path);
+      return this.$route.path.substring(0,6) !== '/cards';
     }
   }
 }
@@ -39,5 +40,6 @@ html, body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    background: #fff;
 }
 </style>

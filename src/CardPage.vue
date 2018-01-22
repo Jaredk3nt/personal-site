@@ -155,7 +155,7 @@ export default {
 <style lang="scss">
     @import 'globals';
     body {
-        background: #eee;
+        background: #fff;
         font-family: sans-serif;
         -webkit-overflow-scrolling: touch;
     }

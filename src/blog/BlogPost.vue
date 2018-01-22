@@ -4,7 +4,6 @@
             <div class="blogpost">
                 <div class="title">
                     <h2>{{post.title}}</h2>
-                    <h4 v-if="post.subtitle != undefined">{{post.subtitle}}</h4>
                 </div>
                 <div class="header">
                     <img src="../assets/jared.jpg" class="headshot">
@@ -15,30 +14,23 @@
                         <a href="https://twitter.com/Jaredk3nt"><img src="../assets/twitter.svg" alt="Twitter" class="icon"></a>
                     </div>
                 </div>
-                <ul>
-                    <li v-for="paragraph in post.content">
-                        <h5>{{paragraph.title}}</h5>
-                        <p>{{paragraph.body}}</p>
-                    </li>
-                </ul>
+                <div class="post-body" v-html="postBody"></div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-const blogPost = require('../../static/blogPosts.json');
+import marky from 'markyjs';
+const posts = require('../../static/posts.json');
 
 export default {
     name: 'BlogPost',
     props: [],
     data: function() {
         return {
-            postList: blogPost["blogposts"]
+            postList: posts["posts"],
         }
-    },
-    created: function() {
-        //console.log(this.postList);
     },
     computed: {
         post: function() {
@@ -47,6 +39,9 @@ export default {
                     return this.postList[i];
                 }
             }
+        },
+        postBody: function() {
+            return marky(this.post.content);
         }
     }
 }

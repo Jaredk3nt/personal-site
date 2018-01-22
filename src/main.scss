@@ -10,6 +10,7 @@ $grey: #333;
 body {
     margin: 0em;
     padding: 0em;
+    background-color: #fff;
 }
 
 .nav {
@@ -98,10 +99,17 @@ body {
 }
 
 .content {
+    h1 {
+        font-family: $sans-serif;
+        font-weight: 900;
+        font-size: 2.25rem;
+        color: #000;
+        margin: .5em;
+    }
     h2 {
         font-family: $sans-serif;
         font-weight: 900;
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: #e9ac00;
         margin: .4em 0em .1em 0em;
 
@@ -148,10 +156,26 @@ body {
         white-space: pre-wrap;
         font-family: $serif;
         font-size: 1.25rem;
-        margin: .2em 0em;
+        margin: .5em 0em 1em 0em;
 
         @media only screen and (max-width : $screen-small) {
             font-size: 1rem;
+        }
+    }
+    code {
+        font-size: 1rem;
+        background-color: $grey;
+        color: #fff;
+        padding: .25em .4em;
+        border-radius: 2px;
+    }
+    pre {
+        background-color: $grey;
+        padding: .75em .75em .75em 1.5em;
+        overflow: scroll;
+        border-left: $yellow solid 8px;
+        code {
+            color: #fff;
         }
     }
 }

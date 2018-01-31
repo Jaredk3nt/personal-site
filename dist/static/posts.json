@@ -5,6 +5,12 @@
             "title": "Testing how the markdown looks here",
             "date": "January 22, 2017",
             "content": "### My first blog post with markdown\nI finally got around to implementing my own markdown parser, so now my blogposts are fully customizable with markdown! When I was in SWE I set up this blog in a couple of hours so I cut some corners. I only had plain text that could be put into HTML tags. Since we had to have section titles I built a very strictly formatted JSON file that allowed me to have section titles and my component would go through the array of section titles and text and create an unordered list out of them, styling them the correct way. This made it extremely hard to change up the format and basically made it so the blog could never be used for anything else. So a couple of days over the winter break to make **Markyjs** a simple markdown to HTML parser. Now all I have to do is include that as a dependency and then pass the markdown styled string I have stored for the blog post to marky `marky('some markdown here')` and voila!\n\nIt was a fun little project and now I am looking forward to my very very big project this semester that I shall be starting shortly!"
+        },
+        {
+            "id": "markdown2",
+            "title": "Testing how the markdown looks here",
+            "date": "January 22, 2017",
+            "content": "### My first blog post with markdown\nI finally got around to implementing my own markdown parser, so now my blogposts are fully customizable with markdown! When I was in SWE I set up this blog in a couple of hours so I cut some corners. I only had plain text that could be put into HTML tags. Since we had to have section titles I built a very strictly formatted JSON file that allowed me to have section titles and my component would go through the array of section titles and text and create an unordered list out of them, styling them the correct way. This made it extremely hard to change up the format and basically made it so the blog could never be used for anything else. So a couple of days over the winter break to make **Markyjs** a simple markdown to HTML parser. Now all I have to do is include that as a dependency and then pass the markdown styled string I have stored for the blog post to marky `marky('some markdown here')` and voila!\n\nIt was a fun little project and now I am looking forward to my very very big project this semester that I shall be starting shortly!"
         }
     ]
 }

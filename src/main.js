@@ -13,6 +13,7 @@ import CardPage from './CardPage';
 import Card from './Card';
 import Collection from './Collection.vue';
 import FilterButtons from './cards/FilterButtons.vue';
+import Header from './molecules/Header';
 
 Vue.config.productionTip = false
 
@@ -21,5 +22,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App, Home, BlogPost, Popup, CardPage, Card, Collection, CardRoot }
+  components: { App, Home, BlogPost, Popup, CardPage, Card, Collection, CardRoot, Header }
 })

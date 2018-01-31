@@ -5,15 +5,13 @@
                 <div class="title">
                     <h2>{{post.title}}</h2>
                 </div>
-                <div class="header">
-                    <img src="../assets/jared.jpg" class="headshot">
-                    <div class="info">
-                        <router-link :to="'/'"><h3>CS373 Fall 2017: <strong>Jared Jones</strong></h3></router-link>
-                        <p>Computer Science student @ the University of Texas at Austin. I'm here to write about what I know and ask about what I don't.</p>
-                        <a href="https://github.com/Jaredk3nt"><img src="../assets/github.svg" alt="Github" class="icon"></a>
-                        <a href="https://twitter.com/Jaredk3nt"><img src="../assets/twitter.svg" alt="Twitter" class="icon"></a>
-                    </div>
-                </div>
+                <Header
+                    title="Programmable"
+                    name="Jared Jones"
+                    tagline="Computer Science student @ the University of Texas at Austin. I'm here to write about what I know and ask about what I don't."
+                    github="Jaredk3nt"
+                    twitter="Jaredk3nt">
+                </Header>
                 <div class="post-body" v-html="postBody"></div>
             </div>
         </div>
@@ -21,6 +19,7 @@
 </template>
 
 <script>
+import Header from '../molecules/Header';
 import marky from 'markyjs';
 const posts = require('../../static/posts.json');
 
@@ -43,78 +42,15 @@ export default {
         postBody: function() {
             return marky(this.post.content);
         }
+    },
+    components: {
+        Header
     }
 }
 </script>
 
 <style lang="scss">
 @import '../main.scss';
-
-.header {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    background: #f9f9f9;
-    height: 200px;
-    margin: 2em 0em;
-
-    @media only screen and (max-width : $screen-small) {
-        height: 100px;
-        margin: 1em;
-    }
-    .headshot {
-        display: inline-block;
-        height: 200px;
-
-        @media only screen and (max-width : $screen-small) {
-            height: 100px;
-        }
-    }
-    .info {
-        padding: 1.2em 2em;
-
-        @media only screen and (max-width : $screen-small) {
-            padding: .5em 1em .5em 1em;
-        }
-
-        h3 {
-            margin: .2em 0em;
-            color: $grey;
-
-            @media only screen and (max-width : $screen-medium) {
-                font-size: 1.2rem;
-            }
-            @media only screen and (max-width : $screen-small) {
-                font-size: 1rem;
-            }
-            strong {
-                color: $yellow;
-            }
-        }
-
-        p {
-            margin: .1em 0em;
-            font-size: 1.1rem;
-            color: $grey;
-            line-height: 1.5;
-
-            @media only screen and (max-width : $screen-medium) {
-                font-size: .95rem;
-            }
-            @media only screen and (max-width : $screen-small) {
-                display: none;
-            }
-        }
-        .icon {
-            height: 25px;
-            margin: .5em .35em;
-
-            @media only screen and (max-width : $screen-medium) {
-                height: 20px;
-            }
-        }
-    }
-}
 
 .blogpost {
     padding: .5em 2em;

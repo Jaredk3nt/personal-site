@@ -196,6 +196,11 @@ export default {
             .filters {
                 width: 24.8em;
                 display: inline-block;
+
+                @media screen and (max-width: 720px) {
+                    flex: 1;
+                    width: auto;
+                }
             }
             .clear-filters {
                 display: inline-block;
@@ -204,6 +209,11 @@ export default {
                 padding: .2em;
                 &:hover {
                     cursor: pointer;
+                }
+
+                @media screen and (max-width: 720px) {
+                    flex: .35;
+                    width: auto;
                 }
                 .clear-button {
                     display: flex;
@@ -222,6 +232,9 @@ export default {
         width: 22em;
         vertical-align: top;
 
+        @media screen and (max-width: 1024px) {
+            margin-left: 1em;
+        }
         @media screen and (max-width: 720px) {
             margin-left: 0em;
         }

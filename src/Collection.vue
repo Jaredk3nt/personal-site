@@ -45,15 +45,18 @@
                         <div class="clear-button">Clear Filters</div>
                     </div>
                 </div>
-
-                <div class="search-container">
-                    <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
-                </div>
-                <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
-                <div class="controls">
-                    <button class="control-button danger" v-on:click="() => clearCollection()">Delete</button>
-                    <button class="control-button" v-on:click="() => isImportingCollection = true">Import</button>
-                    <button class="control-button" v-on:click="() => JSON.stringify(exportCollection())">Export</button>
+                <div class="non-filter-container">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search" v-model="searchQuery" v-on:keydown.enter.prevent="prevent">
+                    </div>
+                    <div class="non-filter-buttons">
+                        <button class="pack-button" v-on:click="() => openingPack = true">Open a Pack</button>
+                        <div class="controls">
+                            <button class="control-button" v-on:click="() => isImportingCollection = true">Import</button>
+                            <button class="control-button" v-on:click="() => JSON.stringify(exportCollection())">Export</button>
+                            <button class="control-button danger" v-on:click="() => clearCollection()">Delete</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card-collection">
@@ -301,7 +304,7 @@ export default {
         grid-template-columns: 18em auto;
 
         @media screen and (max-width: 1024px) {
-            grid-template-columns: 18em auto;
+            grid-template-columns: 16.5em auto;
         }
     }
     .container {
@@ -393,7 +396,7 @@ export default {
             align-items: center;
 
             @media screen and (max-width: 1024px) {
-                flex-direction: column;
+                display: block;
             }
             .filter-container {
                 display: flex;
@@ -421,45 +424,81 @@ export default {
                         background-color: $dark-grey;
                         height: 100%;
                     }
-                }
-            }
 
-            .search-container {
-                width: 22em;
-                box-sizing: border-box;
-
-                @media screen and (max-width: 1024px) {
-                    margin: 1em 0em;
-                }
-
-                input {
-                    padding: .75em;
-                    height: 3em;
-                    box-sizing: border-box;
-                    border: none;
-                    border-radius: 4px;
-                    width: 100%;
-
-                    &:focus {
-                        outline: none;
+                    @media screen and (max-width: 1024px) {
+                        vertical-align: top;
                     }
                 }
             }
-            .filter-buttons {
-                display: inline-block;
-                .rarity-button {
-                    @extend .button;
+            .non-filter-container {
+                flex: 1;
+
+                .search-container {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: .5em;
+
+                    @media screen and (max-width: 1024px) {
+                        margin: .5em 0em;
+                        width: auto;
+                    }
+
+                    input {
+                        padding: .75em;
+                        height: 3em;
+                        box-sizing: border-box;
+                        border: none;
+                        border-radius: 4px;
+                        width: 100%;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
                 }
-            }
-            .controls {
-                .control-button {
-                    @extend .button;
-                    display: block;
-                    margin: .5em 0em;
+                .filter-buttons {
+                    display: inline-block;
+                    .rarity-button {
+                        @extend .button;
+                    }
                 }
-                .danger {
-                    background-color: $red;
-                    color: $white;
+                .non-filter-buttons {
+                    .pack-button {
+                        @extend .button;
+                        background-color: $gold;
+                        color: $white;
+                        font-weight: 500;
+                        padding: 1em;
+                        height: 3em;
+                        width: 10em;
+                        margin: 0em 1em;
+                        box-sizing: border-box;
+                        display: inline-block;
+
+                        @media screen and (max-width: 720px) {
+                            width: 100%;
+                            height: 5em;
+                        }            
+                    }
+                    .controls {
+                        float: right;
+                        margin-right: .55em;
+
+                        .control-button {
+                            @extend .button;
+                            display: block;
+                            margin: .5em 0em;
+                            display: inline-block;
+
+                            @media screen and (max-width: 1024px){
+                                display: inline-block;
+                            }
+                        }
+                        .danger {
+                            background-color: $red;
+                            color: $white;
+                        }
+                    }
                 }
             }
         }
@@ -470,22 +509,7 @@ export default {
             height: 100%;
         }
     }
-    .pack-button {
-        @extend .button;
-        background-color: $gold;
-        color: $white;
-        font-weight: 500;
-        padding: 1em;
-        height: 3em;
-        width: 10em;
-        margin: 0em 1em;
-        box-sizing: border-box;
-
-        @media screen and (max-width: 720px) {
-            width: 100%;
-            height: 5em;
-        }            
-    }
+    
     .add-button {
         background-color: $special;
         color: $white;

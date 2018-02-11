@@ -90,5 +90,16 @@ export default {
             }
         }
     }
+    .post-body {
+        ul {
+            list-style: square !important;
+            padding-left: 2em !important; 
+            li {
+                padding: .45em;
+                font-size: 1.15rem;
+            }
+        }
+        
+    }
 }
 </style>

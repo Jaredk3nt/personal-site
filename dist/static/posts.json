@@ -1,6 +1,12 @@
 {
     "posts": [
         {
+            "id": "tether2",
+            "title": "API Design",
+            "date": "Feb 10, 2018",
+            "content": "### Finishing up with the design of the API\nThis week I worked on setting up login logic on the back-end. For this project I am using basic auth, so I had to come up with my own system for allowing authorization on requests. The basic design is as such:\n* The user creates an account by giving a username and password\n* The backend salts and hashes that password using the library bcrypt\n- When the user logs-in the backend uses bcrypt to compare the password to the encrypted version in the database\n* If the credentials are correct the backend generates a token that it gives back to the frontend\n* The frontend then uses this token to make requests as the user\nRight now this system isn't perfectly secure, the tokens that the backend uses to 'remember' users are randomly generated, but later on I want to create hashes that are created by using the username and some backend secret code. I have been reading and researching on secure methodology for having 'remember-me' keys like this and creating a hash that is not stored on the backend, but instead a generated key is a better way to go.\nThe state that the API is in will allow me to start working on the frontend soon. My goal for the first state is having a homescreen that shows all of the stories in the database. Then a login flow that a user can login with, and once they are logged in, be able to post stories to the database and see a profile that shows their stories.\n### Tools Roadmap\nFor the back and frontend I am using the ExpressJS web framework. For testing the backend I have been using Postman. I want to implement unit tests with Mocha on the backend. For the frontend I am using Vue to create the UI. The plan right now is to use a tool called Karma for testing on the frontend. Once the site is in an MVP state I will host both the API and frontend on AWS as I am taking cloud computing right now which focuses a lot on AWS."
+        },
+        {
             "id": "tether1",
             "title": "Humble Beginnings",
             "date": "Feb 1, 2018",

@@ -15,7 +15,7 @@
                 <img src="./assets/bookmark.svg" alt="" class="icon">
                 <div class="nav-item-name">deck</div>
             </router-link>
-            <router-link to="/cards/character/Ayluin" class="nav-item">
+            <router-link to="/cards/character/Shop Keep" class="nav-item">
                 <img src="./assets/npc.svg" alt="" class="icon">
                 <div class="nav-item-name">npcs</div>
             </router-link>

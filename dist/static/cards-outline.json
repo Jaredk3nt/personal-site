@@ -218,6 +218,34 @@
             "type": [2]
         },
         {
+            "name": "Campfire",
+            "description": "Create a campfire",
+            "rarity": "simple",
+            "id": 77,
+            "type": [9]
+        },
+        {
+            "name": "Grappler",
+            "description": "Pull yourself to and object or character",
+            "rarity": "simple",
+            "id": 77,
+            "type": [2]
+        },
+        {
+            "name": "Amnesia",
+            "description": "Cause NPC character to forget the last five minutes",
+            "rarity": "special",
+            "id": 77,
+            "type": [9]
+        },
+        {
+            "name": "Four Leaf Clover",
+            "description": "Gain +1 on all rolls for 1 hour",
+            "rarity": "special",
+            "id": 80,
+            "type": [9]
+        },
+        {
             "name": "Holy Light",
             "description": "Heal a target in a 30 ft range for 3d4 + WIS",
             "rarity": "special",
@@ -317,7 +345,7 @@
         },
         {
             "name": "Dark Pact",
-            "description": "Bond with a special familiar that will follow commands until death",
+            "description": "Bond with a special familiar that will follow commands until death\nTake 1d4 damage",
             "rarity": "special",
             "id": 49,
             "type": [4]
@@ -328,6 +356,13 @@
             "rarity": "special",
             "id": 54,
             "type": [2]
+        },
+        {
+            "name": "Disguise",
+            "description": "Create a disguise of your choosing\nGain +3 on CHA rolls related to your disguise",
+            "rarity": "special",
+            "id": 77,
+            "type": [9]
         },
         {
             "name": "Berserker's Focus",
@@ -376,7 +411,14 @@
             "description": "Hit a target within 50 ft with a rush of elemental energy\nDeal 1d4 + 1d6 damage",
             "rarity": "special",
             "id": 69,
-            "type": [3]
+            "type": [1]
+        },
+        {
+            "name": "Drag",
+            "description": "Pull a target or object towards you",
+            "rarity": "special",
+            "id": 69,
+            "type": [2]
         },
         {
             "name": "Mist Form",
@@ -422,7 +464,7 @@
         },
         {
             "name": "Blood Pact",
-            "description": "Bond with a heroic spirit that will follow commands until death",
+            "description": "Bond with a heroic spirit that will follow commands until death\nTake 1d6 damage",
             "rarity": "heroic",
             "id": 22,
             "type": [4]
@@ -484,6 +526,27 @@
             "type": [2]
         },
         {
+            "name": "Brimstone",
+            "description": "Turn 10ft radius to hot brimstone, any target in the area takes 1d6 damage and 1d4 at the start of any turn where they are within the area",
+            "rarity": "heroic",
+            "id": 80,
+            "type": [2]
+        },
+        {
+            "name": "Desecrate",
+            "description": "Deal 2d4 damage to all targets in 10ft radius\nHeal for 1/2 damage dealt",
+            "rarity": "heroic",
+            "id": 80,
+            "type": [8]
+        },
+        {
+            "name": "Ash",
+            "description": "Deal damage equal to 1/2 of targets current health\nTarget cannot be at full health",
+            "rarity": "legendary",
+            "id": 80,
+            "type": [1]
+        },
+        {
             "name": "Banish",
             "description": "Send a target to the Ethereal Plane for 1d6 hours",
             "rarity": "legendary",
@@ -506,7 +569,7 @@
         },
         {
             "name": "Soul Pact",
-            "description": "Bond with a legendary familiar that will follow commands until death",
+            "description": "Bond with a legendary familiar that will follow commands until death\nReduce your health by 1d6 until familiar dies",
             "rarity": "legendary",
             "id": 30,
             "type": [4]
@@ -619,6 +682,13 @@
             "type": [4]
         },
         {
+            "name": "Varactyl",
+            "description": "Large four legged lizard mount\n60 ft movement",
+            "rarity": "special",
+            "id": 5,
+            "type": [4]
+        },
+        {
             "name": "Healing Fairy",
             "description": "6hp, AC 11\nHeal caster 1d4 + 2 each turn",
             "rarity": "special",
@@ -642,6 +712,13 @@
         {
             "name": "Acultist",
             "description": "36 hp, 13 AC\nHeal target for 1d10 + 2 at the cost of 4 hp",
+            "rarity": "heroic",
+            "id": 3,
+            "type": [4]
+        },
+        {
+            "name": "Royal Procession",
+            "description": "Carriage mount that can hold up to 5 people\n60 ft movement",
             "rarity": "heroic",
             "id": 3,
             "type": [4]

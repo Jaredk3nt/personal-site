@@ -1,6 +1,12 @@
 {
     "posts": [
         {
+            "id": "tether3",
+            "title": "Beginning the Frontend",
+            "date": "Feb 19, 2018",
+            "content": "### Building out the structure for the frontend\nThis week I spent some time planning and starting building out the application structure for the frontend. I used a tool called 'vue-cli' to help me build out the basic bundling structure for Vue with Webpack. After getting that scaffolding I spent a lot of time learning about a state management tool caled Vuex (based on the principles of Flux and similar to Redux for React). I wanted to use this to be able to handle global events like manipulating screens and being able to have a single source of truth for the login credentials and request logic. I spent some time reading articles about how to best treat AJAX and login in Vue projects and got Vuex setup, hopefully in the best way. After getting the main structure down I started with the main navigation flow. I got a 'fake data' feed of stories and the navigation to and from posting stories done. However none of it is hitting the API yet. My plan for the next week is to finish up the prototypal frontend pieces, specifically the login screen and start hooking that up to real requests. Once I can get a user logged in and the authentication tokens remembered pulling stories and posting will be next. Once I have all of those done, login, posting, and reading, I want to spend sometime off of development testing it with real users. I want to do this as soon as I have a working version so that I can figure out what could be better and then implement it iteratively and get to the best state possible by the end of the semester.\n"
+        },
+        {
             "id": "tether2",
             "title": "API Design",
             "date": "Feb 10, 2018",

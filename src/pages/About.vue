@@ -9,16 +9,19 @@
 				<p>Check out all of my work on my <a href="https://github.com/Jaredk3nt">Github</a></p>
 			</div>
 			
-			<a href="https://npmjs.com/kent-css" target="_blank" class="item kent">
-				<h1>KENTcss</h1>
-			</a><a href="http://dsgncoll.com" target="_blank" class="item deco">
-				<h1>Design Collective</h1>
-			</a><a href="http://rapidex.io" target="_blank" class="item rapidex">
+			
+			<a href="http://rapidex.io" target="_blank" class="item rapidex">
 				<h1>Rapidex.io</h1>
 			</a><a href="http://clickerga.me" target="_blank" class="item clicker">
 				<h1>clickerga.me</h1>
-			</a><a href="https://gamingdb-180920.appspot.com/" target="_blank" class="item gaming">
-				<h1>gamingdb</h1>
+			</a><a href="http://jaredjones.me/cards" target="_blank" class="item cheater">
+				<h1>Card D&D</h1>
+			</a><a href="https://npmjs.com/kent-css" target="_blank" class="item kent">
+				<h1>KENTcss</h1>
+			</a><a href="http://npmjs.com/markyjs" target="_blank" class="item deco">
+				<h1>Marky</h1>
+			</a><a href="https://github.com/Jaredk3nt/homepage" target="_blank" class="item homepage">
+				<h1>Homepage</h1>
 			</a><a href="https://play.google.com/store/apps/details?id=com.dev.jaredkent.cheatercheater" target="_blank" class="item cheater">
 				<h1>cheatercheater</h1>
 			</a>
@@ -87,9 +90,9 @@
 			@include hover-state(#222);
 		}
 		&.deco {
-			background-color: #fafafa;
+			background-color: #efefef;
 			color: $grey;
-			@include hover-state(#fafafa);
+			@include hover-state(#efefef);
 			&:visited {
 				color: $grey;
 			}
@@ -109,6 +112,16 @@
 				z-index: 1000;
 				box-shadow: 0px 5px 20px rgba(0,0,0, 0.4);
     		}
+		}
+		&.cards {
+			background-color: #d3b326;
+			color: #fff;
+			@include hover-state(#d3b326);
+		}
+		&.homepage {
+			background-color: #5F4B8B;
+			color: #fff;
+			@include hover-state(#5F4B8B);
 		}
 		&.cheater {
 			background-color: $yellow;

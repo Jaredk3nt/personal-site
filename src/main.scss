@@ -68,6 +68,10 @@ body {
 
     &.no-margin {
         margin-top: 0em;
+
+        @media only screen and (max-width : $screen-small) {
+            margin-top: 3em;
+        }
     }
 
     .page-body {

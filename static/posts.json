@@ -1,6 +1,12 @@
 {
     "posts": [
         {
+            "id": "tether4",
+            "title": "Developmental Design Prototype",
+            "date": "Feb 26, 2018",
+            "content": "### Designing the frontend\nThis week I spent time creating static designs of what I want the frontend to eventually look like. After finishing the scaffolding and starting developing the frontend last week I realized I needed a more solid roadmap of what the UI would look like, how the navigation would flow before I could appropriately create some of the screens. This is what I have created so far: [prototype](https://xd.adobe.com/view/397c2d26-61f7-4bc6-9dbb-c1690322ef11)\nThe prototype is static screens but the software I am using (Adobe XD) allows for me to create the navigation so I can begin to get a feel of what using the app will be like. Along these lines this week I want to get this prototype into as many hands as I can. Once I have fine tuned some things I will start to create it with Vue.\nOne of the biggest challenges I think I will face throughout this process is communicating the idea of the story trees. Since each node is (at this point) containing 600 char, using an actual tree diagram would be rather pointless since you could not read any portion of the story. So I need to try to convey the ideas of 'parent' and 'child' throughout the UI. While testing it this week I want to see how much explanation it requires to allow people to understand that distiction or if it they will grasp it on their own. This could cause me to need a 'tutorial' esque screen on sign-up if the ideas are not fully clear, or a change in the UI.\nI also wanted to mention that these designs are mobile, as I am designing the website mobile first. The desktop screens will not be too drastically changed but allow for better viewing (larger fonts and padding). Since the size of the story portions are small and there is such a high demand for phone based applications  I believe that the application will perform better upon completion if the mobile experience is of very high quality."
+        },
+        {
             "id": "tether3",
             "title": "Beginning the Frontend",
             "date": "Feb 19, 2018",

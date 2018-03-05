@@ -1,6 +1,12 @@
 {
     "posts": [
         {
+            "id": "tether5",
+            "title": "Building the Frontend Pieces",
+            "date": "Feb 26, 2018",
+            "content": "## Building the Pieces\n### What I Worked on This Week\nThis week I finished the login flow for the frontend. You can now run the api locally alongside the frontend and successfully login a user or create an account. While I was doing this I also made some changes to the backend, mainly changing how the authorization is handled. Before we were passing the username and authorization token back and forth for calls made to the api, but I modified it so that the user now passes their unique _id key given by mongo. This will speed up some lookups for calls that get users or posts from the users since the backend no longer has to search by username. I also finished the screen for posting a story. This screen was quite a challenge because of the dynamic nature I wanted to give it. The user can either have a fullscreen view of writing, or be able to see the parent story that they are working off of and get a smaller two-line typing window. It was a fun frontend task that felt like it pushed my knowledge of creating UI's.\n### What is in My Way\nLast week I had my Ethical Hacking midterm and this week I have a midterm in Cloud Computing so those have been pushing me back on working on Tether a bit.\n### What I am Doing Next Week\nNext week I want to link up more of the api, specifially having the proper posts loaded into the main screen based on the logged in user and having the post screen actually commit the story to the database. After I am done with those things I want to create the profile screen and have that populate with the correct data. Once the stories display, you can post, and you can look at profiles the MVP is done. Once the MVP is finished I want to go into testing and hosting the code. Once its hosted it will be very easy to get beta users that will be able to provide Tether with even better testing."
+        },
+        {
             "id": "tether4",
             "title": "Developmental Design Prototype",
             "date": "Feb 26, 2018",

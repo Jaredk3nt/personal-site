@@ -1,6 +1,12 @@
 {
     "posts": [
         {
+            "id": "tether6",
+            "title": "Spring Break & Midterms",
+            "date": "Mar 20, 2018",
+            "content": "## A small break\n### What I Worked on This Week\nDue to midterms and travel over the last two weeks I certainly got less done that I would have liked. I reworked all of the current UI to work better on desktops. This meant going back through and adding CSS for each page. I have also been working on the leftover screens, the story view page and the profile page. One of the complications I have been having is deciding when to use routing to a new page or have something appear as an overlayed UI. I want to do more research on how it is properly done and when and how to pass infomation back and forth between the screens.\n### What is in My Way\nProjects in other classes and a ton of leftover art pieces that I need to complete for my 'drawing for nonmajors' course have been pushing on me. Having spotty internet over spring break to not be able to do more research on the parts I have been working on put me back more than I was expecting.\n### What I am Doing Next Week\nOnce again I need to hook up more of the API to the frontend, this will allow me to work on the UI's with good data so I can really see how things will look once the service is online. I also want to get the backend hosted so we can always have data to populate the front-end. I am looking into doing it on Heroku as that is something I have worked with before. I also want to have my applications flow and layout looked at by one of my friends who works with web alot as well. This is my first time using state-management on a larger application but he has experience with Redux so I want to see if he thinks the way I have things set up is the most optimal. That will give me more confidence in making the final steps forward."
+        },
+        {
             "id": "tether5",
             "title": "Building the Frontend Pieces",
             "date": "Feb 26, 2018",

@@ -1,6 +1,12 @@
 {
     "posts": [
         {
+            "id": "tether9",
+            "title": "Prepping for Show",
+            "date": "April 9, 2018",
+            "content": "### What I Worked on This Week\nThis week I am mostly doing some cleanup on things that I have noticed since having the site live. I added proper svg icons on the story cards for liking and linking new stories. I cleaned up the backend to have consistent responses and error states and made sure emails and usernames were unique across the userbase. Then I started adding loading states to the application, I added loaders on the home screen and profile screen which had sometimes long blank screens on slower connections and made the app feel broken. I also fixed some bugs that prevented the follow and like buttons from going into their clicked state even though the api requests went through. I also got a spot to showcase Tethered at MadCon this year which I am excited about and is one of the main reasons I want to remove as many of the bugs I can find as possible so we can maybe grab some early users there!\n### What is in My Way\nNow ontop of my normal art and cloud projects I have an Ethical Hacking final project that will be taking up some of my time in the coming weeks.\n### What I am Doing Next Week\nI want to continue to clean up the application so it feels as polished as possible for MadCon, and that includes some feature addition, the main one I want to add is having parent views on the story page I think that will promote reading the stories a lot. And secondly is user controls around the profile so users can logout, update info and so on."
+        },
+        {
             "id": "tether8",
             "title": "Big Leaps",
             "date": "April 1, 2018",

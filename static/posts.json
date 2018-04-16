@@ -1,6 +1,12 @@
 {
     "posts": [
         {
+            "id": "tether10",
+            "title": "Big Bugs",
+            "date": "April 16, 2018",
+            "content": "### What I Worked on This Week\nThis week was a soft week for work on tethered, I have been working a lot of hours on my hacking final project. The only thing I really did this week was fixing a big bug that caused peoples passwords to be overwritten due to an error in how the user models were being updated. Basically when I originally wrote the creation of the user I used the wrong lifecycle hook to hash the password so the method that hashed the passwords was being called again on user updates like following or adding stories. This caused the hash to be hashed (and repeat) making the actual password no longer usable to access the account. Luckily I caught this while there are very few users! I also fixed some dependencies that were found to have known vulnerabilities and updated the project.\n P.S. I forgot to mention that last week I was also able to setup an actual domain, so now the site is live at [https://www.tetheredbeta.com](https://www.tetheredbeta.com) \n### What is in My Way\nSame as has been except with the coming of the end of the semester bigger projects and tests are beginning to pile up. I have been rather sad not to be able to put in as much time on tethered this week, especially since the time I did have was spent chasing down the culprit of that bug.\n### What I am Doing Next Week\nMadCon is coming up this weekend and while I actually wont be able to make it my roommate who has been wanting to make a native iOS version of tethered using my API will be there and is going to show off the website and whatever progress he has made on the app as well. So hopefully although I wont be there to get to see people using it I will be able to get some good feedback from him and still get good exposure with other CS students. In prepping for this I really would like to have user profile controls in place, however I have been saying that for 2 weeks now. Heres to hoping I will be able to find the time amidst my group projects!"
+        },
+        {
             "id": "tether9",
             "title": "Prepping for Show",
             "date": "April 9, 2018",
